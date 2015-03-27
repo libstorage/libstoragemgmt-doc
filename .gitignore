@@ -1,0 +1,7 @@
+_site
+Gemfile.lock
+.*.swp
+doc/man/*.5
+doc/man/*.1
+*.orig
+*.rej
