@@ -49,8 +49,11 @@ space utilization.
 
 ## Assistance
 * IRC at #libStorageMgmt http://freenode.net
-* [Mailing lists][13], you need to subscribe to post
-* [Github Issue Page][14]
+* [Developer Mailing list][13]:
+  libstoragemgmt-users@lists.fedorahosted.org
+* [User Mailing List][18]:
+  libstoragemgmt-devel@lists.fedorahosted.org
+* [Bug report: Github Issue Page][14]
 
 [1]: http://www.opensource.org/licenses/lgpl-license.html
 [2]: http://python.org/
@@ -60,12 +63,13 @@ space utilization.
 [6]: doc/c_api_user_guide.html
 [7]: doc/lib_dev_guide.html
 [8]: doc/c_plugin_dev_guide.html
-[9]: http://sourceforge.net/projects/libstoragemgmt/files/documentation/LPC_lsm_2012.odp/download
+[9]: misc/LPC_lsm_2012.odp
 [10]: http://www.youtube.com/watch?v=-ub25iAW9bE
 [11]: http://www.youtube.com/watch?v=LYmY8NcQRlo
 [12]: http://blog.asleson.org/index.php/2013/05/19/orchestrating-your-storage-libstoragemgmt/
-[13]: https://sourceforge.net/p/libstoragemgmt/mailman/
+[13]: https://lists.fedorahosted.org/mailman/listinfo/libstoragemgmt-devel
 [14]: https://github.com/libstorage/libstoragemgmt/issues
 [15]: doc/known_issues.html
 [16]: doc/project_scope.html
 [17]: doc/py_plugin_dev_guide.html
+[18]: https://lists.fedorahosted.org/mailman/listinfo/libstoragemgmt-users

@@ -407,26 +407,26 @@ We'd love to hear from you.
 
 For general questions please contact us via email or IRC:
 
-* An email to <libstoragemgmt-users@lists.sourceforge.net>
+* An email to <libstoragemgmt-users@lists.fedorahosted.org>
 * Ping "Gris" or "tasleson" in #libStorageMgmt channel of [FreeNode IRC][11]
 
 Bugs reports or suspected bug reports can be emailed to:
 
-* <libstoragemgmt-devel@lists.sourceforge.net>
+* <libstoragemgmt-devel@lists.fedorahosted.org>
 
 User mailing list archive page:
-https://lists.sourceforge.net/lists/listinfo/libstoragemgmt-users
+https://lists.fedorahosted.org/mailman/listinfo/libstoragemgmt-users
 
 Developer mailing list archive page:
-https://sourceforge.net/p/libstoragemgmt/mailman/libstoragemgmt-devel
+https://lists.fedorahosted.org/mailman/listinfo/libstoragemgmt-devel
 
 Web IRC page:
 https://webchat.freenode.net
 
 ## 6. Contribute
 
-Please subscribe to "libstoragemgmt-devel@lists.sourceforge.net" mailist:
-https://lists.sourceforge.net/lists/listinfo/libstoragemgmt-devel
+Please subscribe to "libstoragemgmt-devel@lists.fedorahosted.org" mailist:
+https://lists.fedorahosted.org/mailman/listinfo/libstoragemgmt-devel
 
 For libStorageMgmt library code, please refer to [Library Developer Guide][12].
 
