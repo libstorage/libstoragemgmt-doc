@@ -1,8 +1,15 @@
 ---
 title: Library Developer Guide
 ---
+* [1. Setup developer environment](#1.-setup-developer-environment)
+* [2. Code Workflow](#2.-code-workflow)
+* [3. C Library Code Layout](#3.-c-library-code-layout)
+* [4. Python Library Code Layout](#4.-python-library-code-layout)
+* [5. LSM Daemon Code layout.](#5.-lsm-daemon-code-layout.)
+* [6. Tests](#6.-tests)
+* [7. How to contribute.](#7.-how-to-contribute.)
 
-This document is assuming you already read the [user_guide][1].
+This document is assuming you already read the [User Guide][1].
 
 ## 1. Setup developer environment
 
@@ -36,7 +43,7 @@ $ sudo zypper in gcc tar make gcc gcc-c++ libtool autoconf automake \
     libjson-devel procps libmicrohttpd-devel libconfig-devel
 ```
 
-## 2. Compile
+### 1.3. Compile
 
 ```bash
 # Change into root of source tree
@@ -52,9 +59,9 @@ $ ./configure
 $ make
 ```
 
-## 3. Run from the code tree
+### 1.4. Run from the code tree
 
-### 3.1 Automatic way -- lsmenv
+#### 1.4.1 Automatic way -- lsmenv
 
 ```bash
 # EPEL7 is needed for perl-Config-IniFiles on RHEL/Centos 7
@@ -64,11 +71,12 @@ $ sudo yum install perl-Config-IniFiles
 
 # Link 'lsmenv' to $HOME/bin
 # Assuming libstoragemgmt is in "$HOME" and $HOME/bin is in $PATH
-# Check 'lsmenv -h' for detail.
+# Check 'lsmenv -h' for detail usage.
 $ ln -s $HOME/libstoragemgmt/tools/lsmenv $HOME/bin/
 
 # Start lsmd daemon from code tree
-$ lsmenv lsmd
+# You can skip the sudo if you don't intent to run plugin in root mode.
+$ sudo lsmenv lsmd
 
 # Invoke lsmcli command
 $ lsmenv sim lsmcli list --type pools
@@ -77,8 +85,7 @@ $ lsmenv sim lsmcli list --type pools
 $ lsmenv sim plugin_test
 ```
 
-
-### 3.2 Manual way
+#### 1.4.2. Manual way
 
 ```bash
 # Assuming libstoragemgmt is in "$HOME"
@@ -97,7 +104,11 @@ $ export LD_LIBRARY_PATH=\
     "$LD_LIBRARY_PATH:$HOME/libstoragemgmt/c_binding"
 
 # Run lsmd daemon
-$ $HOME/libstoragemgmt/daemon/lsmd
+# You can skip the sudo if you don't intent to run plugin in root mode.
+$ sudo $HOME/libstoragemgmt/daemon/lsmd \
+    --confdir $HOME/libstoragemgmt/config \
+    --plugindir $HOME/libstoragemgmt/plugin \
+    -v -d
 
 # Run lsmcli
 $ $HOME/libstoragemgmt/tools/lsmcli/lsmcli ls -u sim://
@@ -155,26 +166,41 @@ socket JSON to LSM C API.
 TODO: Explain which lib we are using for JSON, socket, and etc.
 
 
-### 3.1 c_binding/include/libstoragemgmt
+### 3.1. Client API -- `libstoragemgmt/libstoragemgmt.h`
 
-Only 'libstoragemgmt.h' is for client use. (right?).
+The `libstoragemgmt/libstoragemgmt_plug_interface.h` file
+is located at `c_binding/include/libstoragemgmt/libstoragemgmt.h`,
+defining client API. It handles communication between client and plugin.
+The plugin interface only accept JSON input and only provide JSON
+output.  This set of methods are responsible to convert C methods into
+JSON format and convert plugin JSON output to C values.
 
-### 3.2 c_binding/lsm_datatypes
+Most of its methods are implemented in `c_binding/lsm_mgmt.cpp`.
 
-Explain here what these files (cpp and hpp) for.
+### 3.2. Plugin API -- `libstoragemgmt/libstoragemgmt_plug_interface.h`
 
-### 3.3 c_binding/lsm_convert
+The `libstoragemgmt/libstoragemgmt_plug_interface.h` file is located
+at `c_binding/include/libstoragemgmt/libstoragemgmt_plug_interface.h`,
+defining C plugin API. It handles communication between plugin and
+client. It convert the output of plugin registered method to JSON
+output and send back to client API.
 
-### 3.4 add more files
+Most of its methods are implemented in `c_binding/lsm_plugin_ipc.cpp`
 
 ## 4. Python Library Code Layout
 
-The Python libraray code is located at 'libstoragemgmt/python_binding'
+The Python library codes are located at 'libstoragemgmt/python_binding'
 folder.
 
-### 4.1 _client.py
+### 4.1. Client API and Plugin API -- `_client.py`
 
-This is the sample code of client:
+The `_client.py` is located  `python_binding/lsm/_client.py` defining
+the client API.
+
+Since plugin is directly communicate with client after initialisation,
+this file could also be treated as plugin API definition.
+
+This is the sample code of client API user:
 
 ```
 #!/usr/bin/python2
@@ -187,50 +213,48 @@ pools = lsm_cli_obj.pools()             # Enumerate Storage Pools.
 
 This file is providing the lsm.Client class and its methods.
 
-Some common check also implement here.
-
-### 4.2 _common.py
+### 4.2. `_common.py`
 
 This file is providing lsm.ErrorNumber, lsm.LsmError for public client
 use.
 
 The Proxy class is for internal use, it make sure all other python
-exception is wraped into LsmError.
+exception is wrapped into LsmError.
 
 The 'ErrorLevel' class is not used anywhere. Might be removed in the
 future.
 
-### 4.3 _data.py
+### 4.3 `_data.py`
 
 This file is providing LSM classes defination like lsm.System, lsm.Pool
 and etc.
 
-### 4.4 _iplugin.py
+### 4.4. `_iplugin.py`
 
 Provide a wrapper class `INetworkAttachedStorage`,
 `IStorageAreaNetwork`, and `INfs` to raise
 LsmError.ErrorNumber.NO_SUPPORT when plugin does not implement user
 requested methods.
 
-### 3.5 _pluginrunner.py
+### 4.5. `_pluginrunner.py`
 
 Provide class `PluginRunner` to server in `xxx_lsmplugin`.
 Please check `libstoragemgmt/plugin/sim/sim_lsmplugin` for detail.
 
-### 3.6 _transport.py
+### 4.6. `_transport.py`
 
 Used by `_client.py` to provide communication between plugin and user
 application.
 
-### 3.7 version.py
+### 4.7. `version.py`
 
 Generated by autoconf tools for `VERSION` constant.
 
-## 4. LSM Daemon Code layout.
+## 5. LSM Daemon Code layout.
 
 The daemon code is located at "libstoragemgmt/daemon" folder.
 
-### 4.1 lsmd -- `lsm_daemon.c`
+### 5.1. lsmd -- `lsm_daemon.c`
 
 Code workflow:
 
@@ -247,7 +271,8 @@ Code workflow:
 
 4. The plugin binary will reply API request via UNIX socket.
 
-### 4.2 `lsm_restd`
+### 5.2. `lsm_restd`
+
 Still in experimental stage.
 Using `microhttpd.h` for http server, `json/json.h` for JSON parsing,
 `libxml/uri.h` for URI parsing.
@@ -255,22 +280,22 @@ Using `microhttpd.h` for http server, `json/json.h` for JSON parsing,
 As LSM internally use JSON data for pluing-client communication, this daemon
 simply convert JSON request from web service to LSM JSON format.
 
-## 5. Tests
+## 6. Tests
 
 The 'make check' command will run three tests via `runtest.sh`.
 
-### 5.1 C Unit Test -- `tester.c`
+### 6.1. C Unit Test -- `tester.c`
 Designed to test C API against simc and sim plugin.
 
-### 5.2 lsmcli Test -- `cmdtest.py`
+### 6.2. Command Line Tool Test -- `cmdtest.py`
 
 Designed to test lsmcli against sim plugin.
 
-### 5.3 Plugin Test(Python API) -- `plugin_test.py`
+### 6.3. Plugin Test(Python API) -- `plugin_test.py`
 
 Designed to test all plugin via Python API.
 
-## 6. How to contribute.
+## 7. How to contribute.
 
 1. Discuss in maillist if it's a new feature or big changes.
 2. Work on patches
@@ -286,6 +311,6 @@ Designed to test all plugin via Python API.
     * Every patch only contain one small change.
     * Patch set only contain one serial change.
     * Test code should be included if changed area is not tested.
-5. git send-email
+5. git send-email to libstoragemgmt-devel maillist.
 
 [1]: user_guide.html
