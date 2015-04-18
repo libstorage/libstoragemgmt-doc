@@ -2,26 +2,21 @@
 title: Python API User Guide
 ---
 
-* [1. Connection -- lsm.Client] (#1.-connection----lsm.client)
-* [2. Capability -- lsm.Capabilities]
-  (#2.-capability----lsm.capabilities)
-* [3. System -- lsm.System] (#3.-system----lsm.system)
-* [4. Pool -- lsm.Pool] (#4.-pool----lsm.pool)
-* [5. Disk -- lsm.Disk] (#5.-disk----lsm.disk)
-* [6. Volume -- lsm.Volume] (#6.-volume----lsm.volume)
-* [7. Access Group -- lsm.AccessGroup]
-  (#7.-access-group----lsm.accessgroup)
-* [8. Volume Mask] (#8.-volume-mask)
-* [9. Volume Replication] (#9.-volume-replication)
-* [10. iSCSI Authentication] (#10.-iscsi-authentication)
-* [Appendix.A Reserved] (#appendix.a-reserved)
-* [Appendix.B Reserved] (#appendix.b-reserved)
-* [Appendix.C Asynchronous Job Control]
-  (#appendix.c-asynchronous-job-control)
-* [Appendix.D Bit Map] (#appendix.d-bit-map)
-* [Appendix.E lsm Static Methods] (#appendix.e-lsm-static-methods)
-* [Appendix.F Exceptions -- lsm.LsmError]
-  (#appendix.f-exceptions----lsm.lsmerror)
+* [1. Connection -- `lsm.Client`][01]
+* [2. Capability -- `lsm.Capabilities`][02]
+* [3. System -- `lsm.System`][03]
+* [4. Pool -- `lsm.Pool`][04]
+* [5. Disk -- `lsm.Disk`][05]
+* [6. Volume -- `lsm.Volume`][06]
+* [7. Access Group -- `lsm.AccessGroup`][07]
+* [8. Volume Mask][08]
+* [9. Volume Replication][09]
+* [10. iSCSI Authentication][10]
+* [Appendix.A Asynchronous Job Control][aa]
+* [Appendix.B Bit Map][ab]
+* [Appendix.C lsm Static Methods][ac]
+* [Appendix.D Exceptions -- lsm.LsmError][ad]
+
 
 This document provides detail about how to use LibStorageMgmt python API
 for storage system management.
@@ -86,15 +81,13 @@ These common exceptions might be raised by every methods:
 * `lsm.ErrorNumber.NO_MEMORY`
 
 
-The method specific expcetions are listed under every methods'
-defination.  All exceptions and their explaination are listed at
-[Section Appendix.F. LsmError][2].
+The method specific exceptions are listed under every methods'
+definition.  All exceptions and their explanation are listed at
+[Appendix.D. LsmError][ad].
 
 ## 1. Connection -- lsm.Client
-* [1.1. Make Connection -- `lsm.Client()`]
-  (#1.1.-make-connection----lsm.client())
-* [1.2. Close Connection -- `lsm.Client.close()`]
-  (#1.2.-close-connection----lsm.client.close())
+* [1.1. Make Connection -- `lsm.Client()`][0101]
+* [1.2. Close Connection -- `lsm.Client.close()`][0102]
 
 ### 1.1. Make Connection -- `lsm.Client()`
 
@@ -102,8 +95,6 @@ defination.  All exceptions and their explaination are listed at
 ```rst
 lsm.Client(uri, password=None, tmo=30000, flags=lsm.Client.FLAG_RSVD)
 
-Version:
-    1.0
 Version:
     1.0
 Usage:
@@ -136,9 +127,7 @@ Sample:
     lsm_client = lsm.Client('sim://')
 ```
 
-
 ### 1.2. Close Connection -- `lsm.Client.close()`
-
 
 ```rst
 lsm.Client.close()
@@ -160,15 +149,12 @@ Sample:
     lsm_client.close()
 ```
 
-
 ## 2. Capability -- lsm.Capabilities
 
-* [2.1. Query Capabilities -- `lsm.Client.capabilities()`]
-  (#2.1.-query-capabilities----lsm.client.capabilities())
-* [2.2. Check Capability -- lsm.Capabilities.supported()]
-  (#2.2.-check-capability----lsm.capabilities.supported())
-* [2.3. List Supported Capabilities -- lsm.Capabilities.get_supported()]
-  (#2.3.-list-supported-capabilities----lsm.capabilities.get_supported())
+* [2.1. Query Capabilities -- `lsm.Client.capabilities()`][0201]
+* [2.2. Check Capability -- `lsm.Capabilities.supported()`][0202]
+* [2.3. List Supported Capabilities
+  --`lsm.Capabilities.get_supported()`][0203]
 
 LibStorageMgmt is using lsm.Capabilities class to indicate the ability
 of current connection. On every connection, these methods are always
@@ -202,15 +188,11 @@ if lsm_caps.supported(lsm.Capabilities.DISKS):
     lsm_disks = lsm_client.disks()
 ```
 
-
 ### 2.1. Query Capabilities -- `lsm.Client.capabilities()`
-
 
 ```rst
 lsm.Client.capabilities(self, systems, flags=lsm.Client.FLAG_RSVD)
 
-Version:
-    1.0
 Version:
     1.0
 Usage:
@@ -232,7 +214,6 @@ Sample:
     lsm_syss = lsm_client.systems()
     lsm_cap = lsm_client.capabilities(lsm_syss[0])
 ```
-
 
 ### 2.2. Check Capability -- lsm.Capabilities.supported()
 
@@ -263,7 +244,6 @@ Sample:
     else:
         print "Disks is not supported by system %s" % lsm_syss[0].name
 ```
-
 
 ### 2.3. List Supported Capabilities -- lsm.Capabilities.get_supported()
 
@@ -302,11 +282,9 @@ Sample:
         print cap_str
 ```
 
-
 ## 3. System -- lsm.System
-* [3.1. System Properties] (#3.1.-system-properties)
-* [3.2. Query systems -- `lsm.Client.systems()`]
-  (#3.2.-query-systems----lsm.client.systems())
+* [3.1. System Properties][0301]
+* [3.2. Query systems -- `lsm.Client.systems()`][0302]
 
 Represents a Storage Array or direct attached storage RAID. Examples
 include:
@@ -331,7 +309,7 @@ include:
 * `status`
 
 
-    Integer. Bit Map(Check Appendix.D for detail).
+    Integer. Bit Map(Check [Appendix.B Bit Map][ab] for detail).
     The hardware health status of system. Could be any combination of
     these values:
 
@@ -395,7 +373,6 @@ include:
 
 ### 3.2. Query systems -- `lsm.Client.systems()`
 
-
 ```rst
 lsm.Client.systems(self, flags=lsm.Client.FLAG_RSVD)
 
@@ -417,12 +394,11 @@ Sample:
     systems = lsm_client.systems()
 ```
 
-
 ## 4. Pool -- lsm.Pool
-* [4.1. Pool Properties] (#4.1.-pool-properties)
-* [4.2. Pool Extra Constants] (#4.2.-pool-extra-constants)
-* [4.3. Query Pools -- `lsm.Client.pools()`]
-  (#4.3.-query-pools----lsm.client.pools())
+* [4.1. Pool Properties][0401]
+* [4.2. Pool Extra Constants][0402]
+* [4.3. Query Pools -- `lsm.Client.pools()`][0403]
+* [4.4. Query Pool Membership -- `lsm.Client.pool_member_info()`][0404]
 
 Pool is the only place a volume or a file system could created from.
 
@@ -451,12 +427,12 @@ Pool is the only place a volume or a file system could created from.
 * `status`
 
 
-    Integer. Bit Map(Check Appendix.D for detail). The health status of
-    pool.  The pool status will not contain volume status which means
-    pool status will not change for the deletion or creation of any
-    volume.  So generally, the status of pool is representing the status
-    of all volumes. If pool is STATUS_ERROR, then all its volumes is
-    STATUS_ERROR.
+    Integer. Bit Map(Check [Appendix.B Bit Map][ab] for detail). The
+    health status of pool. The pool status will not contain volume
+    status which means pool status will not change for the deletion or
+    creation of any volume. So generally, the status of pool is
+    representing the status of all volumes. If pool is STATUS_ERROR,
+    then all its volumes is STATUS_ERROR.
 
     For example: Some thin provisioning pool consumed all space of one
     pool which caused write request to volumes be rejected. Currently,
@@ -554,9 +530,9 @@ Pool is the only place a volume or a file system could created from.
 * `element_type`
 
 
-    Integer. Bit Map(Check Appendix.D for detail). Define what kind of
-    element could current pool create. Could be any combination of these
-    values:
+    Integer. Bit Map(Check [Appendix.B Bit Map][ab] for detail). Define
+    what kind of element could current pool create. Could be any
+    combination of these values:
 
     * `lsm.Pool.ELEMENT_TYPE_UNKNOWN`
 
@@ -591,11 +567,11 @@ Pool is the only place a volume or a file system could created from.
 * `unsupported_actions`
 
 
-    Integer. Bit Map(Check Appendix.D for detail). Indicate which
-    action(s) are not supported against current pool. If set to 0, it
-    means all actions indicated by lsm.Client.capabilities() is
-    supported against current pool.  Otherwise, could be any combination
-    of these values:
+    Integer. Bit Map(Check [Appendix.B Bit Map][ab] for detail).
+    Indicate which action(s) are not supported against current pool. If
+    set to 0, it means all actions indicated by
+    lsm.Client.capabilities() is supported against current pool.
+    Otherwise, could be any combination of these values:
 
     * `lsm.Pool.UNSUPPORTED_VOLUME_GROW`
 
@@ -673,12 +649,107 @@ Capability:
     Every plugin support lsm.Client.pools() call.
 ```
 
+### 4.4. Query Pool Membership -- `lsm.Client.pool_member_info()`
+
+```rst
+lsm.Client.pool_member_info(self, pool, flags=lsm.Client.FLAG_RSVD)
+
+Version:
+    1.2
+Usage:
+    Query the membership information of certain pool:
+        RAID type, member type and member ids.
+    Currently, LibStorageMgmt supports two types of pool:
+        * Sub-pool -- Pool.MEMBER_TYPE_POOL
+            Pool space is allocated from parent pool.
+            Example:
+                * NetApp ONTAP volume
+
+        * Disk RAID pool -- Pool.MEMBER_TYPE_DISK
+            Pool is a RAID group assembled by disks.
+            Example:
+                * LSI MegaRAID disk group
+                * EMC VNX pool
+                * NetApp ONTAP aggregate
+Parameters:
+    pool (lsm.Pool object)
+        Pool to query
+    flags (int)
+        Optional. Reserved for future use.
+        Should be set as lsm.Client.FLAG_RSVD.
+Returns:
+    [raid_type, member_type, member_ids]
+
+    raid_type (int)
+        RAID Type of requested pool.
+            Could be one of these values:
+                Volume.RAID_TYPE_RAID0
+                    Stripe
+                Volume.RAID_TYPE_RAID1
+                    Two disks Mirror
+                Volume.RAID_TYPE_RAID3
+                    Byte-level striping with dedicated parity
+                Volume.RAID_TYPE_RAID4
+                    Block-level striping with dedicated parity
+                Volume.RAID_TYPE_RAID5
+                    Block-level striping with distributed parity
+                Volume.RAID_TYPE_RAID6
+                    Block-level striping with two distributed parities,
+                    aka, RAID-DP
+                Volume.RAID_TYPE_RAID10
+                    Stripe of mirrors
+                Volume.RAID_TYPE_RAID15
+                    Parity of mirrors
+                Volume.RAID_TYPE_RAID16
+                    Dual parity of mirrors
+                Volume.RAID_TYPE_RAID50
+                    Stripe of parities Volume.RAID_TYPE_RAID60
+                    Stripe of dual parities
+                Volume.RAID_TYPE_RAID51
+                    Mirror of parities
+                Volume.RAID_TYPE_RAID61
+                    Mirror of dual parities
+                Volume.RAID_TYPE_JBOD
+                    Just bunch of disks, no parity, no striping.
+                Volume.RAID_TYPE_UNKNOWN
+                    The plugin failed to detect the volume's RAID type.
+                Volume.RAID_TYPE_MIXED
+                    This pool contains multiple RAID settings.
+                Volume.RAID_TYPE_OTHER
+                    Vendor specific RAID type
+    member_type (int)
+        Could be one of these values:
+            Pool.MEMBER_TYPE_POOL
+                Current pool(also known as sub-pool) is allocated from
+                other pool(parent pool). The 'raid_type' will set to
+                RAID_TYPE_OTHER unless certain RAID system support RAID
+                using space of parent pools.
+            Pool.MEMBER_TYPE_DISK
+                Pool is created from RAID group using whole disks.
+            Pool.MEMBER_TYPE_OTHER
+                Vendor specific RAID member type.
+            Pool.MEMBER_TYPE_UNKNOWN
+                Plugin failed to detect the RAID member type.
+    member_ids (list of strings)
+        When 'member_type' is Pool.MEMBER_TYPE_POOL,
+        the 'member_ids' will contain a list of parent Pool IDs.
+        When 'member_type' is Pool.MEMBER_TYPE_DISK,
+        the 'member_ids' will contain a list of disk IDs.
+        When 'member_type' is Pool.MEMBER_TYPE_OTHER or
+        Pool.MEMBER_TYPE_UNKNOWN, the member_ids should be an empty
+        list.
+SpecialExceptions:
+    LsmError
+        ErrorNumber.NO_SUPPORT
+        ErrorNumber.NOT_FOUND_POOL
+Capability:
+    lsm.Capabilities.POOL_MEMBER_INFO
+```
 
 ## 5. Disk -- lsm.Disk
-* [5.1. Disk Properties] (#5.1.-disk-properties)
-* [5.2. Disk Extra Constants] (#5.2.-disk-extra-constants)
-* [5.3. Query Disks -- `lsm.Client.disks()`] (
-  #5.3.-query-disks----lsm.client.disks())
+* [5.1. Disk Properties][0501]
+* [5.2. Disk Extra Constants][0502]
+* [5.3. Query Disks -- `lsm.Client.disks()`][0503]
 
 Disk is used to assemble storage pool or as a spare disk.
 
@@ -869,20 +940,19 @@ Capability:
 
 
 ## 6. Volume -- lsm.Volume
-* [6.1. Volume Properties] (#6.1.-volume-properties)
-* [6.2. Volume Extra Constants] (#6.2.-volume-extra-constants)
-* [6.3. Query Volume -- `lsm.Client.volumes()`]
-  (#6.3.-query-volume----lsm.client.volumes())
-* [6.6. Create Volume -- `lsm.Client.volume_create()`]
-  (#6.6.-create-volume----lsm.client.volume_create())
-* [6.7. Delete Volume -- `lsm.Client.volume_delete()`]
-  (#6.7.-delete-volume----lsm.client.volume_delete())
-* [6.8. Resize Volume -- `lsm.Client.volume_resize()`]
-  (#6.8.-resize-volume----lsm.client.volume_resize())
-* [6.9. Enable Volume -- `lsm.Client.volume_enable()`]
-  (#6.9.-enable-volume----lsm.client.volume_enable())
-* [6.10. Disable Volume -- `lsm.Client.volume_disable()`]
-  (#6.10.-disable-volume----lsm.client.volume_disable())
+* [6.1. Volume Properties][0601]
+* [6.2. Volume Extra Constants][0602]
+* [6.3. Query Volume -- `lsm.Client.volumes()`][0603]
+* [6.4. Create Volume -- `lsm.Client.volume_create()`][0604]
+* [6.5. Delete Volume -- `lsm.Client.volume_delete()`][0605]
+* [6.6. Resize Volume -- `lsm.Client.volume_resize()`][0606]
+* [6.7. Enable Volume -- `lsm.Client.volume_enable()`][0607]
+* [6.8. Disable Volume -- `lsm.Client.volume_disable()`][0608]
+* [6.9. Query Volume RAID Information
+  -- `lsm.Client.volume_raid_info()`][0609]
+* [6.10. Check RAID Volume Creation Capability --
+  `lsm.Client.volume_raid_create_cap_get()`][0610]
+* [6.11. Create RAID volume -- `lsm.Client.volume_raid_create()`][0611]
 
 Volume is well-known as LUN by many storage array vendors. It is a
 virtual storage space which host operation system treated as a or many
@@ -957,13 +1027,11 @@ block device(s).
 
 * `lsm.Volume.PROVISION_THIN`
 
-
     Used by lsm.Client.volume_create() in 'provisioning' parameter.
     Indicating plugin or storage array should create a thin provisioning
     volume.
 
 * `lsm.Volume.PROVISION_FULL`
-
 
     Used by lsm.Client.volume_create() in 'provisioning' parameter.
     Indicating plugin or storage array should create a fully allocated
@@ -971,13 +1039,11 @@ block device(s).
 
 * `lsm.Volume.PROVISION_UNKNOWN`
 
-
     Used by lsm.Client.volume_create() in 'provisioning' parameter.
     Indicating leting plugin or storage to decide on creating a thin or
     full volume.
 
 * `lsm.Volume.SUPPORTED_SEARCH_KEYS`
-
 
     A list of string. Containing all supported search key used by
     lsm.Client.volumes() method.
@@ -1036,7 +1102,7 @@ Capability:
 ```
 
 
-### 6.6. Create Volume -- `lsm.Client.volume_create()`
+### 6.4. Create Volume -- `lsm.Client.volume_create()`
 
 
 ```rst
@@ -1072,7 +1138,7 @@ Parameters:
         Optional. Reserved for future use.
         Should be set as lsm.Client.FLAG_RSVD.
 Returns:
-    (JobID, None)       # Check Appendix.C for detail.
+    (JobID, None)       # Check Appendix.A for detail.
         or
     (None, lsm.Volume)  # The object of lsm.Volume
 SpecialExceptions:
@@ -1091,7 +1157,7 @@ Sample:
         lsm_pool, "test_volue", size_bytes)
     if job_id:
         # we get async job, wait untile finished
-        # Check Appendix.C
+        # Check Appendix.A
     print "New volume created:%s(%s)" % (new_lsm_vol.name,
                                          new_lsm_vol.id)
 Capability:
@@ -1105,7 +1171,7 @@ Capability:
 ```
 
 
-### 6.7. Delete Volume -- `lsm.Client.volume_delete()`
+### 6.5. Delete Volume -- `lsm.Client.volume_delete()`
 
 
 ```rst
@@ -1132,7 +1198,7 @@ Parameters:
         Optional. Reserved for future use.
         Should be set as lsm.Client.FLAG_RSVD.
 Returns:
-    JobID           # Check Appendix.C for detail.
+    JobID           # Check Appendix.A for detail.
         or
     None            # The deletion finished without error.
 SpecialExceptions:
@@ -1146,7 +1212,7 @@ Sample:
     job_id = lsm_client.volume_delete(to_delete_vol)
     if job_id:
         # we get async job, wait untile finished
-        # Check Appendix.C
+        # Check Appendix.A
     print "Volume %s(%s) deleted" % (
         to_delete_vol.name, to_delete_vol.id)
 Capability:
@@ -1156,7 +1222,7 @@ Capability:
 ```
 
 
-### 6.8. Resize Volume -- `lsm.Client.volume_resize()`
+### 6.6. Resize Volume -- `lsm.Client.volume_resize()`
 
 
 ```rst
@@ -1178,7 +1244,7 @@ Parameters:
     new_size_bytes  # Long integer. The new size of volume in bytes.
     flags           # Optional. Reserved for future use, should be 0.
 Returns:
-    (JobID, None)   # Check Appendix.C for detail.
+    (JobID, None)   # Check Appendix.A for detail.
         or
     (None, lsm.Volume) # Updated lsm.Volume object.
 SpecialExceptions:
@@ -1199,7 +1265,7 @@ Sample:
         to_resize_vol, new_size_bytes)
     if job_id:
         # we get async job, wait untile finished
-        # Check Appendix.C
+        # Check Appendix.A
     print "Volume %s resized to %d(%s)" % (
         new_lsm_vol.name, new_lsm_vol.size_bytes,
         lsm.size_bytes_2_size_human(new_lsm_vol.size_bytes))
@@ -1213,11 +1279,12 @@ Sample:
 ```
 
 
-### 6.9. Enable Volume -- `lsm.Client.volume_enable()`
+### 6.7. Enable Volume -- `lsm.Client.volume_enable()`
 
 
 ```rst
-    lsm.Client.volume_enable(self, volume, flags=lsm.Client.FLAG_RSVD)
+lsm.Client.volume_enable(self, volume, flags=lsm.Client.FLAG_RSVD)
+
 Version:
     1.0
 
@@ -1239,13 +1306,13 @@ lsm_vol = lsm_client.volumes()[0]
 job_id = lsm_client.volume_disable(lsm_vol)
 if job_id:
     # we get async job, wait untile finished
-    # Check Appendix.C
+    # Check Appendix.A
 print "Volume %s is offline" % lsm_vol.name
 
 job_id = lsm_client.volume_enable(lsm_vol)
 if job_id:
     # we get async job, wait untile finished
-    # Check Appendix.C
+    # Check Appendix.A
 print "Volume %s is enabled" % lsm_vol.name
     Capability:
 lsm.Capabilities.VOLUME_ENABLE
@@ -1254,11 +1321,11 @@ lsm.Capabilities.VOLUME_ENABLE
 ```
 
 
-### 6.10. Disable Volume -- `lsm.Client.volume_disable()`
+### 6.8. Disable Volume -- `lsm.Client.volume_disable()`
 
 
 ```rst
-    lsm.Client.volume_disable(self, volume, flags=lsm.Client.FLAG_RSVD)
+lsm.Client.volume_disable(self, volume, flags=lsm.Client.FLAG_RSVD)
 
 Version:
     1.0
@@ -1281,13 +1348,13 @@ Sample:
     job_id = lsm_client.volume_disable(lsm_vol)
     if job_id:
         # we get async job, wait untile finished
-        # Check Appendix.C
+        # Check Appendix.A
     print "Volume %s is disabled" % lsm_vol.name
 
     job_id = lsm_client.volume_enable(lsm_vol)
     if job_id:
         # we get async job, wait untile finished
-        # Check Appendix.C
+        # Check Appendix.A
     print "Volume %s is enabled" % lsm_vol.name
         Capability:
     lsm.Capabilities.VOLUME_DISABLE
@@ -1295,23 +1362,254 @@ Sample:
         # lsm.Client.volume_enable() method.
 ```
 
+### 6.9. Query Volume RAID Information -- `lsm.Client.volume_raid_info()`
+
+```rst
+lsm.Client.volume_raid_info(self, volume, flags=lsm.Client.FLAG_RSVD)
+
+Version:
+    1.2
+Usage:
+    Query the RAID information of certain volume.
+    Query the RAID type, strip size, extents count, minimum I/O size,
+    optimal I/O size of given volume.
+Parameters:
+    volume (Volume object)
+        Volume to query
+    flags (int)
+        Optional. Reserved for future use.
+        Should be set as lsm.Client.FLAG_RSVD.
+Returns:
+    [raid_type, strip_size, disk_count, min_io_size, opt_io_size]
+
+    raid_type (int)
+        RAID Type of requested volume. Could be one of these values:
+            Volume.RAID_TYPE_RAID0
+                Stripe
+            Volume.RAID_TYPE_RAID1
+                Two disks Mirror
+            Volume.RAID_TYPE_RAID3
+                Byte-level striping with dedicated parity
+            Volume.RAID_TYPE_RAID4
+                Block-level striping with dedicated parity
+            Volume.RAID_TYPE_RAID5
+                Block-level striping with distributed parity
+            Volume.RAID_TYPE_RAID6
+                Block-level striping with two distributed parities,
+                aka, RAID-DP
+            Volume.RAID_TYPE_RAID10
+                Stripe of mirrors
+            Volume.RAID_TYPE_RAID15
+                Parity of mirrors
+            Volume.RAID_TYPE_RAID16
+                Dual parity of mirrors
+            Volume.RAID_TYPE_RAID50
+                Stripe of parities
+            Volume.RAID_TYPE_RAID60
+                Stripe of dual parities
+            Volume.RAID_TYPE_RAID51
+                Mirror of parities
+            Volume.RAID_TYPE_RAID61
+                Mirror of dual parities
+            Volume.RAID_TYPE_JBOD
+                Just bunch of disks, no parity, no striping.
+            Volume.RAID_TYPE_UNKNOWN
+                The plugin failed to detect the volume's RAID type.
+            Volume.RAID_TYPE_MIXED
+                This volume contains multiple RAID settings.
+            Volume.RAID_TYPE_OTHER
+                Vendor specific RAID type
+    strip_size(int)
+        The size of strip on each disk or other storage extent.
+        For RAID1/JBOD, it should be set as sector size.
+        If plugin failed to detect strip size, it should be set
+        as Volume.STRIP_SIZE_UNKNOWN(0).
+    disk_count(int)
+        The count of disks used for assembling the RAID group(s) where
+        this volume allocated from. For any RAID system using the slice
+        of disk, this value indicate how many disk slices are used for
+        the RAID.  For exmaple, on LVM RAID, the 'disk_count' here
+        indicate the count of PVs used for certain volume.  Another
+        example, on EMC VMAX, the 'disk_count' here indicate how many
+        hyper volumes are used for this volume. For any RAID system
+        using remote LUN for data storing, each remote LUN should be
+        count as a disk.  If the plugin failed to detect disk_count, it
+        should be set as Volume.DISK_COUNT_UNKNOWN(0).
+    min_io_size(int)
+        The minimum I/O size, device preferred I/O size for random I/O.
+        Any I/O size not equal to a multiple of this value may get
+        significant speed penalty. Normally it refers to strip size of
+        each disk(extent). If plugin failed to detect min_io_size, it
+        should try these values in the sequence of:
+            logical sector size -> physical sector size
+            -> Volume.MIN_IO_SIZE_UNKNOWN(0).
+    opt_io_size(int)
+        The optimal I/O size, device preferred I/O size for sequential
+        I/O. Normally it refers to RAID group stripe size. If plugin
+        failed to detect opt_io_size, it should be set to
+        Volume.OPT_IO_SIZE_UNKNOWN(0).
+SpecialExceptions:
+    LsmError
+        ErrorNumber.NO_SUPPORT
+        ErrorNumber.NOT_FOUND_VOLUME
+Capability:
+    lsm.Capabilities.VOLUME_RAID_INFO
+```
+
+### 6.10. Query RAID Volume Creation Capability -- `lsm.Client.volume_raid_create_cap_get()`
+
+```rst
+lsm.Client.volume_raid_create_cap_get(
+    self, system, flags=lsm.Client.FLAG_RSVD)
+
+Version:
+    1.2
+Usage:
+    This method is dedicated to local hardware RAID cards.
+    Query out all supported RAID types and strip sizes which could
+    be used by lsm.Client.volume_raid_create() method.
+Parameters:
+    system (lsm.System)
+        Instance of lsm.System
+    flags (int)
+        Optional. Reserved for future use.
+        Should be set as lsm.Client.FLAG_RSVD.
+Returns:
+    [raid_types, strip_sizes]
+        raid_types ([int])
+            List of integer, possible values are:
+                Volume.RAID_TYPE_RAID0
+                Volume.RAID_TYPE_RAID1
+                Volume.RAID_TYPE_RAID5
+                Volume.RAID_TYPE_RAID6
+                Volume.RAID_TYPE_RAID10
+                Volume.RAID_TYPE_RAID15
+                Volume.RAID_TYPE_RAID16
+                Volume.RAID_TYPE_RAID50
+        strip_sizes ([int])
+            List of integer. Stripe size in bytes.
+SpecialExceptions:
+    LsmError
+        lsm.ErrorNumber.NO_SUPPORT
+            Method not supported.
+Sample:
+    lsm_client = lsm.Client('sim://')
+    lsm_sys = lsm_client.systems()[0]
+    disks = lsm_client.disks(
+        search_key='system_id', search_value=lsm_sys.id)
+
+    free_disks = [d for d in disks if d.status == Disk.STATUS_FREE]
+    supported_raid_types, supported_strip_sizes = \
+        lsm_client.volume_raid_create_cap_get(lsm_sys)
+    new_vol = lsm_client.volume_raid_create(
+        'test_volume_raid_create', supported_raid_types[0],
+        free_disks, supported_strip_sizes[0])
+
+Capability:
+    lsm.Capabilities.VOLUME_CREATE_RAID
+        This method is mandatory when volume_raid_create() is
+        supported.
+```
+
+### 6.11. Create RAID Volume -- `lsm.Client.volume_raid_create()`
+
+```rst
+lsm.Client.volume_raid_create(self, name, raid_type, disks,
+                              strip_size, flags=lsm.Client.FLAG_RSVD)
+
+Version:
+    1.2
+Usage:
+    This method is dedicated to local hardware RAID cards.
+    Create a disk RAID pool and allocate entire storage space to
+    new volume using requested volume name.
+    When dealing with RAID10, 50 or 60, the first half part of
+    'disks' will be located in one bottom layer RAID group.
+    The new volume and new pool will created within the same system
+    of provided disks.
+    This method does not allow duplicate call, when duplicate call
+    was issued, LsmError with ErrorNumber.DISK_NOT_FREE will be raise.
+    User should check disk.status for Disk.STATUS_FREE before
+    invoking this method.
+Parameters:
+    name (string)
+        The name for new volume.
+        The requested volume name might be ignored due to restriction
+        of hardware RAID vendors.
+        The pool name will be automatically choosed by plugin.
+    raid_type (int)
+        The RAID type for the RAID group, possible values are:
+            Volume.RAID_TYPE_RAID0
+            Volume.RAID_TYPE_RAID1
+            Volume.RAID_TYPE_RAID5
+            Volume.RAID_TYPE_RAID6
+            Volume.RAID_TYPE_RAID10
+            Volume.RAID_TYPE_RAID15
+            Volume.RAID_TYPE_RAID16
+            Volume.RAID_TYPE_RAID50
+        Please check volume_raid_create_cap_get() returns to get
+        supported all raid types of current hardware RAID card.
+    disks ([lsm.Disks,])
+        A list of lsm.Disk objects. Free disks used for new RAID group.
+    strip_size (int)
+        The size in bytes of strip.
+        When setting strip_size to Volume.VCR_STRIP_SIZE_DEFAULT, it
+        allow hardware RAID cards to choose their default value.
+        Please use volume_raid_create_cap_get() method to get all
+        supported strip size of current hardware RAID card.
+        The Volume.VCR_STRIP_SIZE_DEFAULT is always supported when
+        lsm.Capabilities.VOLUME_CREATE_RAID is supported.
+    flags (int)
+        Optional. Reserved for future use.
+        Should be set as lsm.Client.FLAG_RSVD.
+Returns:
+    lsm.Volume
+        The lsm.Volume object for newly created volume.
+SpecialExceptions:
+    LsmError
+        lsm.ErrorNumber.NO_SUPPORT
+            Method not supported or RAID type not supported.
+        lsm.ErrorNumber.DISK_NOT_FREE
+            Disk is not in Disk.STATUS_FREE status.
+        lsm.ErrorNumber.NOT_FOUND_DISK
+            Disk not found
+        lsm.ErrorNumber.INVALID_ARGUMENT
+            1. Invalid input argument data.
+            2. Disks are not from the same system.
+            3. Disks are not from the same enclosure.
+            4. Invalid strip_size.
+            5. Disk count are meet the minimum requirement:
+                RAID1: len(disks) == 2
+                RAID5: len(disks) >= 3
+                RAID6: len(disks) >= 4
+                RAID10: len(disks) % 2 == 0 and len(disks) >= 4
+                RAID50: len(disks) % 2 == 0 and len(disks) >= 6
+                RAID60: len(disks) % 2 == 0 and len(disks) >= 8
+        lsm.ErrorNumber.NAME_CONFLICT
+            Requested name is already be used by other volume.
+Sample:
+    lsm_client = lsm.Client('sim://')
+    disks = lsm_client.disks()
+    free_disks = [d for d in disks if d.status == Disk.STATUS_FREE]
+    new_vol = lsm_client.volume_raid_create(
+        'raid0_vol1', Volume.RAID_TYPE_RAID0, free_disks)
+Capability:
+    lsm.Capabilities.VOLUME_CREATE_RAID
+        Indicate current system support volume_raid_create() method.
+        At least one RAID type should be supported.
+        The strip_size == Volume.VCR_STRIP_SIZE_DEFAULT is supported.
+```
 
 ## 7. Access Group -- lsm.AccessGroup
-* [7.1. Access Group Properties] (#7.1.-access-group-properties)
-* [7.2. Access Group Extra Constants]
-  (#7.2.-access-group-extra-constants)
-* [7.3. Query Access Group -- `lsm.Client.access_groups()`]
-  (#7.3.-query-access-group----lsm.client.access_groups())
-* [7.4. Create Access Group -- `lsm.Client.access_group_create()`]
-  (#7.4.-create-access-group----lsm.client.access_group_create())
-* [7.5. Delete Access Group -- `lsm.Client.access_group_delete()`]
-  (#7.5.-delete-access-group----lsm.client.access_group_delete())
-* [7.6. Add Access Group Member --
-  `lsm.Client.access_group_initiator_add()`]
-  (#7.6.-add-access-group-member----lsm.client.access_group_initiator_add())
-* [7.7. Delete Access Group Member --
-  `lsm.Client.access_group_initiator_delete()`]
-  (#7.7.-delete-access-group-member----lsm.client.access_group_initiator_delete())
+* [7.1. Access Group Properties][0701]
+* [7.2. Access Group Extra Constants][0702]
+* [7.3. Query Access Group -- `lsm.Client.access_groups()`][0703]
+* [7.4. Create Access Group -- `lsm.Client.access_group_create()`][0704]
+* [7.5. Delete Access Group -- `lsm.Client.access_group_delete()`][0705]
+* [7.6. Add Access Group Member
+  -- `lsm.Client.access_group_initiator_add()`][0706]
+* [7.7. Delete Access Group Member
+  -- `lsm.Client.access_group_initiator_delete()`][0707]
 
 Access group define a group of initiators to access volume. For example,
 most FC/FCoE HBA cards has two ports, each of two ports has one(or more with
@@ -1652,39 +1950,35 @@ Capability:
 
 
 ## 8. Volume Mask
-* [8.1. Query Masked Access Group -- `lsm.Client.access_groups_granted_to_volume()`] (#8.1.-query-masked-access-group----lsm.client.access_groups_granted_to_volume())
-* [8.2. Query Masked Volume -- `lsm.Client.access_groups_granted_to_volume()`] (#8.2.-query-masked-volume----lsm.client.access_groups_granted_to_volume())
-* [8.3. Volume Mask -- `lsm.Client.volume_mask()`] (#8.3.-volume-mask----lsm.client.volume_mask())
-* [8.4. Volume Unmask -- `lsm.Client.volume_unmask()`] (#8.4.-volume-unmask----lsm.client.volume_unmask())
+* [8.1. Query Masked Access Group
+  -- `lsm.Client.access_groups_granted_to_volume()`][0801]
+* [8.2. Query Masked Volume
+  -- `lsm.Client.access_groups_granted_to_volume()`][0802]
+* [8.3. Volume Mask -- `lsm.Client.volume_mask()`][0803]
+* [8.4. Volume Unmask -- `lsm.Client.volume_unmask()`][0804]
 
-Volume mask is also known as "LUN Masking". The lsm.MaskInfo represent a
-masking relationship between lsm.Volume and lsm.AccessGroup.
+Volume mask is also known as "LUN Masking".
 
 Masking information can be queried via these ways:
 
-    * Need lsm.Volume:
-```rst
+```python
+# Need lsm.Volume:
 lsm.Client.volumes(
     self, search_key='access_group_id',
     search_value=lsm.AccessGroup.id)
-    * Need lsm.AccessGroup:
-```rst
+
+#Need lsm.AccessGroup:
 lsm.Client.access_groups(
     self, search_key='volume_id', search_value=lsm.Volume.id)
-    * Need MaskInfo:
-```rst
-lsm.Client.mask_infos(
-    self, search_key='volume_id', search_value=lsm.Volume.id)
-```rst
-lsm.Client.mask_infos(
-    self, search_key='access_group_id',
-    search_value=lsm.AccessGroup.id)
+```
 
 ### 8.1. Query Masked Access Group -- `lsm.Client.access_groups_granted_to_volume()`
 
+TODO
 
 ### 8.2. Query Masked Volume -- `lsm.Client.access_groups_granted_to_volume()`
 
+TODO
 
 ### 8.3. Volume Mask -- `lsm.Client.volume_mask()`
 
@@ -1741,7 +2035,7 @@ Sample:
         lsm_pool, "test_volue", size_bytes)
     if job_id:
         # we get async job, wait untile finished
-        # Check Appendix.C
+        # Check Appendix.A
     print "New volume created:%s(%s)" % (new_lsm_vol.name,
                                          new_lsm_vol.id)
     lsm_client.volume_mask(new_ag, new_vol)
@@ -1811,173 +2105,198 @@ instead:
 
 ## 10. iSCSI Authentication
 
-## Appendix.A Reserved
+TODO
 
-## Appendix.B Reserved
+## Appendix.A Asynchronous Job Control
+* [Appendix.A.1 Query a Job -- `lsm.Client.job_status()`][aa01]
+* [Appendix.A.2 Sample Code to Wait a Job][aa02]
 
-## Appendix.C Asynchronous Job Control
-* [Appendix.C.1 Query a Job -- `lsm.Client.job_status()`] (#appendix.c.1-query-a-job----lsm.client.job_status())
-* [Appendix.C.2 Sample Code to Wait a Job] (#appendix.c.2-sample-code-to-wait-a-job)
+For time consuming methods like volume_create(), volume_delte() and etc,
+some plugin support asynchronous job control which return a job ID for
+user to trace the progress of time consuming tasks. Please check method
+definition for detail.
 
-For time consuming methods like volume_create(), volume_delte() and etc, some
-plugin support asynchronous job control which return a job ID for user to
-trace the progress of time consuming tasks. Please check method defination
-for detail.
-
-### Appendix.C.1 Query a Job -- `lsm.Client.job_status()`
+### Appendix.A.1 Query a Job -- `lsm.Client.job_status()`
 
 
-    lsm.Client.job_status(self, job_id)
+```rst
+lsm.Client.job_status(self, job_id)
 
-    Usage:
-Query the status of a asynchronous job.
-If a job failed, A lsm.LsmError be raise with lsm.ErrorNumber and
-error message.
-    Parameters:
-job_id      # String. The Job ID provided by methods.
-    Returns:
-(job_status, job_progress, data)
-            # job_status:   Integer. Could be one of these values:
-            #                * lsm.JobStatus.INPROGRESS
-            #                  The job is still running.
-            #                * lsm.JobStatus.COMPLETE
-            #                  The job finished without error.
-            # job_progress: Integer. Percent number of progress.
-            # data:         Object of lsm.Volume or lsm.Pool or etc.
-            #               Please refer to job-creating method for
-            #               returned data type.
-    SpecialExceptions:
-N/A
-    Sample:
-lsm_client = lsm.Client('sim://')
-lsm_pool = lsm_client.pools()[0]
-size_bytes = lsm.size_human_2_size_bytes("200GiB")
-(job_id, new_lsm_vol) = lsm_client.volume_create(
-    lsm_pool, "test_volue", size_bytes, lsm.Volume.PROVISION_UNKNOWN)
-if job_id:
-    while True:
-        (status, percent, new_lsm_vol) = lsm_client.job_status(job_id)
-        if status == JobStatus.INPROGRESS:
-            time.sleep(0.1)
-            continue
-        elif status == JobStatus.COMPLETE:
-            print("New volume %s created" % new_lsm_vol.id)
-            break
-        else:
-            raise Exception("Unkonwn job status: %d" % status)
+Version:
+    1.0
+Usage:
+    Query the status of a asynchronous job.
+    If a job failed, A lsm.LsmError be raise with lsm.ErrorNumber and
+    error message.
+Parameters:
+    job_id (string)
+        String. The Job ID provided by methods.
+Returns:
+    (job_status, job_progress, data)
 
-### Appendix.C.2 Sample Code to Wait a Job
+    job_status
+        Integer. Could be one of these values:
+            * lsm.JobStatus.INPROGRESS
+                The job is still running.
+            * lsm.JobStatus.COMPLETE
+                The job finished without error.
+    job_progress:
+        Integer. Percent number of progress.
+    data:
+        Object of lsm.Volume or lsm.Pool or etc.  Please refer to
+        job-creating method for returned data type.
 
+SpecialExceptions:
+    N/A
+
+Sample:
+    lsm_client = lsm.Client('sim://')
+    lsm_pool = lsm_client.pools()[0]
+    size_bytes = lsm.size_human_2_size_bytes("200GiB")
+    (job_id, new_lsm_vol) = lsm_client.volume_create(
+        lsm_pool, "test_volue", size_bytes,
+        lsm.Volume.PROVISION_UNKNOWN)
+    if job_id:
+        while True:
+            (status, percent, new_lsm_vol) = lsm_client.job_status(
+                job_id)
+            if status == JobStatus.INPROGRESS:
+                time.sleep(0.1)
+                continue
+            elif status == JobStatus.COMPLETE:
+                print("New volume %s created" % new_lsm_vol.id)
+                break
+            else:
+                raise Exception("Unkonwn job status: %d" % status)
+```
+
+### Appendix.A.2 Sample Code to Wait a Job
+
+```python
     @staticmethod
     def wait_job(lsm_client, job_id, item):
-if job_id is None:
-    retrun None
-else:
-    while True:
-        (status, percent, item) = self.c.job_status(job)
-        if status == JobStatus.INPROGRESS:
-            time.sleep(0.1)
-            continue
-        elif status == JobStatus.COMPLETE:
-            return item
+        if job_id is None:
+            retrun None
         else:
-            raise Exception("Unkonwn job status: %d" % status)
+            while True:
+                (status, percent, item) = self.c.job_status(job)
+                if status == JobStatus.INPROGRESS:
+                    time.sleep(0.1)
+                    continue
+                elif status == JobStatus.COMPLETE:
+                    return item
+                else:
+                    raise Exception("Unkonwn job status: %d" % status)
+```
 
 
-## Appendix.D Bit Map
+## Appendix.B Bit Map
 We use "Bit Map" to hold multiple status of resources in one integer.
 Sample codes:
 
+```python
     #!/usr/bin/python2
     import lsm
 
     lsm_client = lsm.Client("sim://")      # Make connection.
     lsm_systems = lsm_client.systems()     # Enumerate all systems
     for lsm_system in lsm_systems:
-if lsm_system.status & lsm.System.STATUS_OK:
-    print "System %s is in OK status" % lsm_system.name
+        if lsm_system.status & lsm.System.STATUS_OK:
+            print "System %s is in OK status" % lsm_system.name
+```
 
-## Appendix.E lsm Static Methods
-* [Appendix.E.1 `lsm.size_bytes_2_size_human()`] (#appendix.e.1-lsm.size_bytes_2_size_human())
-* [Appendix.E.2 `lsm.size_human_2_size_bytes()`] (#appendix.e.2-lsm.size_human_2_size_bytes())
+## Appendix.C lsm Static Methods
+* [Appendix.C.1 `lsm.size_bytes_2_size_human()`][ac01]
+* [Appendix.C.2 `lsm.size_human_2_size_bytes()`][ac02]
 
-### Appendix.E.1 `lsm.size_bytes_2_size_human()`
+### Appendix.C.1 `lsm.size_bytes_2_size_human()`
 
-
+```rst
     lsm.size_bytes_2_size_human(size_bytes)
 
-    Usage:
-Convert integer(size in bytes) to human readable size string.
-Output string will follow the rule of IEC binary prefixes on size:
-    http://en.wikipedia.org/wiki/Gibibyte
-Output string format:
-    "%.2f %s" % (float_number, unit)
-Unit conversion will be:
-    2 ** 10             KiB
-    2 ** 20             MiB
-    2 ** 30             GiB
-    2 ** 40             TiB
-    2 ** 50             PiB
-    2 ** 60             EiB
-    Parameters:
-size_bytes      # Long integer, count of bytes
-    Returns:
-size_human      # String. "%.2f %s", Example: "2.51 GiB"
-    SpecialExceptions:
-N/A
-    Sample:
-#!/usr/bin/python2
-from lsm import size_bytes_2_size_human
+Version:
+    1.0
+Usage:
+    Convert integer(size in bytes) to human readable size string.
+    Output string will follow the rule of IEC binary prefixes on size:
+        http://en.wikipedia.org/wiki/Gibibyte
+    Output string format:
+        "%.2f %s" % (float_number, unit)
+    Unit conversion will be:
+        2 ** 10             KiB
+        2 ** 20             MiB
+        2 ** 30             GiB
+        2 ** 40             TiB
+        2 ** 50             PiB
+        2 ** 60             EiB
+Parameters:
+    size_bytes (Long integer)
+        Count of bytes
+Returns:
+    size_human (String)
+    Size in human friendly format: "%.2f %s", Example: "2.51 GiB"
 
-print size_bytes_2_size_human(2 * 2 ** 30)
-# Get "2.00 GiB"
+SpecialExceptions:
+    N/A
+Sample:
+    #!/usr/bin/python2
+    from lsm import size_bytes_2_size_human
 
-### Appendix.E.2 `lsm.size_human_2_size_bytes()`
+    print size_bytes_2_size_human(2 * 2 ** 30)
+    # Get "2.00 GiB"
+```
 
+### Appendix.C.2 `lsm.size_human_2_size_bytes()`
 
+```rst
     lsm.size_human_2_size_bytes(size_human)
 
-    Usage:
-Convert human readable size string to long integer.
-Supported input string format:
-    '1.9KiB'            # long(1024*1.9)
-    '1 KiB'             # long(2**10)
-    '1B'                # long(1)
-    '2K'                # treated as '2KiB'
-    '2k'                # treated as '2KiB'
-    '2KB'               # long(2* 10**3)
-Unit conversion will be:
-    2 ** 10             KiB     |   10 ** 3         KB
-    2 ** 20             MiB     |   10 ** 6         MB
-    2 ** 30             GiB     |   10 ** 9         GB
-    2 ** 40             TiB     |   10 ** 12        TB
-    2 ** 50             PiB     |   10 ** 15        PB
-    2 ** 60             EiB     |   10 ** 18        EB
-    Parameters:
-size_human      # String.
-    Returns:
-size_bytes      # Long integer, count of bytes
-    SpecialExceptions:
-N/A
-    Sample:
-#!/usr/bin/python2
-from lsm import size_human_2_size_bytes
+Version:
+    1.0
+Usage:
+    Convert human readable size string to long integer.
+    Supported input string format:
+        '1.9KiB'            # long(1024*1.9)
+        '1 KiB'             # long(2**10)
+        '1B'                # long(1)
+        '2K'                # treated as '2KiB'
+        '2k'                # treated as '2KiB'
+        '2KB'               # long(2* 10**3)
+    Unit conversion will be:
+        2 ** 10             KiB     |   10 ** 3         KB
+        2 ** 20             MiB     |   10 ** 6         MB
+        2 ** 30             GiB     |   10 ** 9         GB
+        2 ** 40             TiB     |   10 ** 12        TB
+        2 ** 50             PiB     |   10 ** 15        PB
+        2 ** 60             EiB     |   10 ** 18        EB
+Parameters:
+    size_human (String)
+        Check accetpable string format above.
+Returns:
+    size_bytes (Long integer)
+        Count of bytes
+SpecialExceptions:
+    N/A
+Sample:
+    #!/usr/bin/python2
+    from lsm import size_human_2_size_bytes
 
-print size_human_2_size_bytes("2.0GiB")
-# long(2 * 2 ** 10)
+    print size_human_2_size_bytes("2.0GiB")
+    # long(2 * 2 ** 10)
+```
 
-## Appendix.F Exceptions -- `lsm.LsmError`
+## Appendix.D Exceptions -- `lsm.LsmError`
 
 
 * `lsm.ErrorNumber.LIB_BUG`
 
-    There is a bug of LSM library been triggered. Please report this bug to
-    upstream or package maintainer.
+    There is a bug of LSM library been triggered. Please report this bug
+    to upstream or package maintainer.
 
 * `lsm.ErrorNumber.PLUGIN_BUG`
 
-    There is a bug of LSM plugin been triggered. Please report this bug to
-    upstream or package maintainer.
+    There is a bug of LSM plugin been triggered. Please report this bug
+    to upstream or package maintainer.
 
 * `lsm.ErrorNumber.JOB_STARTED`
 
@@ -1991,9 +2310,11 @@ print size_human_2_size_bytes("2.0GiB")
 
     The **lsmd** daemon is not running. Please start it with:
 
-systemctl start lsmd
-# or
-service lsmd start
+    ```bash
+    systemctl start lsmd
+    # RHEL 6
+    service libstoragemgmtd start
+    ```
 
 * `lsm.ErrorNumber.NAME_CONFLICT`
 
@@ -2010,13 +2331,13 @@ service lsmd start
 
 * `lsm.ErrorNumber.NO_STATE_CHANGE`
 
-    Indicate requested no state change for requested action. It offten caused
-    by repeated call.
+    Indicate requested no state change for requested action. It offten
+    caused by repeated call.
 
 * `lsm.ErrorNumber.NETWORK_CONNREFUSED`
 
-    Plugin failed to connect to storage array or SDK as network connection
-    refused. Often caused by firewall.
+    Plugin failed to connect to storage array or SDK as network
+    connection refused. Often caused by firewall.
 
 * `lsm.ErrorNumber.NETWORK_HOSTDOWN`
 
@@ -2042,18 +2363,18 @@ service lsmd start
 
 * `lsm.ErrorNumber.NOT_FOUND_ACCESS_GROUP`
 
-    Provided object of lsm.AccessGroup in argument of current method does not
-    exist on storage system.
+    Provided object of lsm.AccessGroup in argument of current method
+    does not exist on storage system.
 
 * `lsm.ErrorNumber.NOT_FOUND_FS`
 
-    Provided object of lsm.FileSystem in argument of current method does not
-    exist on storage system.
+    Provided object of lsm.FileSystem in argument of current method does
+    not exist on storage system.
 
 * `lsm.ErrorNumber.NOT_FOUND_JOB`
 
-    Provided job_id in argument of current method does not exist on storage
-    system.
+    Provided job_id in argument of current method does not exist on
+    storage system.
 
 * `lsm.ErrorNumber.NOT_FOUND_POOL`
 
@@ -2062,8 +2383,8 @@ service lsmd start
 
 * `lsm.ErrorNumber.NOT_FOUND_FS_SS`
 
-    Provided object of lsm.FsSnapshot in argument of current method does not
-    exists.
+    Provided object of lsm.FsSnapshot in argument of current method does
+    not exists.
 
 * `lsm.ErrorNumber.NOT_FOUND_VOLUME`
 
@@ -2072,8 +2393,8 @@ service lsmd start
 
 * `lsm.ErrorNumber.NOT_FOUND_NFS_EXPORT`
 
-    Provided object of lsm.NfsExport in argument of current method does not
-    exists.
+    Provided object of lsm.NfsExport in argument of current method does
+    not exists.
 
 * `lsm.ErrorNumber.NOT_FOUND_SYSTEM`
 
@@ -2102,13 +2423,14 @@ service lsmd start
 
 * `lsm.ErrorNumber.PLUGIN_SOCKET_PERMISSION`
 
-    The plugin does not have sufficient permission to run or create a socket.
+    The plugin does not have sufficient permission to run or create a
+    socket.
 
 * `lsm.ErrorNumber.PLUGIN_NOT_EXIST`
 
-    The requested plugin does not exist. It might happen when requested plugin
-    got deleted and newly added after lsmd started. Suggest user to check
-    URI or restart lsmd.
+    The requested plugin does not exist. It might happen when requested
+    plugin got deleted and newly added after lsmd started. Suggest user
+    to check URI or restart lsmd.
 
 * `lsm.ErrorNumber.NOT_ENOUGH_SPACE`
 
@@ -2125,8 +2447,8 @@ service lsmd start
 
 * `lsm.ErrorNumber.TRANSPORT_INVALID_ARG`
 
-    Invalid argument used in IPC communication between client and plugin.
-    It's a LSM library bug.
+    Invalid argument used in IPC communication between client and
+    plugin.  It's a LSM library bug.
 
 * `lsm.ErrorNumber.LAST_INIT_IN_ACCESS_GROUP`
 
@@ -2134,16 +2456,71 @@ service lsmd start
 
 * `lsm.ErrorNumber.UNSUPPORTED_SEARCH_KEY`
 
-    Indicate 'search_key' argument is not supported by certain query methods.
+    Indicate 'search_key' argument is not supported by certain query
+    methods.
 
 * `lsm.ErrorNumber.EMPTY_ACCESS_GROUP`
 
-    Refused to do volume_mask() against empty(no initiator) access group.
+    Refused to do volume_mask() against empty(no initiator) access
+    group.
 
 * `lsm.ErrorNumber.POOL_NOT_READY`
 
-    Requested pool is not ready, refuse to do creation, resize, deletion and
-    etc.
+    Requested pool is not ready, refuse to do creation, resize, deletion
+    and etc.
 
 [1]: user_guide.html
-[2]: #appendix.f-exceptions----lsm.lsmerror
+[01]: #1.-connection----lsm.client
+[0101]: #1.1.-make-connection----lsm.client()
+[0102]: #1.2.-close-connection----lsm.client.close()
+[02]: #2.-capability----lsm.capabilities
+[0201]: #2.1.-query-capabilities----lsm.client.capabilities()
+[0202]: #2.2.-check-capability----lsm.capabilities.supported()
+[0203]: #2.3.-list-supported-capabilities----lsm.capabilities.get_supported()
+[03]: #3.-system----lsm.system
+[0301]: #3.1.-system-properties
+[0302]: #3.2.-query-systems----lsm.client.systems()
+[04]: #4.-pool----lsm.pool
+[0401]: #4.1.-pool-properties
+[0402]: #4.2.-pool-extra-constants
+[0403]: #4.3.-query-pools----lsm.client.pools()
+[0404]: #4.4.-query-pool-membership----lsm.client.pool_member_info()
+[05]: #5.-disk----lsm.disk
+[0501]: #5.1.-disk-properties
+[0502]: #5.2.-disk-extra-constants
+[0503]: #5.3.-query-disks----lsm.client.disks()
+[06]: #6.-volume----lsm.volume
+[0601]: #6.1.-volume-properties
+[0602]: #6.2.-volume-extra-constants
+[0603]: #6.3.-query-volume----lsm.client.volumes()
+[0604]: #6.4.-create-volume----lsm.client.volume_create()
+[0605]: #6.5.-delete-volume----lsm.client.volume_delete()
+[0606]: #6.6.-resize-volume----lsm.client.volume_resize()
+[0607]: #6.7.-enable-volume----lsm.client.volume_enable()
+[0608]: #6.8.-disable-volume----lsm.client.volume_disable())
+[0609]: #6.9.-query-volume-raid-information----lsm.client.volume_raid_info()
+[0610]: #6.10.-query-raid-volume-creation-capability----lsm.client.volume_raid_create_cap_get()
+[0611]: #6.11.-create-raid-volume----lsm.client.volume_raid_create()
+[07]: #7.-access-group----lsm.accessgroup
+[0701]: #7.1.-access-group-properties
+[0702]: #7.2.-access-group-extra-constants
+[0703]: #7.3.-query-access-group----lsm.client.access_groups()
+[0704]: #7.4.-create-access-group----lsm.client.access_group_create()
+[0705]: #7.5.-delete-access-group----lsm.client.access_group_delete()
+[0706]: #7.6.-add-access-group-member----lsm.client.access_group_initiator_add()
+[0707]: #7.7.-delete-access-group-member----lsm.client.access_group_initiator_delete()
+[08]: #8.-volume-mask
+[0801]: #8.1.-query-masked-access-group----lsm.client.access_groups_granted_to_volume()
+[0802]: #8.2.-query-masked-volume----lsm.client.access_groups_granted_to_volume()
+[0803]: #8.3.-volume-mask----lsm.client.volume_mask()
+[0804]: #8.4.-volume-unmask----lsm.client.volume_unmask()
+[09]: #9.-volume-replication
+[10]: #10.-iscsi-authentication
+[aa]: #appendix.a-asynchronous-job-control
+[aa01]: #appendix.a.1-query-a-job----lsm.client.job_status()
+[aa02]: #appendix.a.2-sample-code-to-wait-a-job
+[ab]: #appendix.b-bit-map
+[ac]: #appendix.c-lsm-static-methods
+[ac01]: #appendix.c.1-lsm.size_bytes_2_size_human()
+[ac02]: #appendix.c.2-lsm.size_human_2_size_bytes()
+[ad]: #appendix.d-exceptions----lsm.lsmerror
