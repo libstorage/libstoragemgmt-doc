@@ -557,7 +557,7 @@ Pool is the only place a volume or a file system could created from.
     * `lsm.Pool.ELEMENT_TYPE_DELTA`
 
 
-        The pool which is holding the dalta of snapshot or replication.
+        The pool which is holding the delta of snapshot or replication.
 
     * `lsm.Pool.ELEMENT_TYPE_SYS_RESERVED`
 
@@ -601,13 +601,13 @@ Pool is the only place a volume or a file system could created from.
 * `lsm.Pool.TOTAL_SPACE_NOT_FOUND`
 
 
-    Integer: -1. Indicate plugin failed to retrived total space of the
+    Integer: -1. Indicate plugin failed to retrieved total space of the
     pool.
 
 * `lsm.Pool.FREE_SPACE_NOT_FOUND`
 
 
-    Integer: -1. Indicate plugin failed to retrived free space of the
+    Integer: -1. Indicate plugin failed to retrieved free space of the
     pool.
 
 ### 4.3. Query Pools -- `lsm.Client.pools()`
@@ -855,7 +855,7 @@ Disk is used to assemble storage pool or as a spare disk.
     * `lsm.Disk.STATUS_INITIALIZING`
 
 
-        Disk is not functional and is initialiaing.
+        Disk is not functional and is initializing.
         It could be:
 
         * Initialiaing new disk.
@@ -974,8 +974,9 @@ block device(s).
 * `vpd83`
 
 
-    String. Fromat: '[0-9a-f]{32}', SCSI VPD0x83 as identifier of
-    volume. Also knowned as 'wwid' in device-mapper-multipath.
+    String. Format: '6[0-9a-f]{31}' or '[235][0-9a-f]{15}', SCSI VPD0x83 type 3
+    NAA identifier of volume. Also known as 'wwid' in device-mapper-multipath
+    and 'ID_WWN' of udev.
 
 * `block_size`
 
@@ -1040,7 +1041,7 @@ block device(s).
 * `lsm.Volume.PROVISION_UNKNOWN`
 
     Used by lsm.Client.volume_create() in 'provisioning' parameter.
-    Indicating leting plugin or storage to decide on creating a thin or
+    Indicating plugin or storage will decide on creating a thin or
     full volume.
 
 * `lsm.Volume.SUPPORTED_SEARCH_KEYS`
@@ -1156,7 +1157,7 @@ Sample:
     (job_id, new_lsm_vol) = lsm_client.volume_create(
         lsm_pool, "test_volue", size_bytes)
     if job_id:
-        # we get async job, wait untile finished
+        # we get asynchronous job, wait until finished
         # Check Appendix.A
     print "New volume created:%s(%s)" % (new_lsm_vol.name,
                                          new_lsm_vol.id)
@@ -1211,7 +1212,7 @@ Sample:
     to_delete_vol = lsm_client.volumes()[0]
     job_id = lsm_client.volume_delete(to_delete_vol)
     if job_id:
-        # we get async job, wait untile finished
+        # we get asynchronous job, wait until finished
         # Check Appendix.A
     print "Volume %s(%s) deleted" % (
         to_delete_vol.name, to_delete_vol.id)
@@ -1234,7 +1235,7 @@ Version:
 Usage:
     Resize (grow or shrink) a volume. Please be warned when shrinking the
     size of volume, there might be a data corruption or data lose.
-    It's stongly suggested to perform a data backup before shrinking any
+    It's strongly suggested to perform a data backup before shrinking any
     volume.
     Size grow is mandatory if lsm.Capabilities.VOLUME_RESIZE is supported.
     The resized volume will hold larger size than requested due to
@@ -1264,7 +1265,7 @@ Sample:
     (job_id, new_lsm_vol) = lsm_client.volume_resize(
         to_resize_vol, new_size_bytes)
     if job_id:
-        # we get async job, wait untile finished
+        # we get asynchronous job, wait until finished
         # Check Appendix.A
     print "Volume %s resized to %d(%s)" % (
         new_lsm_vol.name, new_lsm_vol.size_bytes,
@@ -1305,13 +1306,13 @@ lsm_client = lsm.Client('sim://')
 lsm_vol = lsm_client.volumes()[0]
 job_id = lsm_client.volume_disable(lsm_vol)
 if job_id:
-    # we get async job, wait untile finished
+    # we get asynchronous job, wait until finished
     # Check Appendix.A
 print "Volume %s is offline" % lsm_vol.name
 
 job_id = lsm_client.volume_enable(lsm_vol)
 if job_id:
-    # we get async job, wait untile finished
+    # we get asynchronous job, wait until finished
     # Check Appendix.A
 print "Volume %s is enabled" % lsm_vol.name
     Capability:
@@ -1347,13 +1348,13 @@ Sample:
     lsm_vol = lsm_client.volumes()[0]
     job_id = lsm_client.volume_disable(lsm_vol)
     if job_id:
-        # we get async job, wait untile finished
+        # we get asynchronous job, wait until finished
         # Check Appendix.A
     print "Volume %s is disabled" % lsm_vol.name
 
     job_id = lsm_client.volume_enable(lsm_vol)
     if job_id:
-        # we get async job, wait untile finished
+        # we get asynchronous job, wait until finished
         # Check Appendix.A
     print "Volume %s is enabled" % lsm_vol.name
         Capability:
@@ -1536,7 +1537,7 @@ Parameters:
         The name for new volume.
         The requested volume name might be ignored due to restriction
         of hardware RAID vendors.
-        The pool name will be automatically choosed by plugin.
+        The pool name will be automatically chose by plugin.
     raid_type (int)
         The RAID type for the RAID group, possible values are:
             Volume.RAID_TYPE_RAID0
@@ -1678,8 +1679,6 @@ will be treated as a access group.
 
 ### 7.3. Query Access Group -- `lsm.Client.access_groups()`
 
-
-```rst
 ```rst
 lsm.Client.access_groups(
     self, search_key=None, search_value=None, flags=lsm.Client.FLAG_RSVD)
@@ -1800,8 +1799,6 @@ Capability:
     lsm.Capabilities.ACCESS_GROUP_CREATE_ISCSI_IQN
         # Support creating iSCSI IQN access group.
 ```
-
-
 
 ### 7.5. Delete Access Group -- `lsm.Client.access_group_delete()`
 
@@ -1931,7 +1928,7 @@ SpecialExceptions:
             # group.
         lsm.ErrorNumber.LAST_INIT_IN_ACCESS_GROUP
             # Defined access group is masked to volumes and
-            # we are removeing its last initiator. This is not
+            # we are removing its last initiator. This is not
             # allowed in LSM. Try to unmask volumes first.
 Sample:
     lsm_client = lsm.Client('sim://')
@@ -2034,7 +2031,7 @@ Sample:
     new_vol = lsm_client.volume_create(
         lsm_pool, "test_volue", size_bytes)
     if job_id:
-        # we get async job, wait untile finished
+        # we get asynchronous job, wait until finished
         # Check Appendix.A
     print "New volume created:%s(%s)" % (new_lsm_vol.name,
                                          new_lsm_vol.id)
@@ -2300,7 +2297,7 @@ Sample:
 
 * `lsm.ErrorNumber.JOB_STARTED`
 
-    This is only used in C API to indicate a ASYNC job was created.
+    This is only used in C API to indicate a asynchronous job was created.
 
 * `lsm.ErrorNumber.TIMEOUT`
 
@@ -2331,7 +2328,7 @@ Sample:
 
 * `lsm.ErrorNumber.NO_STATE_CHANGE`
 
-    Indicate requested no state change for requested action. It offten
+    Indicate requested no state change for requested action. It often
     caused by repeated call.
 
 * `lsm.ErrorNumber.NETWORK_CONNREFUSED`

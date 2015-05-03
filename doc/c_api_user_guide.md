@@ -15,15 +15,15 @@ title: C API User Guide
 * [Appendix.A. Asynchronous Job Control][aa]
 * [Appendix.B. Bit Map][ab]
 * [Appendix.C. Misc Functions and Structures][ac]
-* [Appendix.D. Exceptions -- `lsm_error`][ad]
+* [Appendix.D. Errors -- `lsm_error`][ad]
 
 This document provides detail information about how to use
-LibStorageMgmt C API for storage system management and assuming you have
+LibStorageMgmt C API for storage system management and assumes you have
 read the [LibStorageMgmt User Guide][1].
 
-The sample C code could be found at git repo [client_example.c][2].
+The sample C code can be found at git repository [client_example.c][2].
 
-To libstoragemgmt in your project:
+To use LibStorageMgmt in your project:
 
 * Install `libstoragemgmt-devel` package.
 
@@ -58,7 +58,7 @@ To libstoragemgmt in your project:
         LSM_CLIENT_FLAG_RSVD);
     ```
 
-* Invoke libstoragemgmt methods:
+* Invoke LibStorageMgmt methods:
 
     ```c
     /** Use lsm_pool_list as example */
@@ -84,11 +84,11 @@ To libstoragemgmt in your project:
     }
     ```
 
-* Handle exceptions:
+* Handle errors:
 
-    Please refer to [Appendix.D. Exceptions][ad] for detail.
+    Please refer to [Appendix.D. Errors][ad] for detail.
 
-    These common exceptions might be raised by every methods:
+    These common errors might be returned by every methods:
 
     * `LSM_ERR_LIB_BUG`
 
@@ -106,7 +106,7 @@ To libstoragemgmt in your project:
 
     * `LSM_ERR_NO_MEMORY`
 
-    Sample code to handle exceptions:
+    Sample code to handle errors:
 
     ```c
     lsm_error *lsm_err = lsm_error_last_get(lsm_conn);
@@ -125,8 +125,8 @@ To libstoragemgmt in your project:
 * [1.1. Make Connection -- `lsm_connect_password`][0101]
 * [1.2. Close Connection -- `lsm_connect_close`][0102]
 
-The `lsm_connect` struct is opaque holding internal data, there is
-no public member in it.
+The `lsm_connect` struct is an opaque data structure which holds
+internal data, there is no public member in it.
 
 ### 1.1. Make Connection -- `lsm_connect_password`
 
@@ -148,22 +148,22 @@ Parameters:
     conn (output, lsm_connect **)
         Output pointer of lsm_connect type.
     timeout (input, uint32_t)
-        Maximum milliseconds of runtime for each method before raising
+        Maximum milliseconds of runtime for each method before returning
         error with LSM_ERR_TIMEOUT. If set to 0, it means no timeout.
     e (output, lsm_error_ptr *)
         Output pointer of lsm_error_ptr type.
-        Please refer to section [Appendix.D. Exceptions] for detail.
+        Please refer to section [Appendix.D. Errors] for detail.
     flags (input, lsm_flag)
         Reserved for future use. Should be set as LSM_CLIENT_FLAG_RSVD.
 Returns:
     rc (int)
         LSM_ERR_OK if connection was created without any error.
-        When error found, please retrive error information from output
+        When error found, please retrieve error information from output
         pointer argument 'e'.
-        Please refer to section [Appendix.D. Exceptions] for detail.
+        Please refer to section [Appendix.D. Errors] for detail.
 Capability:
     No capability needed for this method.
-SpecialExceptions:
+SpecialErrors:
     LSM_ERR_PLUGIN_AUTH_FAILED
     LSM_ERR_PLUGIN_IPC_FAIL
     LSM_ERR_PLUGIN_SOCKET_PERMISSION
@@ -199,11 +199,11 @@ Parameters:
 Returns:
     rc (int)
         LSM_ERR_OK if connection was created without any error.
-        Please refer to section [Appendix.D. Exceptions] for error
+        Please refer to section [Appendix.D. Errors] for error
         number.
 Capability:
     No capability needed for this method.
-SpecialExceptions:
+SpecialErrors:
         N/A
 Sample:
     int rc = lsm_connect_close(lsm_conn, LSM_CLIENT_FLAG_RSVD);
@@ -312,16 +312,16 @@ Parameters:
         as NULL.
         Please refer to [Appendix.C.1 String Array] section for
         'lsm_string_list' structure members.
-        This memory requires manuall free via lsm_string_list_free().
+        This memory requires manually free via lsm_string_list_free().
     flags (input, lsm_flag)
         Reserved for future use. Should be set as LSM_CLIENT_FLAG_RSVD.
 Returns:
     rc (int)
         LSM_ERR_OK if connection was created without any error.
-        Please refer to section [Appendix.D. Exceptions] for detail.
+        Please refer to section [Appendix.D. Errors] for detail.
 Capability:
     LSM_CAP_POOL_MEMBER_INFO
-SpecialExceptions:
+SpecialErrors:
     LSM_ERR_NO_SUPPORT
     LSM_ERR_NOT_FOUND_POOL
 Sample:
@@ -454,10 +454,10 @@ Parameters:
 Returns:
     rc (int)
         LSM_ERR_OK if connection was created without any error.
-        Please refer to section [Appendix.D. Exceptions] for detail.
+        Please refer to section [Appendix.D. Errors] for detail.
 Capability:
     LSM_CAP_VOLUME_RAID_INFO
-SpecialExceptions:
+SpecialErrors:
     LSM_ERR_NO_SUPPORT
     LSM_ERR_NOT_FOUND_VOLUME
 Sample:
@@ -536,10 +536,10 @@ Parameters:
 Returns:
     rc (int)
         LSM_ERR_OK if connection was created without any error.
-        Please refer to section [Appendix.D. Exceptions] for detail.
+        Please refer to section [Appendix.D. Errors] for detail.
 Capability:
     LSM_CAP_VOLUME_RAID_CREATE
-SpecialExceptions:
+SpecialErrors:
     LSM_ERR_NO_SUPPORT
     LSM_ERR_NOT_FOUND_SYSTEM
 Sample:
@@ -594,7 +594,7 @@ Usage:
     The new volume and new pool will created within the same system
     of provided disks.
     This method does not allow duplicate call, if duplicate call
-    was isssue, LSM_ERR_DISK_NOT_FREE will be returned.
+    was issue, LSM_ERR_DISK_NOT_FREE will be returned.
     User should check lsm_disk_status_get() for LSM_DISK_STATUS_FREE
     before invoking this method.
 Parameters:
@@ -605,7 +605,7 @@ Parameters:
         The name for new volume.
         The requested volume name might be ignored due to restriction
         of hardware RAID vendors.
-        The pool name will be automatically choosed by plugin.
+        The pool name will be automatically chose by plugin.
     raid_type (input, lsm_volume_raid_type *)
         The pointer to lsm_volume_raid_type.
         The possible values are:
@@ -639,10 +639,10 @@ Parameters:
 Returns:
     rc (int)
         LSM_ERR_OK if connection was created without any error.
-        Please refer to section [Appendix.D. Exceptions] for detail.
+        Please refer to section [Appendix.D. Errors] for detail.
 Capability:
     LSM_CAP_VOLUME_RAID_CREATE
-SpecialExceptions:
+SpecialErrors:
     LSM_ERR_NO_SUPPORT
     LSM_ERR_NOT_FOUND_DISK
     LSM_ERR_DISK_NOT_FREE
@@ -733,7 +733,7 @@ Sample:
 #### Appendix.C.1.7 `lsm_string_list_append()`
 #### Appendix.C.1.8 `lsm_string_list_delete()`
 
-## Appendix.D. Exceptions -- `lsm_error`
+## Appendix.D. Errors -- `lsm_error`
 
 [01]: #1.-connection----lsm_connect
 [0101]: #1.1.-make-connection----lsm_connect_password
@@ -763,4 +763,4 @@ Sample:
 [01]: #appendix.c.1.6-lsm_string_list_size()
 [01]: #appendix.c.1.7-lsm_string_list_append()
 [01]: #appendix.c.1.8-lsm_string_list_delete()
-[ad]: #appendix.d.-exceptions----lsm_error
+[ad]: #appendix.d.-errors----lsm_error
