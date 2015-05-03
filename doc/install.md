@@ -75,7 +75,9 @@ For OpenSuSE 13.1/13.2, the packages have been renamed to:
     $ git clone https://github.com/libstorage/libstoragemgmt.git
     ```
 
-2. Install required packages(RHEL/Centos and Fedora).
+2. Install required packages.
+
+    RHEL/Centos and Fedora
 
     ```bash
     $ sudo yum install \
@@ -90,7 +92,7 @@ For OpenSuSE 13.1/13.2, the packages have been renamed to:
     $ sudo yum install libmicrohttpd-devel json-c-devel
     ```
 
-3. Install required packages(SuSE and OpenSuSE).
+    SuSE and OpenSuSE
 
     ```bash
     $ sudo zypper in gcc tar make gcc gcc-c++ libtool autoconf \
@@ -99,6 +101,17 @@ For OpenSuSE 13.1/13.2, the packages have been renamed to:
 
     # If you want the REST API daemon
     $ sudo zypper in libjson-devel procps libmicrohttpd-devel
+    ```
+
+    Debian
+
+    ```bash
+    $ sudo apt-get install gcc tar make g++ libtool autoconf automake \
+        libyajl-dev python-pywbem libxml2-dev check \
+        libglib2.0-dev python-m2crypto libssl-dev libconfig-dev
+
+    # If you want the REST API daemon
+    $ sudo apt-get install libmicrohttpd-dev libjson-c-dev procps
     ```
 
 4. Compile and install:
