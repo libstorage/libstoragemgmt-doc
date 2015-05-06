@@ -43,6 +43,15 @@ $ sudo zypper in gcc tar make gcc gcc-c++ libtool autoconf automake \
     libjson-devel procps libmicrohttpd-devel libconfig-devel
 ```
 
+#### 1.2.3 Debian
+
+```bash
+$ sudo apt-get install gcc tar make g++ libtool autoconf automake \
+    libyajl-dev python-pywbem libxml2-dev check \
+    libglib2.0-dev python-m2crypto libssl-dev python-yaml \
+    libjson-c-dev procps libmicrohttpd-dev libconfig-dev
+```
+
 ### 1.3. Compile
 
 ```bash
@@ -66,8 +75,10 @@ $ make
 ```bash
 # EPEL7 is needed for perl-Config-IniFiles on RHEL/Centos 7
 $ sudo yum install perl-Config-IniFiles
-# or
+# or openSuSE:
 # sudo zypper in perl-Config-IniFiles
+# or debian:
+# sudo apt-get install libconfig-inifiles-perl
 
 # Link 'lsmenv' to $HOME/bin
 # Assuming libstoragemgmt is in "$HOME" and $HOME/bin is in $PATH
