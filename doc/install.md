@@ -52,13 +52,15 @@ $ sudo subscription-manager repos --enable \
     rhel-7-workstation-optional-rpms
 ```
 
-For OpenSuSE 13.1/13.2, the packages have been renamed to:
+For OpenSuSE 13.1/13.2/Tumbleweed, the packages have been renamed to:
 
-* `libstoragemgmt1` -- Daemon, CLI util and basic files.
+* `libstoragemgmt` -- Daemon, CLI util and basic files.
 
-* `libstoragemgmt1-python` -- Python client libraries.
+* `libstoragemgmt1` -- C library files.
 
-* `libstoragemgmt1-*-plugin` -- Plugins.
+* `python-libstoragemgmt` -- Python client libraries.
+
+* `libstoragemgmt-*-plugin` -- Plugins.
 
 * `libstoragemgmt-devel` -- Development files for C language.
 
@@ -103,7 +105,7 @@ For OpenSuSE 13.1/13.2, the packages have been renamed to:
     $ sudo zypper in libjson-devel procps libmicrohttpd-devel
     ```
 
-    Debian
+    Debian/Ubuntu
 
     ```bash
     $ sudo apt-get install gcc tar make g++ libtool autoconf automake \
@@ -119,10 +121,13 @@ For OpenSuSE 13.1/13.2, the packages have been renamed to:
     ```bash
     # autogen.sh required when using git source tree
     $ ./autogen.sh
-    $ ./configure
-    # Options:
+    $ ./configure --prefix=/usr
+    # If you define other prefix, '--plugindir <you_prefix>' of lsmd
+    # should be use.
+    # Extra options:
     #       --without-rest-api      # skip REST API daemon, experimental
     #       --without-megaraid      # skip megaraid plugin.
+    #       --without-hpsa          # skip hpsa plugin.
 
     $ make -j5
     $ sudo make install
@@ -130,8 +135,15 @@ For OpenSuSE 13.1/13.2, the packages have been renamed to:
 
 ### 1.3. Weekly Snapshot Build
 
-* Download the repo file from [OBS][1] for your system to folder
-  '/etc/yum.repos.d/':
+* Install weekly snapshot rpm repo:
+
+    * [Fedora][1]
+
+    * [RHEL/Centos 6][2]
+
+    * [RHEL/Centos 7][3]
+
+    * [OpenSuSE][4]
 
 * Install libstoragemgmt(RHEL/Centos and Fedora):
 
@@ -143,18 +155,30 @@ For OpenSuSE 13.1/13.2, the packages have been renamed to:
 * Install libstoragemgmt(OpenSuSE):
 
     ```bash
-    $ zypper se libstoragemgmt1
-    $ sudo zypper in libstoragemgmt1-<desired package>
+    $ zypper se libstoragemgmt
+    $ sudo zypper in libstoragemgmt-<desired package>
     ```
 
-
-## 2. Start daemon
+## 2. Prepare and Start daemon
 
 ```bash
-# System without systemd, like RHEL 6
-$ sudo service libstoragemgmtd start
+# Create libstoragemgmt user and group
+sudo groupadd -r libstoragemgmt
+sudo useradd -r -g libstoragemgmt -d /var/run/lsm -s /sbin/nologin \
+    -c "daemon account for libstoragemgmt" libstoragemgmt
 
-# Systemd
+# Create IPC socket folders
+sudo mkdir -p /var/run/lsm/ipc
+sudo chmod 0755 /var/run/lsm
+sudo chmod 0755 /var/run/lsm/ipc
+sudo chown libstoragemgmt:libstoragemgmt /var/run/lsm
+sudo chown libstoragemgmt:libstoragemgmt /var/run/lsm/ipc
+
+# OS without systemd, like RHEL 6, Debian 7,
+# or Ubuntu 12.04/14.04 LTS
+$ sudo /usr/bin/lsmd -d -v
+
+# OS with Systemd
 $ sudo systemctl start libstoragemgmt.service
 ```
 
@@ -164,4 +188,7 @@ $ sudo systemctl start libstoragemgmt.service
 $ lsmcli -u 'sim://' list --type systems
 ```
 
-[1]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git/
+[1]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-fedora/
+[2]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-rhel6/CentOS_6/home:cathay4t:libstoragemgmt-git-rhel6.repo
+[3]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-rhel7/CentOS_7/home:cathay4t:libstoragemgmt-git-rhel7.repo
+[4]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-suse/
