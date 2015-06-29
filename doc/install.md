@@ -2,13 +2,12 @@
 title: Installation Guide
 ---
 
-* [1. Install] (#1.-install)
-  * [1.1 RPM Package of Released Version]
-    (#1.1.-rpm-package-of-released-version)
-  * [1.2 Compile from Source] (#1.2.-compile-from-source)
-  * [1.3 Weekly Snapshot Build] (#1.3.-weekly-snapshot-build)
-* [2. Start daemon] (#2.-start-daemon)
-* [3. Test installation] (#3.-test-installation)
+* [1. Install][01]
+    * [1.1. RPM Package of Released Version][0101]
+    * [1.2. Compile from Source][0102]
+    * [1.3. Weekly Snapshot Build][0103]
+* [2. Prepare and Start daemon][02]
+* [3. Test installation][03]
 
 ## 1. Install
 
@@ -187,6 +186,12 @@ $ sudo systemctl start libstoragemgmt.service
 ```bash
 $ lsmcli -u 'sim://' list --type systems
 ```
+[01]: #1.-install
+[0101]: #1.1.-rpm-package-of-released-version
+[0102]: #1.2.-compile-from-source
+[0103]: #1.3.-weekly-snapshot-build
+[02]: #2.-prepare-and-start-daemon
+[03]: #3.-test-installation
 
 [1]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-fedora/
 [2]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-rhel6/CentOS_6/home:cathay4t:libstoragemgmt-git-rhel6.repo
