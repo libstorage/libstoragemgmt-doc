@@ -21,9 +21,11 @@ verify LSI SMI-S providers' SSL public keys with system wide PKI/x509.
 Please contact LSI support to setup the self-signed certification.
 
 If you want to ignore the SSL check error which is not suggested, please
-add 'no_ssl_verify=yes' in your URI, like this:
+add `no_ssl_verify=yes` in your URI, like this:
 
-        smispy+ssl://username@host?namespace=root/LsiMr13&no_ssl_verify=yes
+```
+    smispy+ssl://username@host?namespace=root/LsiMr13&no_ssl_verify=yes
+```
 
 <p style="color: red">
 <b>

@@ -53,10 +53,13 @@ SMI-S  | `smispy://<user>@<host>` | [EMC VMAX/DMX/VNX/CX][2]
 SMI-S  | `smispy://<user>@<host>` | [NetApp ONTAP][1]
 SMI-S  | `smispy://<user>@<host>` | [IBM XIV/DS/SVC][3]
 SMI-S  | `smispy://<user>@<host>?namespace=root/lsiarray13` | [NetApp E-Series][5]
+SMI-S  | `smispy://<user>@<host>` | [Huawei HVS][17]
 SMI-S  | `smispy://<user>@<host>` | [Other Array with SMI-S 1.4+][6]
 Targetd | `targetd://<user>@<host>` | [Linux Targetd][7]
-Nstor | `nstor://<user>@<host>` | [NexentaStor 3.x][8]
-MegaRAID | `megaraid://` | [LSI MegaRAID][4]
+Nstor | `nstor://<user>@<host>` | [NexentaStor 4.x/3.x][8]
+LSI MegaRAID | `megaraid://` | [LSI MegaRAID][4]
+SMI-S | `smispy://<user>@<host>?namespace=root/LsiMr13` | [LSI MegaRAID][4]
+HP SmartArray| `hpsa://` | [HP SmartArray][16]
 
 ## 1. Installation
 The libStorageMgmt packages exist in RHEL 7 and Fedora repositories.
@@ -447,6 +450,8 @@ or [Python Plugin developer Guide][14].
 [13]: c_plugin_dev_guide.html
 [14]: py_plugin_dev_guide.html
 [15]: install.html
+[16]: array_conf/HPSA_Conf.html
+[17]: array_conf/Huawei_Conf.html
 
 [01]: #1-installation
 [02]: #2-warnings

@@ -41,6 +41,17 @@ space utilization.
 * [Python Plugin developer Guide][17]
 * [Proposed project scope][16]
 
+### Array configurations
+* [NetApp ONTAP][19]
+* [EMC VMAX/DMX/VNX/CX][20]
+* [Linux Targetd][21]
+* [NexentaStor][22]
+* [IBM XIV/DS/SVC][23]
+* [NetApp E-Series][24]
+* [Huawei HVS][25]
+* [LSI MegaRAID][26]
+* [HP SmartArray][27]
+
 ### Media & Papers
 * [Slides from Linux Plumbers Conference 2012][9]
 * [Youtube video: targetd and lsmcli: a demonstration][10]
@@ -73,3 +84,12 @@ space utilization.
 [16]: doc/project_scope.html
 [17]: doc/py_plugin_dev_guide.html
 [18]: https://lists.fedorahosted.org/mailman/listinfo/libstoragemgmt-users
+[19]: doc/array_conf/NetApp_Conf.html
+[20]: doc/array_conf/EMC_Conf.html
+[21]: doc/array_conf/TGT_Conf.html
+[22]: doc/array_conf/Nstor_Conf.html
+[23]: doc/array_conf/IBM_Conf.html
+[24]: doc/array_conf/NetAppE_conf.html
+[25]: doc/array_conf/Huawei_Conf.html
+[26]: doc/array_conf/LSI_Conf.html
+[27]: doc/array_conf/HPSA_Conf.html
