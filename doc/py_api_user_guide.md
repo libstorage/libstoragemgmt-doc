@@ -2645,76 +2645,66 @@ Sample:
     and etc.
 
 [1]: user_guide.html
-[01]: #1.-connection----lsm.client
-[0101]: #1.1.-make-connection----lsm.client()
-[0102]: #1.2.-close-connection----lsm.client.close()
-[02]: #2.-capability----lsm.capabilities
-[0201]: #2.1.-query-capabilities----lsm.client.capabilities()
-[0202]: #2.2.-check-capability----lsm.capabilities.supported()
-[0203]:
-#2.3.-list-supported-capabilities----lsm.capabilities.get_supported()
-[03]: #3.-system----lsm.system
-[0301]: #3.1.-system-properties
-[0302]: #3.2.-query-systems----lsm.client.systems()
-[04]: #4.-pool----lsm.pool
-[0401]: #4.1.-pool-properties
-[0402]: #4.2.-pool-extra-constants
-[0403]: #4.3.-query-pools----lsm.client.pools()
-[0404]: #4.4.-query-pool-membership----lsm.client.pool_member_info()
-[05]: #5.-disk----lsm.disk
-[0501]: #5.1.-disk-properties
-[0502]: #5.2.-disk-extra-constants
-[0503]: #5.3.-query-disks----lsm.client.disks()
-[06]: #6.-volume----lsm.volume
-[0601]: #6.1.-volume-properties
-[0602]: #6.2.-volume-extra-constants
-[0603]: #6.3.-query-volume----lsm.client.volumes()
-[0604]: #6.4.-create-volume----lsm.client.volume_create()
-[0605]: #6.5.-delete-volume----lsm.client.volume_delete()
-[0606]: #6.6.-resize-volume----lsm.client.volume_resize()
-[0607]: #6.7.-enable-volume----lsm.client.volume_enable()
-[0608]: #6.8.-disable-volume----lsm.client.volume_disable()
-[0609]:
-#6.9.-query-volume-raid-information----lsm.client.volume_raid_info()
-[0610]:
-#6.10.-query-raid-volume-creation-capability----lsm.client.volume_raid_create_cap_get()
-[0611]: #6.11.-create-raid-volume----lsm.client.volume_raid_create()
-[07]: #7.-access-group----lsm.accessgroup
-[0701]: #7.1.-access-group-properties
-[0702]: #7.2.-access-group-extra-constants
-[0703]: #7.3.-query-access-group----lsm.client.access_groups()
-[0704]: #7.4.-create-access-group----lsm.client.access_group_create()
-[0705]: #7.5.-delete-access-group----lsm.client.access_group_delete()
-[0706]:
-#7.6.-add-access-group-member----lsm.client.access_group_initiator_add()
-[0707]:
-#7.7.-delete-access-group-member----lsm.client.access_group_initiator_delete()
-[08]: #8.-volume-mask
-[0801]:
-#8.1.-query-masked-access-group----lsm.client.access_groups_granted_to_volume()
-[0802]:
-#8.2.-query-masked-volume----lsm.client.volumes_accessible_by_access_group()
-[0803]: #8.3.-volume-mask----lsm.client.volume_mask()
-[0804]: #8.4.-volume-unmask----lsm.client.volume_unmask()
-[09]: #9.-volume-replication
-[09]:
-#9.1-create-replicate-target-volume----lsm.client.volume_replicate()
-[09]:
-#9.2-query-volume-child-dependency----lsm.client.volume_child_dependency()
-[09]:
-#9.3-query-volume-child-dependency----lsm.client.volume_child_dependency_rm()
-[10]: #10.-iscsi-authentication
-[11]: #11.-file-system----lsm.filesystem
-[12]: #12.-nfs-export----lsm.nfsexport
-[13]: #13.-target-port----lsm.targetport
-[1301]: #13.1.-target-port-properties
-[1302]: #13.2.-target-port-extra-constants
-[1303]: #13.3.-query-target-ports----lsm.client.target_ports()
-[aa]: #appendix.a-asynchronous-job-control
-[aa01]: #appendix.a.1-query-a-job----lsm.client.job_status()
-[aa02]: #appendix.a.2-sample-code-to-wait-a-job
-[ab]: #appendix.b-bit-map
-[ac]: #appendix.c-lsm-static-methods
-[ac01]: #appendix.c.1-lsm.size_bytes_2_size_human()
-[ac02]: #appendix.c.2-lsm.size_human_2_size_bytes()
-[ad]: #appendix.d-exceptions----lsm.lsmerror
+[01]: #1-connection-lsm-client
+[0101]: #1-1-make-connection-lsm-client
+[0102]: #1-2-close-connection-lsm-client-close
+[02]: #2-capability-lsm-capabilities
+[0201]: #2-1-query-capabilities-lsm-client-capabilities
+[0202]: #2-2-check-capability-lsm-capabilities-supported
+[0203]: #2-3-list-supported-capabilities-lsm-capabilities-get_supported
+[03]: #3-system-lsm-system
+[0301]: #3-1-system-properties
+[0302]: #3-2-query-systems-lsm-client-systems
+[04]: #4-pool-lsm-pool
+[0401]: #4-1-pool-properties
+[0402]: #4-2-pool-extra-constants
+[0403]: #4-3-query-pools-lsm-client-pools
+[0404]: #4-4-query-pool-membership-lsm-client-pool_member_info
+[05]: #5-disk-lsm-disk
+[0501]: #5-1-disk-properties
+[0502]: #5-2-disk-extra-constants
+[0503]: #5-3-query-disks-lsm-client-disks
+[06]: #6-volume-lsm-volume
+[0601]: #6-1-volume-properties
+[0602]: #6-2-volume-extra-constants
+[0603]: #6-3-query-volume-lsm-client-volumes
+[0604]: #6-4-create-volume-lsm-client-volume_create
+[0605]: #6-5-delete-volume-lsm-client-volume_delete
+[0606]: #6-6-resize-volume-lsm-client-volume_resize
+[0607]: #6-7-enable-volume-lsm-client-volume_enable
+[0608]: #6-8-disable-volume-lsm-client-volume_disable
+[0609]: #6-9-query-volume-raid-information-lsm-client-volume_raid_info
+[0610]: #6-10-query-raid-volume-creation-capability-lsm-client-volume_raid_create_cap_get
+[0611]: #6-11-create-raid-volume-lsm-client-volume_raid_create
+[07]: #7-access-group-lsm-accessgroup
+[0701]: #7-1-access-group-properties
+[0702]: #7-2-access-group-extra-constants
+[0703]: #7-3-query-access-group-lsm-client-access_groups
+[0704]: #7-4-create-access-group-lsm-client-access_group_create
+[0705]: #7-5-delete-access-group-lsm-client-access_group_delete
+[0706]: #7-6-add-access-group-member-lsm-client-access_group_initiator_add
+[0707]: #7-7-delete-access-group-member-lsm-client-access_group_initiator_delete
+[08]: #8-volume-mask
+[0801]: #8-1-query-masked-access-group-lsm-client-access_groups_granted_to_volume
+[0802]: #8-2-query-masked-volume-lsm-client-volumes_accessible_by_access_group
+[0803]: #8-3-volume-mask-lsm-client-volume_mask
+[0804]: #8-4-volume-unmask-lsm-client-volume_unmask
+[09]: #9-volume-replication
+[09]: #9-1-create-replicate-target-volume-lsm-client-volume_replicate
+[09]: #9-2-query-volume-child-dependency-lsm-client-volume_child_dependency
+[09]: #9-3-query-volume-child-dependency-lsm-client-volume_child_dependency_rm
+[10]: #10-iscsi-authentication
+[11]: #11-file-system-lsm-filesystem
+[12]: #12-nfs-export-lsm-nfsexport
+[13]: #13-target-port-lsm-targetport
+[1301]: #13-1-target-port-properties
+[1302]: #13-2-target-port-extra-constants
+[1303]: #13-3-query-target-ports-lsm-client-target_ports
+[aa]: #appendix-a-asynchronous-job-control
+[aa01]: #appendix-a-1-query-a-job-lsm-client-job_status
+[aa02]: #appendix-a-2-sample-code-to-wait-a-job
+[ab]: #appendix-b-bit-map
+[ac]: #appendix-c-lsm-static-methods
+[ac01]: #appendix-c-1-lsm-size_bytes_2_size_human
+[ac02]: #appendix-c-2-lsm-size_human_2_size_bytes
+[ad]: #appendix-d-exceptions-lsm-lsmerror

@@ -1,19 +1,36 @@
 ---
 title: Library Developer Guide
 ---
-* [1. Setup developer environment](#1.-setup-developer-environment)
-* [2. Code Workflow](#2.-code-workflow)
-* [3. C Library Code Layout](#3.-c-library-code-layout)
-* [4. Python Library Code Layout](#4.-python-library-code-layout)
-* [5. LSM Daemon Code layout.](#5.-lsm-daemon-code-layout.)
-* [6. Tests](#6.-tests)
-* [7. How to contribute.](#7.-how-to-contribute.)
+* [1. Setup developer environment][01]
+    * [1.1. Grab the code][0101]
+    * [1.2. Install build dependencies][0102]
+    * [1.3. Compile][0103]
+    * [1.4. Run from the code tree][0104]
+* [2. Code Workflow][02]
+* [3. C Library Code Layout][03]
+    * [3.1. Client API -- `libstoragemgmt/libstoragemgmt.h`][0301]
+    * [3.2. Plugin API --
+      `libstoragemgmt/libstoragemgmt_plug_interface.h`][0302]
+* [4. Python Library Code Layout][04]
+    * [4.1. Client API and Plugin API -- `_client.py`][0401]
+    * [4.2. `_common.py`][0402]
+    * [4.3. `_data.py`][0403]
+    * [4.4. `_iplugin.py`][0404]
+    * [4.5. `_pluginrunner.py`][0405]
+    * [4.6. `_transport.py`][0406]
+    * [4.7. `version.py`][0407]
+* [5. LSM Daemon Code layout.][05]
+* [6. Tests][06]
+    * [6.1. C Unit Test -- `tester.c`][0601]
+    * [6.2. Command Line Tool Test -- `cmdtest.py`][0602]
+    * [6.3. Plugin Test(Python API) -- `plugin_test.py`][0603]
+* [7. How to contribute.][07]
 
 This document is assuming you already read the [User Guide][1].
 
 ## 1. Setup developer environment
 
-### 1.1 Grab the code
+### 1.1. Grab the code
 
 ```bash
 # The rest document is assuming your working folder is $HOME
@@ -21,9 +38,9 @@ This document is assuming you already read the [User Guide][1].
 $ git clone https://github.com/libstorage/libstoragemgmt.git
 ```
 
-### 1.2 Install build dependencies
+### 1.2. Install build dependencies
 
-#### 1.2.1 RHEL/Centos/Fedora
+#### 1.2.1. RHEL/Centos/Fedora
 
 ```bash
 # Make sure build dependencies are installed
@@ -34,7 +51,7 @@ $ sudo yum install tar make gcc gcc-c++ libtool autoconf automake \
        openssl-devel perl-Config-IniFiles time PyYAML libconfig-devel
 ```
 
-#### 1.2.2 OpenSuSE
+#### 1.2.2. OpenSuSE
 
 ```bash
 $ sudo zypper in gcc tar make gcc gcc-c++ libtool autoconf automake \
@@ -43,7 +60,7 @@ $ sudo zypper in gcc tar make gcc gcc-c++ libtool autoconf automake \
     libjson-devel procps libmicrohttpd-devel libconfig-devel
 ```
 
-#### 1.2.3 Debian
+#### 1.2.3. Debian
 
 ```bash
 $ sudo apt-get install gcc tar make g++ libtool autoconf automake \
@@ -70,7 +87,7 @@ $ make
 
 ### 1.4. Run from the code tree
 
-#### 1.4.1 Automatic way -- lsmenv
+#### 1.4.1. Automatic way -- lsmenv
 
 ```bash
 # EPEL7 is needed for perl-Config-IniFiles on RHEL/Centos 7
@@ -235,7 +252,7 @@ exception is wrapped into LsmError.
 The 'ErrorLevel' class is not used anywhere. Might be removed in the
 future.
 
-### 4.3 `_data.py`
+### 4.3. `_data.py`
 
 This file is providing LSM classes defination like lsm.System, lsm.Pool
 and etc.
@@ -325,3 +342,33 @@ Designed to test all plugin via Python API.
 5. git send-email to libstoragemgmt-devel maillist.
 
 [1]: user_guide.html
+[01]: #1-setup-developer-environment
+[0101]: #1-1-grab-the-code
+[0102]: #1-2-install-build-dependencies
+[010201]: #1-2-1-rhel-centos-fedora
+[010202]: #1-2-2-opensuse
+[010203]: #1-2-3-debian
+[0103]: #1-3-compile
+[0104]: #1-4-run-from-the-code-tree
+[010401]: #1-4-1-automatic-way-lsmenv
+[010402]: #1-4-2-manual-way
+[02]: #2-code-workflow
+[03]: #3-c-library-code-layout
+[0301]: #3-1-client-api-libstoragemgmt-libstoragemgmt-h
+[0302]: #3-2-plugin-api-libstoragemgmt-libstoragemgmt_plug_interface-h
+[04]: #4-python-library-code-layout
+[0401]: #4-1-client-api-and-plugin-api-_client-py
+[0402]: #4-2-_common-py
+[0403]: #4-3-_data-py
+[0404]: #4-4-_iplugin-py
+[0405]: #4-5-_pluginrunner-py
+[0406]: #4-6-_transport-py
+[0407]: #4-7-version-py
+[05]: #5-lsm-daemon-code-layout
+[0501]: #5-1-lsmd-lsm_daemon-c
+[0502]: #5-2-lsm_restd
+[06]: #6-tests
+[0601]: #6-1-c-unit-test-tester-c
+[0602]: #6-2-command-line-tool-test-cmdtest-py
+[0603]: #6-3-plugin-test-python-api-plugin_test-py
+[07]: #7-how-to-contribute

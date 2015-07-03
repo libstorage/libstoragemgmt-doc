@@ -1,16 +1,15 @@
 ---
 title: User Guide
 ---
-
-* [1. Installation](#1.-installation)
-* [2. Warnings](#2.-warnings)
-* [3. Terminology](#3.-terminology)
-* [4. How to use](#4.-how-to-use)
- * [4.1. Command Line Tool Example](#4.1.-command-line-tool-example)
- * [4.2. Python Code Example](#4.2.-python-code-example)
- * [4.3. C code Example](#4.3.-c-code-example)
-* [5. Assistance or feedback](#5.-assistance-or-feedback)
-* [6. Contribute](#6.-contribute)
+* [1. Installation][01]
+* [2. Warnings][02]
+* [3. Terminology][03]
+* [4. How to use][04]
+    * [4.1. Command Line Tool Example][0401]
+    * [4.2. Python Code Example][0402]
+    * [4.3. C code Example][0403]
+* [5. Assistance or feedback][05]
+* [6. Contribute][06]
 
 LibStorageMgmt is a vendor neutral library that provides an API and
 tools for managing SAN arrays and local hardware RAID adapters.
@@ -448,3 +447,13 @@ or [Python Plugin developer Guide][14].
 [13]: c_plugin_dev_guide.html
 [14]: py_plugin_dev_guide.html
 [15]: install.html
+
+[01]: #1-installation
+[02]: #2-warnings
+[03]: #3-terminology
+[04]: #4-how-to-use
+[0401]: #4-1-command-line-tool-example
+[0402]: #4-2-python-code-example
+[0403]: #4-3-c-code-example
+[05]: #5-assistance-or-feedback
+[06]: #6-contribute
