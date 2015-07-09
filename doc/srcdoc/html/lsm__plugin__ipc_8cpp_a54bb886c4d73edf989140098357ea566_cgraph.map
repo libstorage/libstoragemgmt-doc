@@ -1,0 +1,19 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$libstoragemgmt__accessgroups_8h.html#a86d4737c3ce743f1af1aa6fe954faee4" title="lsm_access_group_record_copy" alt="" coords="216,5,448,35"/>
+<area shape="rect" id="node5" href="$libstoragemgmt__blockrange_8h.html#a48671c20af871ab30a641f79fd6d0b80" title="lsm_block_range_record_copy" alt="" coords="223,59,441,88"/>
+<area shape="rect" id="node7" href="$libstoragemgmt__disk_8h.html#a1a98cc1ee79118d1c52f49aee17ef13e" title="lsm_disk_record_copy" alt="" coords="249,112,415,141"/>
+<area shape="rect" id="node9" href="$libstoragemgmt__fs_8h.html#a69c243d898585ada42b7fa6cd06cbf81" title="lsm_fs_record_copy" alt="" coords="256,165,408,195"/>
+<area shape="rect" id="node11" href="$libstoragemgmt__snapshot_8h.html#a6da33a32efaa370f176c41b2dc0b49c9" title="lsm_fs_ss_record_copy" alt="" coords="245,219,419,248"/>
+<area shape="rect" id="node13" href="$libstoragemgmt__nfsexport_8h.html#a5bd8262aed37ad6e7b813501f533aeb8" title="lsm_nfs_export_record_copy" alt="" coords="225,272,439,301"/>
+<area shape="rect" id="node15" href="$libstoragemgmt__pool_8h.html#ad921386c405f5bb13ad92328de5b09a9" title="lsm_pool_record_copy" alt="" coords="248,325,416,355"/>
+<area shape="rect" id="node21" href="$libstoragemgmt__common_8h.html#a3b5a448f288238ce3f1514c41d110b7f" title="lsm_string_list_copy" alt="" coords="255,379,409,408"/>
+<area shape="rect" id="node33" href="$libstoragemgmt__systems_8h.html#a2b145e07b892c49727c386a8cd11b945" title="lsm_system_record_copy" alt="" coords="236,432,428,461"/>
+<area shape="rect" id="node35" href="$libstoragemgmt__volumes_8h.html#a1a323b3c687c8fc666e2be2b3d0d7b7a" title="lsm_volume_record_copy" alt="" coords="237,485,427,515"/>
+<area shape="rect" id="node17" href="$libstoragemgmt__plug__interface_8h.html#ae1abeb1f76607e20caa85c45f9ded685" title="lsm_pool_record_alloc" alt="" coords="508,245,673,275"/>
+<area shape="rect" id="node19" href="$libstoragemgmt__pool_8h.html#a44d50c6c387a0269fc494e94a831064b" title="lsm_pool_record_free" alt="" coords="735,245,897,275"/>
+<area shape="rect" id="node23" href="$libstoragemgmt__common_8h.html#ae74bb6480d8bf5d8f7611cb1b5538943" title="lsm_string_list_alloc" alt="" coords="513,299,668,328"/>
+<area shape="rect" id="node25" href="$libstoragemgmt__common_8h.html#a4f84263165b1bac528847364be3868f3" title="lsm_string_list_elem_get" alt="" coords="496,352,685,381"/>
+<area shape="rect" id="node27" href="$libstoragemgmt__common_8h.html#a3c14a677c3228eb120dda0aca3a55bb2" title="lsm_string_list_elem_set" alt="" coords="497,405,684,435"/>
+<area shape="rect" id="node29" href="$libstoragemgmt__common_8h.html#a0042977fcc59a5907892dcd5e907b891" title="lsm_string_list_free" alt="" coords="515,459,667,488"/>
+<area shape="rect" id="node31" href="$libstoragemgmt__common_8h.html#ad34a6ddb243ad500bda1ed9221d1555f" title="lsm_string_list_size" alt="" coords="516,512,665,541"/>
+</map>

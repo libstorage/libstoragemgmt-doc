@@ -1,0 +1,27 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$simc__lsmplugin_8c.html#ad3f85091c4f29f96c49a9be02603c278" title="free_allocated_ag" alt="" coords="129,177,271,207"/>
+<area shape="rect" id="node5" href="$simc__lsmplugin_8c.html#aa545e0626c5c941ab35e3b33a59e505b" title="free_allocated_fs" alt="" coords="131,363,269,392"/>
+<area shape="rect" id="node11" href="$simc__lsmplugin_8c.html#a02dfb4211774611edc2fc7d04c6cc1b2" title="free_allocated_job" alt="" coords="127,231,273,260"/>
+<area shape="rect" id="node28" href="$simc__lsmplugin_8c.html#a1f6a2df5aaccdc667b865ba68442b15f" title="free_allocated_volume" alt="" coords="113,309,287,339"/>
+<area shape="rect" id="node31" href="$simc__lsmplugin_8c.html#a4861e40da529503e42b94fe6ee977798" title="free_disk" alt="" coords="159,573,241,603"/>
+<area shape="rect" id="node33" href="$libstoragemgmt__disk_8h.html#aa6d1092072d92281bb83bcb20143244d" title="lsm_disk_record_free" alt="" coords="371,548,533,577"/>
+<area shape="rect" id="node35" href="$simc__lsmplugin_8c.html#a897fbaf3acd52ae50b66ad5a8b4a6bb5" title="free_group_grant_hash" alt="" coords="113,627,287,656"/>
+<area shape="rect" id="node37" href="$simc__lsmplugin_8c.html#a739a0cbe16775ba690cebe55631e764f" title="free_pool_record" alt="" coords="133,416,267,445"/>
+<area shape="rect" id="node40" href="$libstoragemgmt__disk_8h.html#a58d5c03a47314215785d6346999b0f24" title="lsm_disk_id_get" alt="" coords="137,680,263,709"/>
+<area shape="rect" id="node42" href="$libstoragemgmt__plug__interface_8h.html#a956a6a7959dcba5fdb614163e75d814c" title="lsm_disk_record_alloc" alt="" coords="119,733,281,763"/>
+<area shape="rect" id="node45" href="$libstoragemgmt__pool_8h.html#ab06058eb1efe413a14d018c0668c3b65" title="lsm_pool_id_get" alt="" coords="136,787,264,816"/>
+<area shape="rect" id="node47" href="$libstoragemgmt__plug__interface_8h.html#ae1abeb1f76607e20caa85c45f9ded685" title="lsm_pool_record_alloc" alt="" coords="117,469,283,499"/>
+<area shape="rect" id="node50" href="$libstoragemgmt__plug__interface_8h.html#ac13f5bfd14cf00890aa738992326b67e" title="lsm_register_plugin_v1_2" alt="" coords="107,840,293,869"/>
+<area shape="rect" id="node54" href="$libstoragemgmt__plug__interface_8h.html#a43b9509e6a75c4754075c9f8558150c4" title="lsm_system_record_alloc" alt="" coords="105,893,295,923"/>
+<area shape="rect" id="node56" href="$simc__lsmplugin_8c.html#a2998f026c689b44c39c7c4ef2bf74808" title="md5" alt="" coords="175,947,225,976"/>
+<area shape="rect" id="node7" href="$simc__lsmplugin_8c.html#af0acd1adb207026ee396a4fae0a552c8" title="free_fs_record" alt="" coords="393,376,511,405"/>
+<area shape="rect" id="node9" href="$libstoragemgmt__fs_8h.html#a2ce1b4f4ea1791c0847dd42dbd32d7aa" title="lsm_fs_record_free" alt="" coords="608,324,757,353"/>
+<area shape="rect" id="node13" href="$libstoragemgmt__blockrange_8h.html#af374923811b014947b8ab34648ecd2f8" title="lsm_block_range_record_free" alt="" coords="344,219,560,248"/>
+<area shape="rect" id="node16" href="$libstoragemgmt__snapshot_8h.html#a1bb48837b2b2c5f1754d81f88f7fe50b" title="lsm_fs_ss_record_free" alt="" coords="367,5,537,35"/>
+<area shape="rect" id="node18" href="$libstoragemgmt__nfsexport_8h.html#a59027d6d02d4e8e7352f514805ae7f58" title="lsm_nfs_export_record_free" alt="" coords="348,59,556,88"/>
+<area shape="rect" id="node20" href="$libstoragemgmt__pool_8h.html#a44d50c6c387a0269fc494e94a831064b" title="lsm_pool_record_free" alt="" coords="371,429,533,459"/>
+<area shape="rect" id="node22" href="$libstoragemgmt__common_8h.html#a0042977fcc59a5907892dcd5e907b891" title="lsm_string_list_free" alt="" coords="376,112,528,141"/>
+<area shape="rect" id="node24" href="$libstoragemgmt__systems_8h.html#ab3ab47a044dec61344929ff9f27f9dfa" title="lsm_system_record_free" alt="" coords="359,165,545,195"/>
+<area shape="rect" id="node26" href="$libstoragemgmt__volumes_8h.html#a62a718dbb14c43eb0b4c3498ad5bb4e2" title="lsm_volume_record_free" alt="" coords="359,323,545,352"/>
+<area shape="rect" id="node52" href="$libstoragemgmt__plug__interface_8h.html#ade9288e3817843531a90d85978678108" title="lsm_register_plugin_v1" alt="" coords="365,840,539,869"/>
+</map>

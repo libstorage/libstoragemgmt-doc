@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$lsm__mgmt_8cpp.html#a8b4bb1fa06447f6bcef55bdd4c6cbbc8" title="lsm_job_status_volume_get" alt="" coords="237,5,448,35"/>
+<area shape="rect" id="node5" href="$lsm__mgmt_8cpp.html#aada710ab90dfc716d7c4f41085522aa0" title="lsm_volume_create" alt="" coords="265,59,420,88"/>
+<area shape="rect" id="node7" href="$lsm__mgmt_8cpp.html#a6d9a680a1d2efa3b5726cb70913cb0c9" title="lsm_volume_raid_create" alt="" coords="251,112,435,141"/>
+<area shape="rect" id="node9" href="$lsm__mgmt_8cpp.html#adf7c883b3d78e4e18f824897f67e8192" title="lsm_volume_replicate" alt="" coords="259,165,427,195"/>
+<area shape="rect" id="node11" href="$lsm__mgmt_8cpp.html#a0cb40bb591c6a1124d0557adf2d02ea2" title="lsm_volume_resize" alt="" coords="268,219,417,248"/>
+<area shape="rect" id="node13" href="$lsm__mgmt_8cpp.html#a6c97f0873b651669d089730c29dbd5d4" title="lsm_volumes_accessible_by_access_group" alt="" coords="189,272,496,301"/>
+<area shape="rect" id="node15" href="$lsm__convert_8hpp.html#af80c3330b915debb975742e31a9609b7" title="value_array_to_volumes" alt="" coords="251,325,435,355"/>
+</map>

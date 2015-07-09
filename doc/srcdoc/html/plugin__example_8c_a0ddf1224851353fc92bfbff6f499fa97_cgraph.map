@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$plugin__example_8c.html#a835662273cf7c1da975ba12983ac436a" title="load" alt="" coords="156,5,204,35"/>
+<area shape="rect" id="node7" href="$libstoragemgmt__plug__interface_8h.html#a2b8cdbe677133aaa5c9480a891ca8bec" title="lsm_plugin_init_v1" alt="" coords="109,59,251,88"/>
+<area shape="rect" id="node9" href="$plugin__example_8c.html#abd498ed06456e455bf60a53cdd9dcfca" title="unload" alt="" coords="148,112,212,141"/>
+<area shape="rect" id="node5" href="$libstoragemgmt__plug__interface_8h.html#ade9288e3817843531a90d85978678108" title="lsm_register_plugin_v1" alt="" coords="299,5,472,35"/>
+<area shape="rect" id="node11" href="$libstoragemgmt__plug__interface_8h.html#a65d569cd42c1270c7fb199149353adbc" title="lsm_private_data_get" alt="" coords="301,112,469,141"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ipc.html#a5ae060754f08e3c14be2961fde55b1ae" title="Ipc::errorSend" alt="" coords="145,5,263,35"/>
+<area shape="rect" id="node5" href="$class_ipc.html#a6c3adc12ca46ae0d92d5850f82b7e65c" title="Ipc::requestSend" alt="" coords="135,59,273,88"/>
+<area shape="rect" id="node9" href="$class_ipc.html#acbe97fc53a2d4e35414dad75e522e1b8" title="Ipc::responseSend" alt="" coords="131,112,277,141"/>
+<area shape="rect" id="node7" href="$class_ipc.html#a87b09d1b7ddd1e720fd9809b80bf01c5" title="Ipc::rpc" alt="" coords="327,59,399,88"/>
+</map>

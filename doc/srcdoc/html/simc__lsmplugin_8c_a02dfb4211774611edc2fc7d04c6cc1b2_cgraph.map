@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$libstoragemgmt__blockrange_8h.html#af374923811b014947b8ab34648ecd2f8" title="lsm_block_range_record_free" alt="" coords="200,5,416,35"/>
+<area shape="rect" id="node5" href="$libstoragemgmt__fs_8h.html#a2ce1b4f4ea1791c0847dd42dbd32d7aa" title="lsm_fs_record_free" alt="" coords="233,59,383,88"/>
+<area shape="rect" id="node7" href="$libstoragemgmt__snapshot_8h.html#a1bb48837b2b2c5f1754d81f88f7fe50b" title="lsm_fs_ss_record_free" alt="" coords="223,112,393,141"/>
+<area shape="rect" id="node9" href="$libstoragemgmt__nfsexport_8h.html#a59027d6d02d4e8e7352f514805ae7f58" title="lsm_nfs_export_record_free" alt="" coords="204,165,412,195"/>
+<area shape="rect" id="node11" href="$libstoragemgmt__pool_8h.html#a44d50c6c387a0269fc494e94a831064b" title="lsm_pool_record_free" alt="" coords="227,219,389,248"/>
+<area shape="rect" id="node13" href="$libstoragemgmt__common_8h.html#a0042977fcc59a5907892dcd5e907b891" title="lsm_string_list_free" alt="" coords="232,272,384,301"/>
+<area shape="rect" id="node15" href="$libstoragemgmt__systems_8h.html#ab3ab47a044dec61344929ff9f27f9dfa" title="lsm_system_record_free" alt="" coords="215,325,401,355"/>
+<area shape="rect" id="node17" href="$libstoragemgmt__volumes_8h.html#a62a718dbb14c43eb0b4c3498ad5bb4e2" title="lsm_volume_record_free" alt="" coords="215,379,401,408"/>
+</map>

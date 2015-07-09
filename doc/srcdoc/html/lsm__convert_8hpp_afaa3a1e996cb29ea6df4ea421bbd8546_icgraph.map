@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$lsm__convert_8hpp.html#a382977f90fc7d38775d1db78123c22d8" title="access_group_to_value" alt="" coords="205,112,384,141"/>
+<area shape="rect" id="node15" href="$lsm__mgmt_8cpp.html#a430c7c43e99c5e82a5f76b167d0cacac" title="lsm_fs_ss_restore" alt="" coords="224,165,365,195"/>
+<area shape="rect" id="node17" href="$lsm__mgmt_8cpp.html#a3b625a7b01f7fea5ed9378e188bb65c5" title="lsm_nfs_export_fs" alt="" coords="224,219,365,248"/>
+<area shape="rect" id="node19" href="$lsm__convert_8hpp.html#ae28859b404cc31d2882ac564081e4397" title="nfs_export_to_value" alt="" coords="216,272,373,301"/>
+<area shape="rect" id="node5" href="$lsm__convert_8hpp.html#aa0d21f839085334a58ad360778b834f2" title="access_group_list_to_value" alt="" coords="483,5,688,35"/>
+<area shape="rect" id="node7" href="$lsm__mgmt_8cpp.html#a268fbeefc3e56c0c0e8a5c0d873d2982" title="lsm_access_group_delete" alt="" coords="488,59,683,88"/>
+<area shape="rect" id="node9" href="$lsm__mgmt_8cpp.html#a769608888c0df609237b20bef2876792" title="lsm_volume_mask" alt="" coords="515,112,656,141"/>
+<area shape="rect" id="node11" href="$lsm__mgmt_8cpp.html#a994a16d4bee1aadcbf5037cf0446751f" title="lsm_volume_unmask" alt="" coords="507,165,664,195"/>
+<area shape="rect" id="node13" href="$lsm__mgmt_8cpp.html#a6c97f0873b651669d089730c29dbd5d4" title="lsm_volumes_accessible_by_access_group" alt="" coords="432,219,739,248"/>
+<area shape="rect" id="node21" href="$lsm__mgmt_8cpp.html#ae7b1279f13bff48ff0b1b04ab19b499f" title="lsm_nfs_export_delete" alt="" coords="497,272,673,301"/>
+</map>

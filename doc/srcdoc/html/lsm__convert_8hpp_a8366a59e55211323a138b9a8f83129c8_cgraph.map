@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_value.html#a3c222a89b5735e557bef01119328c50c" title="Value::asObject" alt="" coords="401,5,532,35"/>
+<area shape="rect" id="node5" href="$lsm__convert_8cpp.html#a6feccb6882b08bd4343d1bb53c3fe523" title="is_expected_object" alt="" coords="175,59,329,88"/>
+<area shape="rect" id="node10" href="$libstoragemgmt__plug__interface_8h.html#ae1abeb1f76607e20caa85c45f9ded685" title="lsm_pool_record_alloc" alt="" coords="169,112,335,141"/>
+<area shape="rect" id="node8" href="$class_value.html#af8d0ac77ee63564b3ae101a62e38922f" title="Value::valueType" alt="" coords="400,59,533,88"/>
+<area shape="rect" id="node12" href="$libstoragemgmt__pool_8h.html#a44d50c6c387a0269fc494e94a831064b" title="lsm_pool_record_free" alt="" coords="385,112,548,141"/>
+</map>

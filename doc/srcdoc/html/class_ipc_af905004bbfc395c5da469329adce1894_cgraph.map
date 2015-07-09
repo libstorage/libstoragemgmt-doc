@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_payload.html#a9bed7360b63ce87c61d0eb2f801a5d2d" title="Payload::deserialize" alt="" coords="165,5,320,35"/>
+<area shape="rect" id="node5" href="$class_transport.html#abc43414cf3a79f6e032de4f9fb565405" title="Transport::msg_recv" alt="" coords="164,59,321,88"/>
+</map>
