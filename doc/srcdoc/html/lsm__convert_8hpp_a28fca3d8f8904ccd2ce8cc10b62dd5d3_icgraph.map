@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$lsm__mgmt_8cpp.html#a8de789cdad64fd7145283c81930418eb" title="lsm_fs_clone" alt="" coords="171,5,277,35"/>
+<area shape="rect" id="node5" href="$lsm__mgmt_8cpp.html#abd018319aa89fb682277634a8bdbe61b" title="lsm_fs_file_clone" alt="" coords="157,59,291,88"/>
+<area shape="rect" id="node7" href="$lsm__mgmt_8cpp.html#af08021999ffadf37231b3c3afb498567" title="lsm_fs_resize" alt="" coords="168,112,280,141"/>
+<area shape="rect" id="node9" href="$lsm__mgmt_8cpp.html#a14c3f8291301745071e21ba6a171bf00" title="lsm_fs_ss_create" alt="" coords="155,165,293,195"/>
+<area shape="rect" id="node11" href="$lsm__mgmt_8cpp.html#a3146bfd034812a4edcfedc43eb6d8b05" title="lsm_fs_ss_delete" alt="" coords="156,219,292,248"/>
+<area shape="rect" id="node13" href="$lsm__mgmt_8cpp.html#a430c7c43e99c5e82a5f76b167d0cacac" title="lsm_fs_ss_restore" alt="" coords="153,272,295,301"/>
+</map>

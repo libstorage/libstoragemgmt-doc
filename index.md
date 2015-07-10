@@ -34,6 +34,7 @@ space utilization.
 ### API User Guides
 * [Python API User Guide][5]
 * [C API User Guide][6]
+* [Source code documentation][28]
 
 ### Developer Guide
 * [Library Developer Guide][7]
@@ -93,3 +94,4 @@ space utilization.
 [25]: doc/array_conf/Huawei_Conf.html
 [26]: doc/array_conf/LSI_Conf.html
 [27]: doc/array_conf/HPSA_Conf.html
+[28]: doc/srcdoc/html/index.html

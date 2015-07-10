@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$lsm__mgmt_8cpp.html#af4350a67209c865b888fe58121e356d6" title="lsm_access_groups_granted_to_volume" alt="" coords="189,5,477,35"/>
+<area shape="rect" id="node5" href="$lsm__mgmt_8cpp.html#a769608888c0df609237b20bef2876792" title="lsm_volume_mask" alt="" coords="263,59,404,88"/>
+<area shape="rect" id="node7" href="$lsm__mgmt_8cpp.html#adf7c883b3d78e4e18f824897f67e8192" title="lsm_volume_replicate" alt="" coords="249,112,417,141"/>
+<area shape="rect" id="node9" href="$lsm__mgmt_8cpp.html#af55a74fafde39b5a27db4a04d24b4c56" title="lsm_volume_replicate_range" alt="" coords="227,165,440,195"/>
+<area shape="rect" id="node11" href="$lsm__mgmt_8cpp.html#a0cb40bb591c6a1124d0557adf2d02ea2" title="lsm_volume_resize" alt="" coords="259,219,408,248"/>
+<area shape="rect" id="node13" href="$lsm__mgmt_8cpp.html#a994a16d4bee1aadcbf5037cf0446751f" title="lsm_volume_unmask" alt="" coords="255,272,412,301"/>
+</map>

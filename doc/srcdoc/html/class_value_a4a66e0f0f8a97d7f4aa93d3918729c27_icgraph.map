@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_value.html#a202daa504bf242421a221f3a4878aad5" title="getValue" alt="" coords="112,5,195,35"/>
+<area shape="rect" id="node5" href="$class_ipc.html#a1a016f22784bda788cd0b58cc7ae05bb" title="Ipc::responseRead" alt="" coords="243,5,389,35"/>
+<area shape="rect" id="node7" href="$class_ipc.html#a87b09d1b7ddd1e720fd9809b80bf01c5" title="Ipc::rpc" alt="" coords="439,5,511,35"/>
+</map>

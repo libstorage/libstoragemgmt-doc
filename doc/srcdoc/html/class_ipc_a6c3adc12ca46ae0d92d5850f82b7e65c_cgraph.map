@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_transport.html#a460fff05d5a5ab574040f020a7434cbc" title="Transport::msg_send" alt="" coords="164,5,324,35"/>
+<area shape="rect" id="node5" href="$class_payload.html#a650a5fe95715db9aca8368461edfe00e" title="Payload::serialize" alt="" coords="175,59,313,88"/>
+<area shape="rect" id="node7" href="$class_value.html#ac069a186c2a7e381c2b9480f12c8a7e2" title="Value::serialize" alt="" coords="373,59,496,88"/>
+</map>

@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_block_mgmt.html#a330b9eaefefa552f123b878da1c04c1d" title="BlockMgmt::createInit" alt="" coords="164,165,340,195"/>
+<area shape="rect" id="node7" href="$class_block_mgmt.html#a23bc9b08d1148bdf4b87e9ab24d329b3" title="BlockMgmt::createLun" alt="" coords="163,219,341,248"/>
+<area shape="rect" id="node10" href="$class_block_mgmt.html#ac6c597d3d5f65796902eadb9b03ae4f4" title="BlockMgmt::createSnapShot" alt="" coords="144,432,360,461"/>
+<area shape="rect" id="node13" href="$class_block_mgmt.html#a111a3a5e45b2e18a901da12a433cb784" title="BlockMgmt::deleteInit" alt="" coords="165,699,339,728"/>
+<area shape="rect" id="node16" href="$class_block_mgmt.html#a269d58e6c664d224b70bd4d128a7061f" title="BlockMgmt::deleteLun" alt="" coords="164,752,340,781"/>
+<area shape="rect" id="node19" href="$lsm__mgmt_8cpp.html#a509852520fe04b665a1694161e5ed149" title="lsm_fs_list" alt="" coords="207,272,297,301"/>
+<area shape="rect" id="node21" href="$lsm__mgmt_8cpp.html#a16ee3a7e5d55064909162e84f338bf55" title="lsm_fs_ss_list" alt="" coords="196,325,308,355"/>
+<area shape="rect" id="node23" href="$lsm__mgmt_8cpp.html#a079b3be05abc515419f9c4a2bad4b7ee" title="lsm_nfs_list" alt="" coords="203,379,301,408"/>
+<area shape="rect" id="node25" href="$lsm__mgmt_8cpp.html#ade69ae22b0faeaa2ef923d4d1b2f646c" title="lsm_pool_list" alt="" coords="199,805,305,835"/>
+<area shape="rect" id="node31" href="$lsm__mgmt_8cpp.html#a80283b7e95e108faef1187ca3e691521" title="lsm_system_list" alt="" coords="187,485,317,515"/>
+<area shape="rect" id="node33" href="$lsm__mgmt_8cpp.html#a96dafa5589e886f2a30c1d32aae89dfb" title="lsm_target_port_list" alt="" coords="173,539,331,568"/>
+<area shape="rect" id="node35" href="$lsm__mgmt_8cpp.html#a028b960c89e50b947372c07361016a5e" title="lsm_volume_raid_create_cap_get" alt="" coords="129,592,375,621"/>
+<area shape="rect" id="node37" href="$lsm__mgmt_8cpp.html#a6c97f0873b651669d089730c29dbd5d4" title="lsm_volumes_accessible_by_access_group" alt="" coords="99,645,405,675"/>
+<area shape="rect" id="node39" href="$class_block_mgmt.html#a16572b5a331567b4efb9bd9610e38568" title="BlockMgmt::mapLun" alt="" coords="172,5,332,35"/>
+<area shape="rect" id="node42" href="$class_block_mgmt.html#a348fe130d9aa2dba2f19e92dc2db343e" title="BlockMgmt::resizeLun" alt="" coords="165,59,339,88"/>
+<area shape="rect" id="node45" href="$class_block_mgmt.html#ac19a7451d6214e69abb1799877ed3905" title="BlockMgmt::unmapLun" alt="" coords="164,112,340,141"/>
+<area shape="rect" id="node48" href="$lsm__convert_8hpp.html#a7b9a6fa5db0d852bf3e32ec61d8f0b52" title="value_array_to_access_groups" alt="" coords="139,859,365,888"/>
+<area shape="rect" id="node50" href="$lsm__convert_8hpp.html#a00dd02db9f403da93a45fdcb70ce54e2" title="value_array_to_disks" alt="" coords="172,912,332,941"/>
+<area shape="rect" id="node52" href="$lsm__convert_8hpp.html#af80c3330b915debb975742e31a9609b7" title="value_array_to_volumes" alt="" coords="160,965,344,995"/>
+<area shape="rect" id="node5" href="$smiscli_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="468,192,521,221"/>
+<area shape="rect" id="node27" href="$client__example_8c.html#a27d81c25676b55b97b715ed78b2f2b12" title="list_pools" alt="" coords="453,805,536,835"/>
+<area shape="rect" id="node29" href="$client__example_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="585,805,639,835"/>
+</map>

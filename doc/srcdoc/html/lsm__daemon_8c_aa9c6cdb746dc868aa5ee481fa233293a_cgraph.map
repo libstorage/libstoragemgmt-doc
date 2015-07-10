@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$lsm__daemon_8c.html#a774b920e8b66c469d6308e0f51389876" title="child_cleanup" alt="" coords="140,5,249,35"/>
+<area shape="rect" id="node5" href="$lsm__daemon_8c.html#ac486c5c99a86bde979068caedf66464c" title="clean_up" alt="" coords="328,203,408,232"/>
+<area shape="rect" id="node17" href="$lsm__daemon_8c.html#a727c152ab0f936093194e2eba44a2a93" title="exec_plugin" alt="" coords="144,59,245,88"/>
+<area shape="rect" id="node22" href="$lsm__daemon_8c.html#ada1343ac996571586d4f6b0f9fa1230d" title="plugin_lookup" alt="" coords="140,241,249,271"/>
+<area shape="rect" id="node24" href="$lsm__daemon_8c.html#a8ea9d630e70d093cd88426ef03501931" title="process_plugins" alt="" coords="132,137,257,167"/>
+<area shape="rect" id="node7" href="$lsm__daemon_8c.html#a283c8f1df88535348607f11329944a22" title="clean_sockets" alt="" coords="492,203,609,232"/>
+<area shape="rect" id="node15" href="$lsm__daemon_8c.html#aaf85990d185defbfc6d5ee45ffd0ce8b" title="empty_plugin_list" alt="" coords="481,149,620,179"/>
+<area shape="rect" id="node9" href="$lsm__daemon_8c.html#a86b860d83634c46799c50bfc76aeaca0" title="delete_socket" alt="" coords="684,204,804,233"/>
+<area shape="rect" id="node11" href="$lsm__daemon_8c.html#a8f31d51d02e2d37b469a99bd245dedf6" title="process_directory" alt="" coords="673,151,815,180"/>
+<area shape="rect" id="node13" href="$lsm__daemon_8c.html#a76e2ccdbac6d9a39680e5549fb94196d" title="path_form" alt="" coords="864,256,955,285"/>
+<area shape="rect" id="node19" href="$lsm__daemon_8c.html#a7e202ad3059e1a167eaa84d853674b69" title="drop_privileges" alt="" coords="308,45,428,75"/>
+<area shape="rect" id="node28" href="$lsm__daemon_8c.html#a40b4daa15cac223d170014bc61c3ca03" title="flight_check" alt="" coords="316,149,420,179"/>
+<area shape="rect" id="node31" href="$lsm__daemon_8c.html#a50bc606fe8e8132d445d892db0861afa" title="process_plugin" alt="" coords="309,256,427,285"/>
+<area shape="rect" id="node33" href="$lsm__daemon_8c.html#a70cbe5fcf5a588738f15c4b478f978a0" title="chk_pconf_root_pri" alt="" coords="477,309,624,339"/>
+<area shape="rect" id="node38" href="$lsm__daemon_8c.html#a3f9e9163012e98e932c11e65dc550553" title="setup_socket" alt="" coords="493,256,608,285"/>
+<area shape="rect" id="node35" href="$lsm__daemon_8c.html#a312d8fd508310ec0e44e84ebbb9e1461" title="parse_conf_bool" alt="" coords="680,308,808,337"/>
+</map>

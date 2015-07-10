@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$lsm__mgmt_8cpp.html#a2fe3ffb3710db0a8c948e83ccb2c0df3" title="lsm_pool_member_info" alt="" coords="207,32,380,61"/>
+<area shape="rect" id="node5" href="$lsm__datatypes_8cpp.html#a164f8ce32cc3825732bfd89d5c5a1d20" title="lsm_string_list_copy" alt="" coords="216,85,371,115"/>
+<area shape="rect" id="node9" href="$lsm__convert_8hpp.html#afaa3a1e996cb29ea6df4ea421bbd8546" title="string_list_to_value" alt="" coords="217,165,369,195"/>
+<area shape="rect" id="node7" href="$lsm__plugin__ipc_8cpp.html#a54bb886c4d73edf989140098357ea566" title="lsm_data_type_copy" alt="" coords="439,59,599,88"/>
+<area shape="rect" id="node11" href="$lsm__convert_8hpp.html#a382977f90fc7d38775d1db78123c22d8" title="access_group_to_value" alt="" coords="429,112,608,141"/>
+<area shape="rect" id="node23" href="$lsm__mgmt_8cpp.html#a430c7c43e99c5e82a5f76b167d0cacac" title="lsm_fs_ss_restore" alt="" coords="448,165,589,195"/>
+<area shape="rect" id="node25" href="$lsm__mgmt_8cpp.html#a3b625a7b01f7fea5ed9378e188bb65c5" title="lsm_nfs_export_fs" alt="" coords="448,219,589,248"/>
+<area shape="rect" id="node27" href="$lsm__convert_8hpp.html#ae28859b404cc31d2882ac564081e4397" title="nfs_export_to_value" alt="" coords="440,272,597,301"/>
+<area shape="rect" id="node13" href="$lsm__convert_8hpp.html#aa0d21f839085334a58ad360778b834f2" title="access_group_list_to_value" alt="" coords="707,5,912,35"/>
+<area shape="rect" id="node15" href="$lsm__mgmt_8cpp.html#a268fbeefc3e56c0c0e8a5c0d873d2982" title="lsm_access_group_delete" alt="" coords="712,59,907,88"/>
+<area shape="rect" id="node17" href="$lsm__mgmt_8cpp.html#a769608888c0df609237b20bef2876792" title="lsm_volume_mask" alt="" coords="739,112,880,141"/>
+<area shape="rect" id="node19" href="$lsm__mgmt_8cpp.html#a994a16d4bee1aadcbf5037cf0446751f" title="lsm_volume_unmask" alt="" coords="731,165,888,195"/>
+<area shape="rect" id="node21" href="$lsm__mgmt_8cpp.html#a6c97f0873b651669d089730c29dbd5d4" title="lsm_volumes_accessible_by_access_group" alt="" coords="656,219,963,248"/>
+<area shape="rect" id="node29" href="$lsm__mgmt_8cpp.html#ae7b1279f13bff48ff0b1b04ab19b499f" title="lsm_nfs_export_delete" alt="" coords="721,272,897,301"/>
+</map>

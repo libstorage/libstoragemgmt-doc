@@ -1,0 +1,29 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$client__example_8c.html#a02a815e32ecbf068b8dc5ecefd89e296" title="error" alt="" coords="405,59,459,88"/>
+<area shape="rect" id="node9" href="$client__example_8c.html#a27d81c25676b55b97b715ed78b2f2b12" title="list_pools" alt="" coords="157,272,240,301"/>
+<area shape="rect" id="node12" href="$libstoragemgmt__error_8h.html#ab3d1944b0f1e122eafc56f9fbe689f41" title="lsm_error_last_get" alt="" coords="359,429,505,459"/>
+<area shape="rect" id="node43" href="$libstoragemgmt_8h.html#a432fb468e7a6ba9749f6beb60134b41f" title="lsm_connect_close" alt="" coords="124,7,273,36"/>
+<area shape="rect" id="node48" href="$libstoragemgmt_8h.html#ae2459b4bc940c47d0046d82be210065f" title="lsm_connect_password" alt="" coords="111,112,287,141"/>
+<area shape="rect" id="node5" href="$libstoragemgmt__error_8h.html#a3d6c3302c51402dd037e182fe4c35500" title="lsm_error_free" alt="" coords="621,5,739,35"/>
+<area shape="rect" id="node7" href="$libstoragemgmt__error_8h.html#a8d0b060c3829de2704844f4e2e91f171" title="lsm_error_message_get" alt="" coords="589,59,771,88"/>
+<area shape="rect" id="node14" href="$libstoragemgmt__pool_8h.html#a6b5088bf80af9b7957506b9828b83a86" title="lsm_pool_free_space_get" alt="" coords="336,272,528,301"/>
+<area shape="rect" id="node16" href="$libstoragemgmt_8h.html#aa61c2c3acf8bcb9e10b611e679000407" title="lsm_pool_list" alt="" coords="379,376,485,405"/>
+<area shape="rect" id="node22" href="$libstoragemgmt__pool_8h.html#a62fb44ace12507bcff9786d4bf94ea6d" title="lsm_pool_record_array_free" alt="" coords="577,272,783,301"/>
+<area shape="rect" id="node40" href="$libstoragemgmt__pool_8h.html#aa26e74bde47e5d10fddaaf095f460b70" title="lsm_pool_name_get" alt="" coords="355,219,509,248"/>
+<area shape="rect" id="node18" href="$class_value.html#aa71bbb95edbd20e16fa01374cccb6268" title="Value::asArray" alt="" coords="621,536,739,565"/>
+<area shape="rect" id="node20" href="$libstoragemgmt__plug__interface_8h.html#a6885151254294dcf5c405620ae767845" title="lsm_pool_record_array_alloc" alt="" coords="577,325,783,355"/>
+<area shape="rect" id="node24" href="$namespacelsmcli_1_1data__display.html#aeadc08e78abd46b3b8c29953b699f91c" title="Users are reporting errors with broken pipe when piping output to another program..." alt="" coords="588,379,772,408"/>
+<area shape="rect" id="node26" href="$lsm__convert_8cpp.html#a23825482fa20087834eed9d5e737fd2c" title="value_to_pool" alt="" coords="623,432,737,461"/>
+<area shape="rect" id="node33" href="$class_value.html#af8d0ac77ee63564b3ae101a62e38922f" title="Value::valueType" alt="" coords="1064,472,1197,501"/>
+<area shape="rect" id="node28" href="$class_value.html#a3c222a89b5735e557bef01119328c50c" title="Value::asObject" alt="" coords="1065,395,1196,424"/>
+<area shape="rect" id="node30" href="$lsm__convert_8cpp.html#a6feccb6882b08bd4343d1bb53c3fe523" title="is_expected_object" alt="" coords="839,432,993,461"/>
+<area shape="rect" id="node35" href="$libstoragemgmt__plug__interface_8h.html#ae1abeb1f76607e20caa85c45f9ded685" title="lsm_pool_record_alloc" alt="" coords="833,328,999,357"/>
+<area shape="rect" id="node37" href="$libstoragemgmt__pool_8h.html#a44d50c6c387a0269fc494e94a831064b" title="lsm_pool_record_free" alt="" coords="1049,328,1212,357"/>
+<area shape="rect" id="node45" href="$lsm__datatypes_8cpp.html#a963ad6a93ef7c088a12a73df702d90ba" title="connection_free" alt="" coords="367,5,497,35"/>
+<area shape="rect" id="node51" href="$lsm__datatypes_8cpp.html#a569fa39ff356013a91e292fc8beb0b26" title="connection_get" alt="" coords="368,165,496,195"/>
+<area shape="rect" id="node53" href="$lsm__datatypes_8cpp.html#a33b20fbfeaaf1e9d23c35f31a1088a0c" title="driver_load" alt="" coords="385,112,479,141"/>
+<area shape="rect" id="node55" href="$libstoragemgmt__plug__interface_8h.html#ab6e52a12c1e0e624aa659c6905433be9" title="lsm_error_create" alt="" coords="612,165,748,195"/>
+<area shape="rect" id="node57" href="$class_transport.html#af86634fccfe75857837c864cfa38987b" title="Transport::socket_get" alt="" coords="595,219,765,248"/>
+<area shape="rect" id="node61" href="$lsm__datatypes_8cpp.html#ab513bbe85fbce1ba026ac1d105a40394" title="uds_path" alt="" coords="639,112,721,141"/>
+<area shape="rect" id="node59" href="$class_transport.html#a5473d8320e5f61ac1ce834594d251ee9" title="Transport::close" alt="" coords="852,219,980,248"/>
+</map>

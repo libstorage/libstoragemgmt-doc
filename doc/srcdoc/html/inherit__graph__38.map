@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classlsm_1_1__iplugin_1_1_i_plugin.html" title="IPlugin" alt="" coords="7,32,71,61"/>
+<area shape="rect" id="node3" href="$classlsm_1_1__iplugin_1_1_i_network_attached_storage.html" title="INetworkAttachedStorage" alt="" coords="120,5,320,35"/>
+<area shape="rect" id="node7" href="$classlsm_1_1__iplugin_1_1_i_storage_area_network.html" title="IStorageAreaNetwork" alt="" coords="137,59,303,88"/>
+<area shape="rect" id="node5" href="$classlsm_1_1__iplugin_1_1_i_nfs.html" title="INfs" alt="" coords="368,5,416,35"/>
+</map>

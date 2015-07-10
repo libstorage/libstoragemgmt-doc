@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$lsm__daemon_8c.html#a70cbe5fcf5a588738f15c4b478f978a0" title="chk_pconf_root_pri" alt="" coords="144,120,291,149"/>
+<area shape="rect" id="node13" href="$lsm__daemon_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1049,17,1103,47"/>
+<area shape="rect" id="node16" href="$lsm__daemon_8c.html#a8f31d51d02e2d37b469a99bd245dedf6" title="process_directory" alt="" coords="147,67,288,96"/>
+<area shape="rect" id="node26" href="$lsm__daemon_8c.html#a3f9e9163012e98e932c11e65dc550553" title="setup_socket" alt="" coords="160,173,275,203"/>
+<area shape="rect" id="node5" href="$lsm__daemon_8c.html#a50bc606fe8e8132d445d892db0861afa" title="process_plugin" alt="" coords="340,171,457,200"/>
+<area shape="rect" id="node7" href="$lsm__daemon_8c.html#a8ea9d630e70d093cd88426ef03501931" title="process_plugins" alt="" coords="639,144,764,173"/>
+<area shape="rect" id="node9" href="$lsm__daemon_8c.html#aa9c6cdb746dc868aa5ee481fa233293a" title="_serving" alt="" coords="813,93,891,123"/>
+<area shape="rect" id="node11" href="$lsm__daemon_8c.html#a7e642531c0d2856d2505fe78f403128b" title="serve" alt="" coords="940,43,999,72"/>
+<area shape="rect" id="node18" href="$lsm__daemon_8c.html#a283c8f1df88535348607f11329944a22" title="clean_sockets" alt="" coords="340,67,457,96"/>
+<area shape="rect" id="node20" href="$lsm__daemon_8c.html#ac486c5c99a86bde979068caedf66464c" title="clean_up" alt="" coords="508,67,588,96"/>
+</map>
