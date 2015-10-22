@@ -62,9 +62,9 @@ space utilization.
 ## Assistance
 * IRC at #libStorageMgmt http://freenode.net
 * [Developer Mailing list][13]:
-  libstoragemgmt-users@lists.fedorahosted.org
-* [User Mailing List][18]:
   libstoragemgmt-devel@lists.fedorahosted.org
+* [User Mailing List][18]:
+  libstoragemgmt-users@lists.fedorahosted.org
 * [Bug report: Github Issue Page][14]
 
 [1]: http://www.opensource.org/licenses/lgpl-license.html
