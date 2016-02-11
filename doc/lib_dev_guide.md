@@ -49,7 +49,7 @@ $ sudo yum install tar make gcc gcc-c++ libtool autoconf automake \
        yajl-devel pywbem libxml2-devel  check-devel glib2-devel \
        m2crypto libmicrohttpd-devel json-c-devel \
        openssl-devel perl-Config-IniFiles time PyYAML libconfig-devel \
-       chrpath
+       chrpath valgrind
 ```
 
 #### 1.2.2. OpenSuSE
@@ -59,7 +59,7 @@ $ sudo zypper in gcc tar make gcc gcc-c++ libtool autoconf automake \
     libyajl-devel python-pywbem libxml2-devel check-devel \
     glib2-devel python-M2Crypto openssl-devel python-PyYAML \
     libjson-devel procps libmicrohttpd-devel libconfig-devel \
-    chrpath
+    chrpath valgrind
 ```
 
 #### 1.2.3. Debian
@@ -69,7 +69,7 @@ $ sudo apt-get install gcc tar make g++ libtool autoconf automake \
     libyajl-dev python-pywbem libxml2-dev check \
     libglib2.0-dev python-m2crypto libssl-dev python-yaml \
     libjson-c-dev procps libmicrohttpd-dev libconfig-dev \
-    chrpath
+    chrpath valgrind
 ```
 
 ### 1.3. Compile
