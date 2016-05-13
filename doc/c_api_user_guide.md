@@ -1,21 +1,8 @@
 ---
 title: C API User Guide
 ---
-
-* [1. Connection -- `lsm_connect`][01]
-* [2. Capability -- `lsm_storage_capabilities`][02]
-* [3. System -- `lsm_system`][03]
-* [4. Pool -- `lsm_pool`][04]
-* [5. Disk -- `lsm_pool`][05]
-* [6. Volume -- `lsm_volume`][06]
-* [7. Access Group -- `lsm_access_group`][07]
-* [8. Volume Mask][08]
-* [9. Volume Replication][09]
-* [10. iSCSI Authentication][10]
-* [Appendix.A. Asynchronous Job Control][aa]
-* [Appendix.B. Bit Map][ab]
-* [Appendix.C. Misc Functions and Structures][ac]
-* [Appendix.D. Errors -- `lsm_error`][ad]
+* TOC
+{:toc}
 
 This document provides detail information about how to use
 LibStorageMgmt C API for storage system management and assumes you have
@@ -122,8 +109,6 @@ To use LibStorageMgmt in your project:
     ```
 
 ## 1. Connection -- `lsm_connect`
-* [1.1. Make Connection -- `lsm_connect_password`][0101]
-* [1.2. Close Connection -- `lsm_connect_close`][0102]
 
 The `lsm_connect` struct is an opaque data structure which holds
 internal data, there is no public member in it.
@@ -214,8 +199,6 @@ Sample:
 ## 3. System -- `lsm_system`
 
 ## 4. Pool -- `lsm_pool`
-
-* [4.4. Query Pool Membership -- `lsm_pool_member_info()`][0404]
 
 Pool is the only place a volume or a file system could created from.
 
@@ -349,12 +332,6 @@ Sample:
 ## 5. Disk -- `lsm_pool`
 
 ## 6. Volume -- `lsm_volume`
-
-* [6.9. Query Volume RAID Information
-  -- `lsm_volume_raid_info()`][0609]
-* [6.10. Check RAID Volume Creation Capability --
-  `lsm_volume_raid_create_cap_get())`][0610]
-* [6.11. Create RAID volume -- `lsm_volume_raid_create()`][0611]
 
 Volume is well-known as LUN by many storage array vendors. It is a
 virtual storage space which host operation system treated as a or many
@@ -723,14 +700,6 @@ Sample:
 ## Appendix.C. Misc Functions and Structures
 
 ### Appendix.C.1 String Array -- `lsm_string_list`
-* [Appendix.C.1.1 `lsm_string_list_alloc()`][ac0101]
-* [Appendix.C.1.2 `lsm_string_list_free()`][ac0102]
-* [Appendix.C.1.3 `lsm_string_list_copy()`][ac0103]
-* [Appendix.C.1.4 `lsm_string_list_elem_set()`][ac0104]
-* [Appendix.C.1.5 `lsm_string_list_elem_get()`][ac0105]
-* [Appendix.C.1.6 `lsm_string_list_size()`][ac0106]
-* [Appendix.C.1.7 `lsm_string_list_append()`][ac0107]
-* [Appendix.C.1.8 `lsm_string_list_delete()`][ac0108]
 
 #### Appendix.C.1.1 `lsm_string_list_alloc()`
 #### Appendix.C.1.2 `lsm_string_list_free()`
@@ -742,33 +711,3 @@ Sample:
 #### Appendix.C.1.8 `lsm_string_list_delete()`
 
 ## Appendix.D. Errors -- `lsm_error`
-
-[01]: #1-connection-lsm_connect
-[0101]: #1-1-make-connection-lsm_connect_password
-[0102]: #1-2-close-connection-lsm_connect_close
-[02]: #2-capability-lsm_storage_capabilities
-[03]: #3-system-lsm_system
-[04]: #4-pool-lsm_pool
-[0404]: #4-4-query-pool-membership-lsm_pool_member_info
-[05]: #5-disk-lsm_pool
-[06]: #6-volume-lsm_volume
-[0609]: #6-9-query-volume-raid-information-lsm_volume_raid_info
-[0610]: #6-10-check-raid-volume-creation-capability-lsm_volume_raid_create_cap_get
-[0611]: #6-11-create-raid-volume-lsm_volume_raid_create
-[07]: #7-access-group-lsm_access_group
-[08]: #8-volume-mask
-[09]: #9-volume-replication
-[10]: #10-iscsi-authentication
-[aa]: #appendix-a-asynchronous-job-control
-[ab]: #appendix-b-bit-map
-[ac]: #appendix-c-misc-functions-and-structures
-[ac01]: #appendix-c-1-string-array-lsm_string_list
-[ac0101]: #appendix-c-1-1-lsm_string_list_alloc
-[ac0102]: #appendix-c-1-2-lsm_string_list_free
-[ac0103]: #appendix-c-1-3-lsm_string_list_copy
-[ac0104]: #appendix-c-1-4-lsm_string_list_elem_set
-[ac0105]: #appendix-c-1-5-lsm_string_list_elem_get
-[ac0106]: #appendix-c-1-6-lsm_string_list_size
-[ac0107]: #appendix-c-1-7-lsm_string_list_append
-[ac0108]: #appendix-c-1-8-lsm_string_list_delete
-[ad]: #appendix-d-errors-lsm_error

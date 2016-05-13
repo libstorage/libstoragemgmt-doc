@@ -1,6 +1,7 @@
 ---
 title: EMC CX/VNX/VMAX Configuration Guide
 ---
+
 The libStorageMgmt can manage EMC CX/VNX/VMAX via SMI-S plugin
 (`libstoragemgmt-smis-plugin` package).
 

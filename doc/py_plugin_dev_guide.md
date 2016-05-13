@@ -3,7 +3,7 @@
 
 # LibstorageMgmt Plugin Developer Guide
 
-This document is assuming you already read the [v1_user_guide].
+This document is assuming you already read the [user_guide][1].
 
 The LSM plugin codes are located
 
@@ -100,4 +100,4 @@ Plugin test is located at "libstoragemgmt-code/test/plugin_test.py".
 
 TODO: explain how to use it.
 
-
+[1]: user_guide.html

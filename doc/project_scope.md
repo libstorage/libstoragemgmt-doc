@@ -5,7 +5,11 @@ What problem we are trying to solve
 ---
 
 Today system administrators utilizing open source solutions have no way
-to programmatically manage their storage hardware in a vendor neutral way.  This project's main goal is to provide this needed functionality.  To facilitate management automation, ease of use and take advantage of storage vendor supported features which improve storage performance and space utilization.
+to programmatically manage their storage hardware in a vendor neutral
+way.  This project's main goal is to provide this needed functionality.
+To facilitate management automation, ease of use and take advantage of
+storage vendor supported features which improve storage performance and
+space utilization.
 
 Proposed solution
 ---

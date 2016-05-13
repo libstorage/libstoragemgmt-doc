@@ -23,6 +23,9 @@ space utilization.
     * Grant and remove access to volumes, access groups, or initiators.
     * Replicate volumes with snapshots, clones, and copies.
     * Create and delete access groups and edit members of a group.
+    * List Linux local SCSI/ATA/NVMe disks.
+    * Control IDENT/FAULT LED of local disk via SES(SCSI Enclosure
+      Service).
 
 ## Documentation
 

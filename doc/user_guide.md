@@ -1,15 +1,9 @@
 ---
 title: User Guide
 ---
-* [1. Installation][01]
-* [2. Warnings][02]
-* [3. Terminology][03]
-* [4. How to use][04]
-    * [4.1. Command Line Tool Example][0401]
-    * [4.2. Python Code Example][0402]
-    * [4.3. C code Example][0403]
-* [5. Assistance or feedback][05]
-* [6. Contribute][06]
+
+* TOC
+{:toc}
 
 LibStorageMgmt is a vendor neutral library that provides an API and
 tools for managing SAN arrays and local hardware RAID adapters.
@@ -452,13 +446,3 @@ or [Python Plugin developer Guide][14].
 [15]: install.html
 [16]: array_conf/HPSA_Conf.html
 [17]: array_conf/Huawei_Conf.html
-
-[01]: #1-installation
-[02]: #2-warnings
-[03]: #3-terminology
-[04]: #4-how-to-use
-[0401]: #4-1-command-line-tool-example
-[0402]: #4-2-python-code-example
-[0403]: #4-3-c-code-example
-[05]: #5-assistance-or-feedback
-[06]: #6-contribute

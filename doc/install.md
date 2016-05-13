@@ -2,12 +2,8 @@
 title: Installation Guide
 ---
 
-* [1. Install][01]
-    * [1.1. RPM Package of Released Version][0101]
-    * [1.2. Compile from Source][0102]
-    * [1.3. Weekly Snapshot Build][0103]
-* [2. Prepare and Start daemon][02]
-* [3. Test installation][03]
+* TOC
+{:toc}
 
 ## 1. Install
 
@@ -31,6 +27,8 @@ The library is packaged into separated RPMs:
 * `libstoragemgmt` -- Daemon, CLI util and basic files.
 
 * `libstoragemgmt-python` -- Python client libraries.
+
+* `libstoragemgmt-python-clibs` -- Python client C extension.
 
 * `libstoragemgmt-*-plugin` -- Plugins.
 
@@ -59,6 +57,8 @@ For OpenSuSE 13.1/13.2/Tumbleweed, the packages have been renamed to:
 
 * `python-libstoragemgmt` -- Python client libraries.
 
+* `python-libstoragemgmt-clibs` -- Python client libraries C extention.
+
 * `libstoragemgmt-*-plugin` -- Plugins.
 
 * `libstoragemgmt-devel` -- Development files for C language.
@@ -78,59 +78,34 @@ For OpenSuSE 13.1/13.2/Tumbleweed, the packages have been renamed to:
 
 2. Install required packages.
 
-    RHEL/Centos and Fedora
-
     ```bash
-    $ sudo yum install \
-        tar make gcc gcc-c++ libtool autoconf automake \
-        yajl-devel pywbem libxml2-devel  check-devel glib2-devel \
-        m2crypto openssl-devel libconfig-devel
+    # RHEL/Centos and Fedora
+    $ sudo yum install `cat rh_rpm_dependency`
 
-    # For RHEL/Centos 6 with EPEL
-    $ sudo yum install python-argparse -y
+    # SuSE and OpenSuSE
+    $ sudo zypper in `cat suse_rpm_dependency`
 
-    # If you want the REST API daemon
-    $ sudo yum install libmicrohttpd-devel json-c-devel
+    # Debian/Ubuntu
+
+    $ sudo apt-get install `cat deb_dependency`
     ```
 
-    SuSE and OpenSuSE
+3. Compile and install:
 
-    ```bash
-    $ sudo zypper in gcc tar make gcc gcc-c++ libtool autoconf \
-        automake libyajl-devel python-pywbem libxml2-devel check-devel \
-        glib2-devel python-M2Crypto openssl-devel libcofig-devel
+```bash
+# autogen.sh required when using git source tree
+$ ./autogen.sh
+$ ./configure --prefix=/usr
 
-    # If you want the REST API daemon
-    $ sudo zypper in libjson-devel procps libmicrohttpd-devel
-    ```
+# If you define other prefix, '--plugindir <you_prefix>' of lsmd
+# should be use.
+# Extra options:
+#       --without-megaraid      # skip megaraid plugin.
+#       --without-hpsa          # skip hpsa plugin.
 
-    Debian/Ubuntu
-
-    ```bash
-    $ sudo apt-get install gcc tar make g++ libtool autoconf automake \
-        libyajl-dev python-pywbem libxml2-dev check \
-        libglib2.0-dev python-m2crypto libssl-dev libconfig-dev
-
-    # If you want the REST API daemon
-    $ sudo apt-get install libmicrohttpd-dev libjson-c-dev procps
-    ```
-
-4. Compile and install:
-
-    ```bash
-    # autogen.sh required when using git source tree
-    $ ./autogen.sh
-    $ ./configure --prefix=/usr
-    # If you define other prefix, '--plugindir <you_prefix>' of lsmd
-    # should be use.
-    # Extra options:
-    #       --without-rest-api      # skip REST API daemon, experimental
-    #       --without-megaraid      # skip megaraid plugin.
-    #       --without-hpsa          # skip hpsa plugin.
-
-    $ make -j5
-    $ sudo make install
-    ```
+$ make -j
+$ sudo make install
+```
 
 ### 1.3. Weekly Snapshot Build
 
@@ -186,13 +161,6 @@ $ sudo systemctl start libstoragemgmt.service
 ```bash
 $ lsmcli -u 'sim://' list --type systems
 ```
-[01]: #1-install
-[0101]: #1-1-rpm-package-of-released-version
-[0102]: #1-2-compile-from-source
-[0103]: #1-3-weekly-snapshot-build
-[02]: #2-prepare-and-start-daemon
-[03]: #3-test-installation
-
 [1]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-fedora/
 [2]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-rhel6/CentOS_6/home:cathay4t:libstoragemgmt-git-rhel6.repo
 [3]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-rhel7/CentOS_7/home:cathay4t:libstoragemgmt-git-rhel7.repo

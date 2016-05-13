@@ -2,13 +2,6 @@
 title: Known issus
 ---
 
-## MegaRAID Plugin
-* VPD83 of volume is not supported yet.
-
-    Due to limitation of storcli, we cannot provide VPD83 information of
-    any volume.
-
-
 ## Targetd Plugin
 * Only support iSCSI actions.
 

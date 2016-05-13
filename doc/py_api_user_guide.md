@@ -1,24 +1,7 @@
 ---
-title: Python API User Guide
 ---
-
-* [1. Connection -- `lsm.Client`][01]
-* [2. Capability -- `lsm.Capabilities`][02]
-* [3. System -- `lsm.System`][03]
-* [4. Pool -- `lsm.Pool`][04]
-* [5. Disk -- `lsm.Disk`][05]
-* [6. Volume -- `lsm.Volume`][06]
-* [7. Access Group -- `lsm.AccessGroup`][07]
-* [8. Volume Mask][08]
-* [9. Volume Replication][09]
-* [10. iSCSI Authentication][10]
-* [11. File System -- `lsm.FileSystem`][11]
-* [12. NFS Export -- `lsm.NfsExport`][12]
-* [13. Target Port -- `lsm.TargetPort`][13]
-* [Appendix.A Asynchronous Job Control][aa]
-* [Appendix.B Bit Map][ab]
-* [Appendix.C lsm Static Methods][ac]
-* [Appendix.D Exceptions -- `lsm.LsmError`][ad]
+* TOC
+{:toc}
 
 This document provides detail about how to use LibStorageMgmt python API
 for storage system management.
@@ -87,8 +70,6 @@ definition.  All exceptions and their explanation are listed at
 [Appendix.D. LsmError][ad].
 
 ## 1. Connection -- `lsm.Client`
-* [1.1. Make Connection -- `lsm.Client()`][0101]
-* [1.2. Close Connection -- `lsm.Client.close()`][0102]
 
 ### 1.1. Make Connection -- `lsm.Client()`
 
@@ -150,11 +131,6 @@ Sample:
 ```
 
 ## 2. Capability -- `lsm.Capabilities`
-
-* [2.1. Query Capabilities -- `lsm.Client.capabilities()`][0201]
-* [2.2. Check Capability -- `lsm.Capabilities.supported()`][0202]
-* [2.3. List Supported Capabilities
-  --`lsm.Capabilities.get_supported()`][0203]
 
 LibStorageMgmt is using lsm.Capabilities class to indicate the ability
 of current connection. On every connection, these methods are always
@@ -283,8 +259,6 @@ Sample:
 ```
 
 ## 3. System -- `lsm.System`
-* [3.1. System Properties][0301]
-* [3.2. Query systems -- `lsm.Client.systems()`][0302]
 
 Represents a Storage Array or direct attached storage RAID. Examples
 include:
@@ -385,10 +359,6 @@ Sample:
 ```
 
 ## 4. Pool -- `lsm.Pool`
-* [4.1. Pool Properties][0401]
-* [4.2. Pool Extra Constants][0402]
-* [4.3. Query Pools -- `lsm.Client.pools()`][0403]
-* [4.4. Query Pool Membership -- `lsm.Client.pool_member_info()`][0404]
 
 Pool is the only place a volume or a file system could created from.
 
@@ -703,9 +673,6 @@ Capability:
 ```
 
 ## 5. Disk -- `lsm.Disk`
-* [5.1. Disk Properties][0501]
-* [5.2. Disk Extra Constants][0502]
-* [5.3. Query Disks -- `lsm.Client.disks()`][0503]
 
 Disk is used to assemble storage pool or as a spare disk.
 
@@ -874,19 +841,6 @@ Capability:
 ```
 
 ## 6. Volume -- `lsm.Volume`
-* [6.1. Volume Properties][0601]
-* [6.2. Volume Extra Constants][0602]
-* [6.3. Query Volume -- `lsm.Client.volumes()`][0603]
-* [6.4. Create Volume -- `lsm.Client.volume_create()`][0604]
-* [6.5. Delete Volume -- `lsm.Client.volume_delete()`][0605]
-* [6.6. Resize Volume -- `lsm.Client.volume_resize()`][0606]
-* [6.7. Enable Volume -- `lsm.Client.volume_enable()`][0607]
-* [6.8. Disable Volume -- `lsm.Client.volume_disable()`][0608]
-* [6.9. Query Volume RAID Information
-  -- `lsm.Client.volume_raid_info()`][0609]
-* [6.10. Check RAID Volume Creation Capability --
-  `lsm.Client.volume_raid_create_cap_get()`][0610]
-* [6.11. Create RAID volume -- `lsm.Client.volume_raid_create()`][0611]
 
 Volume is well-known as LUN by many storage array vendors. It is a
 virtual storage space which host operation system treated as a or many
@@ -1520,15 +1474,6 @@ Capability:
 ```
 
 ## 7. Access Group -- `lsm.AccessGroup`
-* [7.1. Access Group Properties][0701]
-* [7.2. Access Group Extra Constants][0702]
-* [7.3. Query Access Group -- `lsm.Client.access_groups()`][0703]
-* [7.4. Create Access Group -- `lsm.Client.access_group_create()`][0704]
-* [7.5. Delete Access Group -- `lsm.Client.access_group_delete()`][0705]
-* [7.6. Add Access Group Member
-  -- `lsm.Client.access_group_initiator_add()`][0706]
-* [7.7. Delete Access Group Member
-  -- `lsm.Client.access_group_initiator_delete()`][0707]
 
 Access group define a group of initiators to access volume. For example,
 most FC/FCoE HBA cards has two ports, each of two ports has one(or more with
@@ -1876,12 +1821,6 @@ Capability:
 ```
 
 ## 8. Volume Mask
-* [8.1. Query Masked Access Group
-  -- `lsm.Client.access_groups_granted_to_volume()`][0801]
-* [8.2. Query Masked Volume
-  -- `lsm.Client.access_groups_granted_to_volume()`][0802]
-* [8.3. Volume Mask -- `lsm.Client.volume_mask()`][0803]
-* [8.4. Volume Unmask -- `lsm.Client.volume_unmask()`][0804]
 
 Volume mask is also known as "LUN Masking".
 
@@ -2173,10 +2112,6 @@ TODO
 
 ## 13. Target Port -- `lsm.TargetPort`
 
-* [13.1. Target Port Properties][1301]
-* [13.2. Target Port Extra Constants][1302]
-* [13.3. Query Target Ports -- `lsm.Client.target_ports()`][1303]
-
 Target port are the front-end port of storage system which storage
 user/client connect to and get storage service from.
 
@@ -2282,9 +2217,304 @@ Capability:
         space.
 ```
 
+## 14. Local Disk -- `lsm.LocalDisk`
+
+This class requires no `lsm.Client` connection, but work against OS
+local attached disks. Currently, only SATA/IDE/SCSI/SAS disks are
+supported.
+
+### 14.1. Query local disks -- `lsm.LocalDisk.list()`
+
+```rst
+Version:
+    1.3
+Usage:
+    Query local disk paths. Currently, only SCSI, ATA and NVMe disks
+    will be included.
+Parameters:
+    N/A
+Returns:
+    [disk_path]
+        List of string. Empty list if not disk found.
+        The disk_path string format is '/dev/sd[a-z]+' for SCSI and
+        ATA disks, '/dev/nvme[0-9]+n[0-9]+' for NVMe disks.
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+        ErrorNumber.INVALID_ARGUMENT
+            Invalid disk_path. Should be like '/dev/sdb'.
+        ErrorNumber.NOT_FOUND_DISK
+            Provided disk is not found.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+
+### 14.2. Query disk SCSI VPD83 id -- `lsm.LocalDisk.vpd83_get()`
+
+```rst
+lsm.LocalDisk.vpd83_get(disk_path)
+
+Version:
+    1.3
+Usage:
+    Query the SCSI VPD83 NAA ID of given disk path.
+Parameters:
+    disk_path (string)
+        The disk path, example '/dev/sdb'.
+Returns:
+    vpd83 (string)
+        String of VPD83 NAA ID. Empty string if not supported.
+        The string format regex is:
+            (?:^6[0-9a-f]{31})|(?:^[235][0-9a-f]{15})$
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+        ErrorNumber.INVALID_ARGUMENT
+            Invalid disk_path. Should be like '/dev/sdb'
+        ErrorNumber.NOT_FOUND_DISK
+            Provided disk is not found.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+
+### 14.3. Search disk by SCSI VPD83 id -- `lsm.LocalDisk.vpd83_search()`
+
+```rst
+lsm.LocalDisk.vpd83_search(vpd83)
+
+Version:
+    1.3
+Usage:
+    Find out the disk paths for given SCSI VPD page 0x83 NAA type
+    ID. Considering multipath, certain VPD83 might have multiple disks
+    associated.
+Parameters:
+    vpd83 (string)
+        The VPD83 NAA type ID.
+Returns:
+    [disk_path]
+        List of string. Empty list if not disk found.
+        The disk_path string format is '/dev/sd[a-z]+' for SCSI and
+        ATA disks.
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+### 14.4. Query disk rotation speed -- `lsm.LocalDisk.rpm_get()`
+
+```rst
+Version:
+    1.3
+Usage:
+    Query the disk rotation speed - revolutions per minute (RPM) of
+    given disk path.
+    Require permission to open disk path as read-only and non-block,
+    normally it's root or disk group privilege.
+Parameters:
+    disk_path (string)
+        The disk path, example '/dev/sdb', '/dev/nvme0n1'.
+Returns:
+    rpm (integer)
+        Disk rotation speed:
+            -1 (lsm.Disk.RPM_UNKNOWN):
+                Unknown RPM
+             0 (lsm.Disk.RPM_NON_ROTATING_MEDIUM):
+                Non-rotating medium (e.g., SSD)
+             1 (lsm.Disk.RPM_ROTATING_UNKNOWN_SPEED):
+                Rotational disk with unknown speed
+            >1:
+                Normal rotational disk (e.g., HDD)
+
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+        ErrorNumber.INVALID_ARGUMENT
+            Invalid disk_path. Should be like '/dev/sdb'.
+        ErrorNumber.NOT_FOUND_DISK
+            Provided disk is not found.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+
+### 14.5. Query disk link type -- `lsm.LocalDisk.link_type_get()`
+
+```rst
+Version:
+    1.3
+Usage:
+    Query the disk link type of given disk path.
+    For SATA disks connected to SAS enclosure, will return
+    lsm.SCSI.LINK_TYPE_ATA.
+    Require permission to open disk_path(root user or disk group).
+Parameters:
+    disk_path (string)
+        The disk path, example '/dev/sdb'.
+Returns:
+    link_type (integer)
+        Link type, possible values are:
+            lsm.Disk.LINK_TYPE_UNKNOWN
+                Failed to detect link type
+            lsm.Disk.LINK_TYPE_FC
+                Fibre Channel
+            lsm.Disk.LINK_TYPE_SSA
+                Serial Storage Architecture, Old IBM tech.
+            lsm.Disk.LINK_TYPE_SBP
+                Serial Bus Protocol, used by IEEE 1394.
+            lsm.Disk.LINK_TYPE_SRP
+                SCSI RDMA Protocol
+            lsm.Disk.LINK_TYPE_ISCSI
+                Internet Small Computer System Interface
+            lsm.Disk.LINK_TYPE_SAS
+                Serial Attached SCSI
+            lsm.Disk.LINK_TYPE_ADT
+                Automation/Drive Interface Transport
+                Protocol, often used by Tape.
+            lsm.Disk.LINK_TYPE_ATA
+                PATA/IDE or SATA.
+            lsm.Disk.LINK_TYPE_USB
+                USB disk.
+            lsm.Disk.LINK_TYPE_SOP
+                SCSI over PCI-E
+            lsm.Disk.LINK_TYPE_PCIE
+                PCI-E, e.g. NVMe
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+        ErrorNumber.INVALID_ARGUMENT
+            Invalid disk_path. Should be like '/dev/sdb'.
+        ErrorNumber.NOT_FOUND_DISK
+            Provided disk is not found.
+        ErrorNumber.NO_SUPPORT
+            Provided disk does not support SCSI SPC.
+        ErrorNumber.PERMISSION_DENIED
+            Insufficient permission to access provided disk path.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+
+### 14.6. Turn on identification LED -- `lsm.LocalDisk.ident_led_on()`
+
+```rst
+Version:
+    1.3
+Usage:
+    Turn on the identification LED for specified disk.
+Parameters:
+    disk_path (string)
+        The disk path, example '/dev/sdb'.
+Returns:
+    None
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+        ErrorNumber.NOT_FOUND_DISK
+            Provided disk is not found.
+        ErrorNumber.NO_SUPPORT
+            Provided disk does not support SCSI SPC.
+        ErrorNumber.PERMISSION_DENIED
+            No sufficient permission to access provided disk path.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+
+### 14.7. Turn off identification LED -- `lsm.LocalDisk.ident_led_off()`
+
+```rst
+Version:
+    1.3
+Usage:
+    Turn off the identification LED for specified disk.
+Parameters:
+    disk_path (string)
+        The disk path, example '/dev/sdb'.
+Returns:
+    None
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+        ErrorNumber.NOT_FOUND_DISK
+            Provided disk is not found.
+        ErrorNumber.NO_SUPPORT
+            Provided disk does not support SCSI SPC.
+        ErrorNumber.PERMISSION_DENIED
+            No sufficient permission to access provided disk path.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+
+### 14.8. Turn on fault LED -- `lsm.LocalDisk.ident_led_on()`
+
+```rst
+Version:
+    1.3
+Usage:
+    Turn on the fault LED for specified disk.
+Parameters:
+    disk_path (string)
+        The disk path, example '/dev/sdb'.
+Returns:
+    None
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+        ErrorNumber.NOT_FOUND_DISK
+            Provided disk is not found.
+        ErrorNumber.NO_SUPPORT
+            Provided disk does not support SCSI SPC.
+        ErrorNumber.PERMISSION_DENIED
+            No sufficient permission to access provided disk path.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+
+### 14.9. Turn off fault LED -- `lsm.LocalDisk.ident_led_off()`
+
+```rst
+Version:
+    1.3
+Usage:
+    Turn off the fault LED for specified disk.
+Parameters:
+    disk_path (string)
+        The disk path, example '/dev/sdb'.
+Returns:
+    None
+SpecialExceptions:
+    LsmError
+        ErrorNumber.LIB_BUG
+            Internal bug.
+        ErrorNumber.INVALID_ARGUMENT
+            Invalid disk_path. Should be like '/dev/sdb'.
+        ErrorNumber.NOT_FOUND_DISK
+            Provided disk is not found.
+        ErrorNumber.NO_SUPPORT
+            Provided disk does not support SCSI SPC.
+        ErrorNumber.PERMISSION_DENIED
+            No sufficient permission to access provided disk path.
+Capability:
+    N/A
+        No capability required as this is a library level method.
+```
+
 ## Appendix.A Asynchronous Job Control
-* [Appendix.A.1 Query a Job -- `lsm.Client.job_status()`][aa01]
-* [Appendix.A.2 Sample Code to Wait a Job][aa02]
 
 For time consuming methods like volume_create(), volume_delete() and etc,
 some plugin support asynchronous job control which return a job ID for
@@ -2381,8 +2611,6 @@ Sample codes:
 ```
 
 ## Appendix.C lsm Static Methods
-* [Appendix.C.1 `lsm.size_bytes_2_size_human()`][ac01]
-* [Appendix.C.2 `lsm.size_human_2_size_bytes()`][ac02]
 
 ### Appendix.C.1 `lsm.size_bytes_2_size_human()`
 
@@ -2645,66 +2873,3 @@ Sample:
     and etc.
 
 [1]: user_guide.html
-[01]: #1-connection-lsm-client
-[0101]: #1-1-make-connection-lsm-client
-[0102]: #1-2-close-connection-lsm-client-close
-[02]: #2-capability-lsm-capabilities
-[0201]: #2-1-query-capabilities-lsm-client-capabilities
-[0202]: #2-2-check-capability-lsm-capabilities-supported
-[0203]: #2-3-list-supported-capabilities-lsm-capabilities-get_supported
-[03]: #3-system-lsm-system
-[0301]: #3-1-system-properties
-[0302]: #3-2-query-systems-lsm-client-systems
-[04]: #4-pool-lsm-pool
-[0401]: #4-1-pool-properties
-[0402]: #4-2-pool-extra-constants
-[0403]: #4-3-query-pools-lsm-client-pools
-[0404]: #4-4-query-pool-membership-lsm-client-pool_member_info
-[05]: #5-disk-lsm-disk
-[0501]: #5-1-disk-properties
-[0502]: #5-2-disk-extra-constants
-[0503]: #5-3-query-disks-lsm-client-disks
-[06]: #6-volume-lsm-volume
-[0601]: #6-1-volume-properties
-[0602]: #6-2-volume-extra-constants
-[0603]: #6-3-query-volume-lsm-client-volumes
-[0604]: #6-4-create-volume-lsm-client-volume_create
-[0605]: #6-5-delete-volume-lsm-client-volume_delete
-[0606]: #6-6-resize-volume-lsm-client-volume_resize
-[0607]: #6-7-enable-volume-lsm-client-volume_enable
-[0608]: #6-8-disable-volume-lsm-client-volume_disable
-[0609]: #6-9-query-volume-raid-information-lsm-client-volume_raid_info
-[0610]: #6-10-query-raid-volume-creation-capability-lsm-client-volume_raid_create_cap_get
-[0611]: #6-11-create-raid-volume-lsm-client-volume_raid_create
-[07]: #7-access-group-lsm-accessgroup
-[0701]: #7-1-access-group-properties
-[0702]: #7-2-access-group-extra-constants
-[0703]: #7-3-query-access-group-lsm-client-access_groups
-[0704]: #7-4-create-access-group-lsm-client-access_group_create
-[0705]: #7-5-delete-access-group-lsm-client-access_group_delete
-[0706]: #7-6-add-access-group-member-lsm-client-access_group_initiator_add
-[0707]: #7-7-delete-access-group-member-lsm-client-access_group_initiator_delete
-[08]: #8-volume-mask
-[0801]: #8-1-query-masked-access-group-lsm-client-access_groups_granted_to_volume
-[0802]: #8-2-query-masked-volume-lsm-client-volumes_accessible_by_access_group
-[0803]: #8-3-volume-mask-lsm-client-volume_mask
-[0804]: #8-4-volume-unmask-lsm-client-volume_unmask
-[09]: #9-volume-replication
-[09]: #9-1-create-replicate-target-volume-lsm-client-volume_replicate
-[09]: #9-2-query-volume-child-dependency-lsm-client-volume_child_dependency
-[09]: #9-3-query-volume-child-dependency-lsm-client-volume_child_dependency_rm
-[10]: #10-iscsi-authentication
-[11]: #11-file-system-lsm-filesystem
-[12]: #12-nfs-export-lsm-nfsexport
-[13]: #13-target-port-lsm-targetport
-[1301]: #13-1-target-port-properties
-[1302]: #13-2-target-port-extra-constants
-[1303]: #13-3-query-target-ports-lsm-client-target_ports
-[aa]: #appendix-a-asynchronous-job-control
-[aa01]: #appendix-a-1-query-a-job-lsm-client-job_status
-[aa02]: #appendix-a-2-sample-code-to-wait-a-job
-[ab]: #appendix-b-bit-map
-[ac]: #appendix-c-lsm-static-methods
-[ac01]: #appendix-c-1-lsm-size_bytes_2_size_human
-[ac02]: #appendix-c-2-lsm-size_human_2_size_bytes
-[ad]: #appendix-d-exceptions-lsm-lsmerror
