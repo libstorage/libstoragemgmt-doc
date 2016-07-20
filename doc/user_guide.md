@@ -114,9 +114,9 @@ encouraged if possible.
     Represents a Storage Array or direct attached storage RAID. Examples
     include:
 <ul>
-    <li> A hardware RAID card, LSI MegaRAID
-    <li> A storage area network (SAN), EMC VNX, NetApp Filer
-    <li> A software solution running on commodity hardware, targetd, Nexenta
+    <li> A hardware RAID card, LSI MegaRAID</li>
+    <li> A storage area network (SAN), EMC VNX, NetApp Filer</li>
+    <li> A software solution running on commodity hardware, targetd, Nexenta</li>
 </ul>
 
 </td>
