@@ -114,9 +114,9 @@ encouraged if possible.
     Represents a Storage Array or direct attached storage RAID. Examples
     include:
 <ul>
-    <li> A hardware RAID card, LSI MegaRAID
-    <li> A storage area network (SAN), EMC VNX, NetApp Filer
-    <li> A software solution running on commodity hardware, targetd, Nexenta
+    <li> A hardware RAID card, LSI MegaRAID</li>
+    <li> A storage area network (SAN), EMC VNX, NetApp Filer</li>
+    <li> A software solution running on commodity hardware, targetd, Nexenta</li>
 </ul>
 
 </td>
@@ -129,7 +129,7 @@ encouraged if possible.
     A group of storage space, typically File Systems or Volumes can be created
     from a Pool.
 </td>
-<td>StoragePool(SNIA Terminology)</td>
+<td>StoragePool (SNIA Terminology)</td>
 </tr>
 
 <tr>
@@ -137,10 +137,10 @@ encouraged if possible.
 <td>
     Storage Area Network (SAN) Storage Arrays can expose a Volume to the
     Host Bus Adapter (HBA) over different transports (FC/iSCSI/FCoE/etc.)
-    The host OS treats it as block devices(one volume can be exposed as many
+    The host OS treats it as block devices (one volume can be exposed as many
     disks if multipath[2] is enabled).
 </td>
-<td>LUN(Logical Unit Number), StorageVolume(SNIA Terminology), Virtual
+<td>LUN (Logical Unit Number), StorageVolume (SNIA Terminology), Virtual
     disk
 </td>
 </tr>
@@ -162,15 +162,15 @@ encouraged if possible.
     Physical disk holding the data.  Pools typically consist of one or more
     disks.
 </td>
-<td>DiskDrive(SNIA Terminology)</td>
+<td>DiskDrive (SNIA Terminology)</td>
 </tr>
 
 <tr>
 <td>Initiator</td>
 <td>
     In fibre channel (FC) or fibre channel over ethernet (FCoE), Initiator is
-    WWPN(World Wide Port Name)[3] or/and WWNN(World Wide Node Name).
-    In iSCSI, Initiator is the IQN(iSCSI Qualified Name)[4].
+    WWPN (World Wide Port Name)[3] or/and WWNN (World Wide Node Name).
+    In iSCSI, Initiator is the IQN (iSCSI Qualified Name)[4].
     In NFS or CIFS, Initiator is the host name or IP address of host.
 </td>
 <td>None</td>
@@ -183,7 +183,7 @@ encouraged if possible.
     more Storage volumes. This ensures that only storage volumes are
     accessible by the specified initiator(s).
 </td>
-<td>Initiator group(igroup), Host Group</td>
+<td>Initiator group (igroup), Host Group</td>
 </tr>
 
 <tr>
