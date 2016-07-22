@@ -67,28 +67,28 @@ For OpenSuSE 13.1/13.2/Tumbleweed, the packages have been renamed to:
 
 1. Download source or clone from git repo.
 
-    ```bash
-    # Source tarball from
-    #
-    # https://github.com/libstorage/libstoragemgmt/releases/latest
-    #
-    # Or Use git:
-    git clone https://github.com/libstorage/libstoragemgmt.git
-    ```
+```bash
+# Source tarball from
+#
+# https://github.com/libstorage/libstoragemgmt/releases/latest
+#
+# Or Use git:
+git clone https://github.com/libstorage/libstoragemgmt.git
+```
 
 2. Install required packages.
 
-    ```bash
-    # RHEL/Centos and Fedora
-    sudo yum install `cat rh_rpm_dependency`
+```bash
+# RHEL/Centos and Fedora
+sudo yum install `cat rh_rpm_dependency`
 
-    # SuSE and OpenSuSE
-    sudo zypper in `cat suse_rpm_dependency`
+# SuSE and OpenSuSE
+sudo zypper in `cat suse_rpm_dependency`
 
-    # Debian/Ubuntu
+# Debian/Ubuntu
 
-    sudo apt-get install `cat deb_dependency`
-    ```
+sudo apt-get install `cat deb_dependency`
+```
 
 3. Compile and install:
 
