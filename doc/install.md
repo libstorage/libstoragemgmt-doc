@@ -15,11 +15,11 @@ For RHEL/Centos 6 (in EPEL), RHEL/Centos 7 and Fedora you can install
 LSM via these commands:
 
 ```bash
-$ sudo yum search libstoragemgmt
-$ sudo yum install libstoragemgmt
+sudo yum search libstoragemgmt
+sudo yum install libstoragemgmt
 # Install plugins.
-$ sudo yum install libstoragemgmt-\*-plugin
-$ sudo systemctl start libstoragemgmt.service
+sudo yum install libstoragemgmt-\*-plugin
+sudo systemctl start libstoragemgmt.service
 ```
 
 The library is packaged into separated RPMs:
@@ -42,10 +42,10 @@ is required for pywbem package:
 
 ```bash
 # RHEL 7 Server
-$ sudo subscription-manager repos --enable \
+sudo subscription-manager repos --enable \
     rhel-7-server-optional-rpms
 # RHEL 7 Workstation
-$ sudo subscription-manager repos --enable \
+sudo subscription-manager repos --enable \
     rhel-7-workstation-optional-rpms
 ```
 
@@ -73,29 +73,29 @@ For OpenSuSE 13.1/13.2/Tumbleweed, the packages have been renamed to:
     # https://github.com/libstorage/libstoragemgmt/releases/latest
     #
     # Or Use git:
-    $ git clone https://github.com/libstorage/libstoragemgmt.git
+    git clone https://github.com/libstorage/libstoragemgmt.git
     ```
 
 2. Install required packages.
 
     ```bash
     # RHEL/Centos and Fedora
-    $ sudo yum install `cat rh_rpm_dependency`
+    sudo yum install `cat rh_rpm_dependency`
 
     # SuSE and OpenSuSE
-    $ sudo zypper in `cat suse_rpm_dependency`
+    sudo zypper in `cat suse_rpm_dependency`
 
     # Debian/Ubuntu
 
-    $ sudo apt-get install `cat deb_dependency`
+    sudo apt-get install `cat deb_dependency`
     ```
 
 3. Compile and install:
 
 ```bash
 # autogen.sh required when using git source tree
-$ ./autogen.sh
-$ ./configure --prefix=/usr
+./autogen.sh
+./configure --prefix=/usr
 
 # If you define other prefix, '--plugindir <you_prefix>' of lsmd
 # should be use.
@@ -103,8 +103,8 @@ $ ./configure --prefix=/usr
 #       --without-megaraid      # skip megaraid plugin.
 #       --without-hpsa          # skip hpsa plugin.
 
-$ make -j
-$ sudo make install
+make -j
+sudo make install
 ```
 
 ### 1.3. Weekly Snapshot Build
@@ -121,17 +121,17 @@ $ sudo make install
 
 * Install libstoragemgmt(RHEL/Centos and Fedora):
 
-    ```bash
-    $ yum search libstoragemgmt
-    $ sudo yum install libstoragemgmt-<desired package>
-    ```
+```bash
+yum search libstoragemgmt
+sudo yum install libstoragemgmt-<desired package>
+```
 
 * Install libstoragemgmt(OpenSuSE):
 
-    ```bash
-    $ zypper se libstoragemgmt
-    $ sudo zypper in libstoragemgmt-<desired package>
-    ```
+```bash
+zypper se libstoragemgmt
+sudo zypper in libstoragemgmt-<desired package>
+```
 
 ## 2. Prepare and Start daemon
 
@@ -150,16 +150,16 @@ sudo chown libstoragemgmt:libstoragemgmt /var/run/lsm/ipc
 
 # OS without systemd, like RHEL 6, Debian 7,
 # or Ubuntu 12.04/14.04 LTS
-$ sudo /usr/bin/lsmd -d -v
+sudo /usr/bin/lsmd -d -v
 
 # OS with Systemd
-$ sudo systemctl start libstoragemgmt.service
+sudo systemctl start libstoragemgmt.service
 ```
 
 ## 3. Test installation
 
 ```bash
-$ lsmcli -u 'sim://' list --type systems
+lsmcli -u 'sim://' list --type systems
 ```
 [1]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-fedora/
 [2]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-rhel6/CentOS_6/home:cathay4t:libstoragemgmt-git-rhel6.repo
