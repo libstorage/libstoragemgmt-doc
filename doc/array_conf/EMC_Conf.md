@@ -57,30 +57,32 @@ Please contact EMC Support instead if are working on production system.
 
 * Execute these commands to install required rpms (if on x86_64)
 
-    ```bash
-    yum install glibc.i686 libgcc.i686
-    ```
+```bash
+sudo yum install glibc.i686 libgcc.i686
+```
 
 * Install SMI-S provider (Follow EMC documents if found):
 
-    ```bash
-    ./se76012_install.sh -install -smi
-    ```
+```bash
+sudo ./se76012_install.sh -install -smi -64bit
+```
 
 * This command will start EMC SMI-S provider if not started:
 
-    ```bash
-    /opt/emc/ECIM/ECOM/bin/ECOM -d
-    ```
+```bash
+sudo /opt/emc/ECIM/ECOM/bin/ECOM -d
+```
 
 * Add Storage Array login information to EMC SMI-S provider:
 
-    ```bash
-    /opt/emc/ECIM/ECOM/bin/TestSmiProvider addsys
-    # Follow the instruction of 'addsys'.
-    # You need to input both SPA and SPB's management IP address.
-    # During our test, 'addsys' will fail if only one IP defined.
-    ```
+```bash
+/opt/emc/ECIM/ECOM/bin/TestSmiProvider
+# After press alot of enter, type "addsys"
+# Follow the instruction of 'addsys'.
+# You need to input both SPA and SPB's management IP address
+# During our test, 'addsys' will fail if only one IP defined.
+# During out test, 'addsys' will fail if using DNS hostname.
+```
 
 * If you want to remove any array from EMC SMI-S provider,
   but have no idea about the path requested by `rmsys`.
@@ -92,7 +94,7 @@ Please contact EMC Support instead if are working on production system.
 
 Above steps were tested on:
 
-* `RHEL 6.4 x86_64`
-* SMI-S Provider 4.6.0.3 for SMI-S 1.5 for Linux
-    * `se76012-Linux-i386-SMI.tar.gz`
-    * `symcli-smi64-7.6.0.1707-12.3.x86_64`
+* `RHEL 7.2 x86_64`
+* SMI-S Provider 4.6.2.9 for SMI-S 1.5 for Linux
+    * `se76267-Linux-i386-SMI.tar.gz`
+    * `symcli-smi64-7.6.2.1808-67.3.x86_64`
