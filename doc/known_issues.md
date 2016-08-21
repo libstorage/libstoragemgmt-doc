@@ -1,5 +1,5 @@
 ---
-title: Known issus
+title: Known issues
 ---
 
 ## Targetd Plugin
