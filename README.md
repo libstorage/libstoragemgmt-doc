@@ -24,7 +24,7 @@ autocmd Filetype markdown set tw=72
 " If in vim 7.3+, set color column at 72.
 if version >=703
     autocmd Filetype markdown set cc=72
-fi
+endif
 ```
 
 Please refer to [Github Help:Using Jekyll with Pages][2] for how
