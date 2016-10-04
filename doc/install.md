@@ -57,7 +57,7 @@ For OpenSuSE 13.1/13.2/Tumbleweed, the packages have been renamed to:
 
 * `python-libstoragemgmt` -- Python client libraries.
 
-* `python-libstoragemgmt-clibs` -- Python client libraries C extention.
+* `python-libstoragemgmt-clibs` -- Python client libraries C extension.
 
 * `libstoragemgmt-*-plugin` -- Plugins.
 
