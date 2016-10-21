@@ -1,6 +1,5 @@
-This is just document of libstoragemgmt which code is located at:
-
-    https://github.com/libstorage/libstoragemgmt/
+This is just document of libstoragemgmt which code is located at
+[https://github.com/libstorage/libstoragemgmt](https://github.com/libstorage/libstoragemgmt).
 
 All the markdown files are written in [GitHub Flavored Markdown][1]
 syntax.
