@@ -15,7 +15,6 @@ For RHEL/Centos 6 (in EPEL), RHEL/Centos 7 and Fedora you can install
 LSM via these commands:
 
 ```bash
-sudo yum search libstoragemgmt
 sudo yum install libstoragemgmt
 # Install plugins.
 sudo yum install libstoragemgmt-\*-plugin
