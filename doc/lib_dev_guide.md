@@ -305,7 +305,7 @@ Designed to test all plugin via Python API.
 
 ## 7. How to contribute.
 
-1. Discuss in maillist if it's a new feature or big changes.
+1. If it's a new feature or big changes, discuss on the mailing list.
 2. Work on patches
 3. git format patch
 4. Make sure your patch meet these requirements:
