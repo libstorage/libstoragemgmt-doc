@@ -85,29 +85,46 @@ $ lsmenv sim plugin_test
 
 ```bash
 # Assuming libstoragemgmt is in "$HOME"
+# Notes: 
+# Make sure it compiled cleanly before proceeding
+# Make sure you don't already have libstoragememgt installed
+$ cd $HOME/libstoragemgmt
 
 # Create socket folder:
-$ mkdir /tmp/lsm/ipc/
+$ mkdir -p /tmp/lsm/ipc/
 
 # Link lsmcli and plugin into lsm python binding folder
-$ ln -sv ../../plugin $HOME/libstoragemgmt/python_binding/lsm/
+$ ln -s `pwd`/tools/lsmcli `pwd`/python_binding/lsm
+$ ln -s `pwd`/plugin `pwd`/python_binding/lsm/plugin
 
 # Link Python C extention
-$ link -sv .libs/_clib.so $HOME/libstoragemgmt/python_binding/lsm/
+$ ln -s `pwd`/python_binding/lsm/.libs/*.so `pwd`/python_binding/lsm/.
+
+# Verify that the symlinks are good by
+$ ls -la $HOME/libstoragemgmt/python_binding/lsm | grep "\->"
+lrwxrwxrwx. 1 tasleson tasleson    63 Feb 13 12:36 _clib.so -> /home/tasleson/libstoragemgmt/python_binding/lsm/.libs/_clib.so
+lrwxrwxrwx. 1 tasleson tasleson    42 Feb 13 12:51 lsmcli -> /home/tasleson/libstoragemgmt/tools/lsmcli
+lrwxrwxrwx. 1 tasleson tasleson    36 Feb 13 12:36 plugin -> /home/tasleson/libstoragemgmt/plugin
 
 # Export LSM required environment variables
 $ export LSM_UDS_PATH="/tmp/lsm/ipc/"
 $ export PYTHONPATH=\
-    "$PYTHONPATH:$HOME/libstoragemgmt/python_binding/lsm"
+    $PYTHONPATH:$HOME/libstoragemgmt/python_binding/
 $ export LD_LIBRARY_PATH=\
-    "$LD_LIBRARY_PATH:$HOME/libstoragemgmt/c_binding"
+    $LD_LIBRARY_PATH:$HOME/libstoragemgmt/c_binding
 
 # Run lsmd daemon
 # You can skip the sudo if you don't intent to run plugin in root mode.
+# Messages are logged to syslog
 $ sudo $HOME/libstoragemgmt/daemon/lsmd \
     --confdir $HOME/libstoragemgmt/config \
     --plugindir $HOME/libstoragemgmt/plugin \
-    -v -d
+    --socketdir /tmp/lsm/ipc \
+    -v
+    
+# Make sure lsmd daemon is running
+$  ps -e | grep lsm[d]
+6677 ?   00:00:00 lsmd
 
 # Run lsmcli
 $ $HOME/libstoragemgmt/tools/lsmcli/lsmcli ls -u sim://
