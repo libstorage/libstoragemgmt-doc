@@ -81,19 +81,19 @@ $ lsmenv sim lsmcli list --type pools
 $ lsmenv sim plugin_test
 ```
 
-#### 1.4.2. Manual way
-* Make sure it compiled cleanly before proceeding
-* Make sure you don't already have libstoragememgt installed
-* If you need to run a plugin with 'root' privledges then you
-  should setup the env variables and run lsmd and lsmcli as root.
-  If you setup the environment then run sudo the env variables are
-  not preserved and things will fail.
+#### 1.4.2. Manual way 
 
 ```bash
 # Assuming libstoragemgmt is in "$HOME"
 # Notes: 
-# 
-# 
+#   Make sure it compiled cleanly before proceeding
+#   Make sure you don't already have libstoragememgt installed
+#     If you need to run a plugin with 'root' privledges then you
+#     should setup the env variables and run lsmd and lsmcli as root.
+#     If you setup the environment then run sudo the env variables are
+#     not preserved and things will fail.
+#
+
 $ cd $HOME/libstoragemgmt
 
 # Create socket folder:
