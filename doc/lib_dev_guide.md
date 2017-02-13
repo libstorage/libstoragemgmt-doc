@@ -82,12 +82,18 @@ $ lsmenv sim plugin_test
 ```
 
 #### 1.4.2. Manual way
+* Make sure it compiled cleanly before proceeding
+* Make sure you don't already have libstoragememgt installed
+* If you need to run a plugin with 'root' privledges then you
+  should setup the env variables and run lsmd and lsmcli as root.
+  If you setup the environment then run sudo the env variables are
+  not preserved and things will fail.
 
 ```bash
 # Assuming libstoragemgmt is in "$HOME"
 # Notes: 
-# Make sure it compiled cleanly before proceeding
-# Make sure you don't already have libstoragememgt installed
+# 
+# 
 $ cd $HOME/libstoragemgmt
 
 # Create socket folder:
@@ -114,9 +120,8 @@ $ export LD_LIBRARY_PATH=\
     $LD_LIBRARY_PATH:$HOME/libstoragemgmt/c_binding
 
 # Run lsmd daemon
-# You can skip the sudo if you don't intent to run plugin in root mode.
 # Messages are logged to syslog
-$ sudo $HOME/libstoragemgmt/daemon/lsmd \
+$ $HOME/libstoragemgmt/daemon/lsmd \
     --confdir $HOME/libstoragemgmt/config \
     --plugindir $HOME/libstoragemgmt/plugin \
     --socketdir /tmp/lsm/ipc \
