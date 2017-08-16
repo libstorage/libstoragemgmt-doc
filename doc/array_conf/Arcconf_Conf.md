@@ -34,10 +34,11 @@ system.
 * Execute this commands to install arcconf executables:
 
 ```
-./StorMan-2.05-22885.x86_64.bin
+tar xf msm_linux_x64_v2_04_22665.tgz
+sudo yum install -y ./cmdline/rpm/Arcconf-2.04-22665.x86_64.rpm
 ```
 
 Above steps were tested on:
 
-* `RHEL 7.3 x86_64`
-* `StorMan-2.05-22885.x86_64.bin`
+* `RHEL 7.4 x86_64`
+* `msm_linux_x64_v2_04_22665.tgz`
