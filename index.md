@@ -55,6 +55,7 @@ space utilization.
 * [Huawei HVS][25]
 * [LSI MegaRAID][26]
 * [HP SmartArray][27]
+* [Microsemi SAS Controllers][29]
 
 ### Media & Papers
 * [Slides from Linux Plumbers Conference 2012][9]
@@ -98,3 +99,4 @@ space utilization.
 [26]: doc/array_conf/LSI_Conf.html
 [27]: doc/array_conf/HPSA_Conf.html
 [28]: doc/srcdoc/html/index.html
+[29]: doc/array_conf/Arcconf_Conf.html
