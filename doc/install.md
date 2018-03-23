@@ -102,37 +102,13 @@ sudo apt-get install `cat deb_dependency`
 #       --without-megaraid      # skip megaraid plugin.
 #       --without-hpsa          # skip hpsa plugin.
 
-make -j
+make -j5
 sudo make install
 ```
 
-### 1.3. Weekly Snapshot Build
-
-* Install weekly snapshot rpm repo:
-
-    * [Fedora][1]
-
-    * [RHEL/Centos 6][2]
-
-    * [RHEL/Centos 7][3]
-
-    * [OpenSuSE][4]
-
-* Install libstoragemgmt(RHEL/Centos and Fedora):
-
-```bash
-yum search libstoragemgmt
-sudo yum install libstoragemgmt-<desired package>
-```
-
-* Install libstoragemgmt(OpenSuSE):
-
-```bash
-zypper se libstoragemgmt
-sudo zypper in libstoragemgmt-<desired package>
-```
-
 ## 2. Prepare and Start daemon
+
+__ONLY REQUIRED IF YOU ARE BUILD FROM SOURCE__
 
 ```bash
 # Create libstoragemgmt user and group
@@ -160,7 +136,3 @@ sudo systemctl start libstoragemgmt.service
 ```bash
 lsmcli -u 'sim://' list --type systems
 ```
-[1]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-fedora/
-[2]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-rhel6/CentOS_6/home:cathay4t:libstoragemgmt-git-rhel6.repo
-[3]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-rhel7/CentOS_7/home:cathay4t:libstoragemgmt-git-rhel7.repo
-[4]: http://download.opensuse.org/repositories/home:/cathay4t:/libstoragemgmt-git-suse/
