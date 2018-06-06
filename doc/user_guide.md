@@ -36,7 +36,9 @@ plugin+ssl://<username>@host:<port>/?<query string parameters>
 # All plugins except 'simc://' and 'sim://' support ssl encryption.
 ```
 
-Current plugins and supported storage products:
+## Supported hardware
+
+Current plugins and supported storage products
 
   Plugin  |  URI Syntax  | Support Products
 --------- | ------------ | ----------------
