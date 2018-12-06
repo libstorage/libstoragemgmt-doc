@@ -3,7 +3,7 @@ title: Linux Targetd Configuration Guide
 ---
 Linux targetd is used to control the Linux LVM volume and LIO iscsi
 target.  Please follow documents in
-[https://github.com/agrover/targetd](https://github.com/libstorage/libstoragemgmt/)
+[https://github.com/open-iscsi/targetd](https://github.com/open-iscsi/targetd)
 to install and setup on the system that will be providing the storage.
 If you are using Fedora 19+ or RHEL7+ rpm packages of targetd are
 included in the standard repositories.
