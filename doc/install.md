@@ -78,8 +78,11 @@ git clone https://github.com/libstorage/libstoragemgmt.git
 2. Install required packages.
 
 ```bash
-# RHEL/Centos and Fedora
-sudo yum install `cat rh_rpm_dependency`
+# RHEL/Centos and Fedora <= 28
+sudo [yum|dnf] install `cat rh_py2_rpm_dependency`
+
+Fedora >= 29
+sudo dnf install `cat rh_py3_rpm_dependency`
 
 # SuSE and OpenSuSE
 sudo zypper in `cat suse_rpm_dependency`
@@ -95,6 +98,8 @@ sudo apt-get install `cat deb_dependency`
 # autogen.sh required when using git source tree
 ./autogen.sh
 ./configure --prefix=/usr
+
+# Fedora >= 29 will require '--with-python3'
 
 # If you define other prefix, '--plugindir <you_prefix>' of lsmd
 # should be use.
