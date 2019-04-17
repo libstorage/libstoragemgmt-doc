@@ -99,6 +99,8 @@ sudo apt-get install `cat deb_dependency`
 ./autogen.sh
 ./configure --prefix=/usr
 
+# Fedora >= 29 will require '--with-python3'
+
 # If you define other prefix, '--plugindir <you_prefix>' of lsmd
 # should be use.
 # Extra options:
