@@ -78,8 +78,11 @@ git clone https://github.com/libstorage/libstoragemgmt.git
 2. Install required packages.
 
 ```bash
-# RHEL/Centos and Fedora
-sudo yum install `cat rh_rpm_dependency`
+# RHEL/Centos and Fedora <= 28
+sudo [yum|dnf] install `cat rh_py2_rpm_dependency`
+
+Fedora >= 29
+sudo dnf install `cat rh_py3_rpm_dependency`
 
 # SuSE and OpenSuSE
 sudo zypper in `cat suse_rpm_dependency`
