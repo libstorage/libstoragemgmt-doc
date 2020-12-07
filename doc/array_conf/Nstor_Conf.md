@@ -1,6 +1,10 @@
 ---
 title: Nexenta Storage Configuration Guide
 ---
+
+### Note: This plugin has been removed.  NexentaStor 5.x uses a new API.
+
+
 The libStorageMgmt can manage NexentaStor 4.x/3.x via Nstor plugin
 (`libstoragemgmt-nstor-plugin` package).
 

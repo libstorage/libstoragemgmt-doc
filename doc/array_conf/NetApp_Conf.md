@@ -2,19 +2,24 @@
 title: NetApp ONTAP Configuration Guide
 ---
 
-LibstoragMgmt could use these two ways to management NetApp ONTAP
+LibstoragMgmt previously offered two ways to management NetApp ONTAP
 storage array:
 
-* [Native NetApp ONTAP SDK. **(Preferred)**][1]
+* [Native NetApp ONTAP SDK. **(Removed)**][1]
 * [NetApp SMI-S provider][2]
 
-### Native NetApp ONTAP SDK. **(Preferred)**
+The NetApp 7-mode plugin has been removed as NetApp has deprecated the API. We
+are leaving the documentation here in case you are using a very old array and
+are using older versions of libStorageMgmt.  The SMI-S method offers a
+subset of the functionality the native API provided.
+
+### Native NetApp ONTAP SDK. **(Removed)**
 
 You need to install the package `libstoragemgmt-ontap-plugin`
 if you didn't install using the distribution tarball.
 
 Please contact NetApp support to enable http/https management
-interface or use this command **on your own risk**:
+interface or use this command **at your own risk**:
 
 ```
 options httpd.enable on
