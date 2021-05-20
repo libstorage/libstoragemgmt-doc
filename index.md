@@ -64,7 +64,7 @@ space utilization.
 * [White paper][12]
 
 ## Assistance
-* IRC at #libStorageMgmt http://freenode.net
+* IRC at #libStorageMgmt https://www.oftc.net/
 * [Developer Mailing list][13]:
   libstoragemgmt-devel@lists.fedorahosted.org
 * [User Mailing List][18]:
