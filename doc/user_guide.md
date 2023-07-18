@@ -403,10 +403,10 @@ int main()
 
 We'd love to hear from you.
 
-For general questions please contact us via email or IRC:
+For general questions please contact us via email or by creating an issue
+on the github repository.
 
 * An email to <libstoragemgmt-users@lists.fedorahosted.org>
-* Ping "Gris" or "tasleson" in #libStorageMgmt channel of [FreeNode IRC][11]
 
 Bugs reports or suspected bug reports can be emailed to:
 
@@ -418,8 +418,6 @@ https://lists.fedorahosted.org/mailman/listinfo/libstoragemgmt-users
 Developer mailing list archive page:
 https://lists.fedorahosted.org/mailman/listinfo/libstoragemgmt-devel
 
-Web IRC page:
-https://webchat.freenode.net
 
 ## 6. Contribute
 
